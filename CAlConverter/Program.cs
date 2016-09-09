@@ -10,6 +10,7 @@ namespace CAlConverter
     {
         static void Main(string[] args)
         {
+            CALSerializer.Deserialize(@"C:\Users\BID01023\Desktop\CustomerCard21.txt");
         }
     }
 }

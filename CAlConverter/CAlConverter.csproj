@@ -43,8 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CALCode.cs" />
+    <Compile Include="CALFile.cs" />
+    <Compile Include="CALMethod.cs" />
+    <Compile Include="CALObject.cs" />
+    <Compile Include="CALObjectType.cs" />
+    <Compile Include="CALProperties.cs" />
+    <Compile Include="CALSerializer.cs" />
+    <Compile Include="CALVar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringHelper.cs" />
+    <Compile Include="StringNode.cs" />
+    <Compile Include="StringTree.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
