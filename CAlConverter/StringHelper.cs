@@ -47,7 +47,6 @@ namespace CAlConverter
                 var temp = rawTree.OrderBy(n => n.Key.Key).First();
                 rawTree.Remove(temp.Key);
                 var nodetext = text.Substring(temp.Value.Key, temp.Value.Value - temp.Value.Key);
-                //basetext = basetext.Where(t => t != nodetext.ToArray());
 
                 resultTree.Add(temp.Key.Key, new StringNode(temp.Key.Value, temp.Value, nodetext));
 

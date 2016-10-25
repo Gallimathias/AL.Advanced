@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoMaS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,58 +21,79 @@ namespace CAlConverter
         public CALCode Code { get; set; }
         public string Documentation { get; set; }
 
-        public CALObject(string source)
+        private CommandHandler<StringNode, bool> commandHandler;
+
+        public CALObject()
         {
-            validate(source);
-            Properties = getProperties(source);
-            Code = getCode(source);
-            Documentation = getDocumentation(source);
+            commandHandler = new CommandHandler<StringNode, bool>();
+
+            commandHandler["OBJECT-PROPERTIES"] += (s) => setProperties(s);
+            
+        }
+
+        
+
+        public CALObject(string source) :this()
+        {
 
         }
 
-        public CALObject(StringNode node)
+        public CALObject(StringNode node) : this()
         {
             this.node = node;
         }
 
-        private string getDocumentation(string source)
+        public CALObject(StringNode node, string sourceText) : this(node)
         {
-            throw new NotImplementedException();
+            var array = sourceText.Split().Where(s => !string.IsNullOrWhiteSpace(s)).ToArray();
+
+            if (array[0] != "OBJECT")
+                throw new Exception("This is not a Object");
+
+            CALObjectType temp = new CALObjectType();
+
+            if (Enum.TryParse(array[1], out temp))
+                ObjectType = temp;
+            else
+                throw new Exception("Object can not be null");
+
+            Number = int.Parse(array[2]);
+
+            for (int i = 3; i < array.Length; i++)
+                Name += array[i];
+
+            Name = Name.Trim(' ');
+
+            for (int i = 0; i < node.Elements.Length; i++)
+                commandHandler.Dispatch(node.Elements[i], node.Children[i]);   
         }
 
-        private CALCode getCode(string source)
+        public override string ToString()
         {
-            throw new NotImplementedException();
+            return $"{ObjectType} {Number} {Name}";
         }
 
-        private List<CALProperties> getProperties(string source)
+        private bool setProperties(StringNode s)
         {
-            var start = source.Substring(source.IndexOf("PROPERTIES")).IndexOf('{');
 
-            //var workString = source.Substring();
-            throw new NotImplementedException();
-        }
+            var array = s.Text.Replace("\n", "").Replace("\r", "").Split(';');
+            
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = array[i].TrimStart(' ');
+                array[i] = array[i].TrimEnd(' ');
+            }
 
-        private void validate(string source)
-        {
-            if (!source.StartsWith("OBJECT"))
-                return;
+            array = array.Where(c => !string.IsNullOrEmpty(c)).ToArray();
 
-            var subs = source.Substring(7, source.IndexOf('{') - 7).Split();
-            ObjectType = (CALObjectType)Enum.Parse(typeof(CALObjectType), subs[0]);
-            Number = int.Parse(subs[1]);
+            var time = array.FirstOrDefault(c => c.StartsWith("Time")).Split('=')[1];
+            var date = array.FirstOrDefault(c => c.StartsWith("Date")).Split('=')[1];
+            var version = array.FirstOrDefault(c => c.StartsWith("Version List")).Split('=')[1];
 
-            for (int i = 2; i < subs.Length - 1; i++)
-                Name += subs[i];
+            Date = DateTime.Parse($"{date} {time}");
+            VersionList = version;
 
-            subs = source.Substring(source.IndexOf("OBJECT - PROPERTIES") + 21, source.IndexOf('}')).Split(';');
-
-            Date = DateTime.Parse(
-                $"{subs.First(s => s.StartsWith("Date")).Split('=')[1]} {subs.First(s => s.StartsWith("Time")).Split('=')[1]}");
-
-            VersionList = subs.First(s => s.StartsWith("Version List")).Split('=')[1];
-
-
+            return true;
         }
     }
 }

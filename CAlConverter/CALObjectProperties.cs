@@ -4,15 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-
 namespace CAlConverter
 {
-    class Program
+    public class CALObjectProperties
     {
-        static void Main(string[] args)
+        public CALObjectProperties(StringNode node, string sourcetext)
         {
-           var obj = CALSerializer.Deserialize(@"C:\Users\BID01023\Desktop\CustomerCard21.txt");
 
         }
     }

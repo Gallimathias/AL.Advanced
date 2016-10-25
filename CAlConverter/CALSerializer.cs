@@ -18,8 +18,25 @@ namespace CAlConverter
                 tempSource = reader.ReadToEnd();
 
             var tree = StringHelper.ParseElementTree(tempSource, '{', '}');
-            foreach (var node in tree.Nodes.Where(n => n.OrderNumber == 1))
-                objects.Add(new CALObject(node));
+            int lastI = 0;
+            for (int i = 0; i < tree.BaseNode.Children.Count; i++)
+            {
+                var clear = tree.BaseNode.ClearText;
+                int length = 0;
+                if (clear.Split().Where(s => s == "OBJECT").Count() > 1)
+                {
+                    lastI = clear.IndexOf("OBJECT", lastI);
+                    length = clear.IndexOf("OBJECT", lastI) - lastI;
+                }
+                else
+                {
+                    length = clear.Length;
+                }
+
+                objects.Add(new CALObject(tree.BaseNode.Children[i],
+                    clear.Substring(lastI, length)));
+            }
+
 
 
             return new CALFile(path, tempSource, objects);
