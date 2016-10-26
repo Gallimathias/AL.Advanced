@@ -41,7 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Nav_Database.designer.cs">
+    <Compile Include="NavObjectHandler.cs" />
+    <Compile Include="NAV_Database\Database.cs" />
+    <Compile Include="Interfaces\IObjectRecord.cs" />
+    <Compile Include="Interfaces\IObjectMetadata.cs" />
+    <Compile Include="Interfaces\IDatabaseContext.cs" />
+    <Compile Include="NAV_Database\Metadata.cs" />
+    <Compile Include="NAV_Database\Object.cs" />
+    <Compile Include="SQL\Nav_Database.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Nav_Database.dbml</DependentUpon>
@@ -55,7 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Nav_Database.dbml">
+    <None Include="SQL\Nav_Database.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>Nav_Database.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
@@ -69,10 +76,11 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Nav_Database.dbml.layout">
+    <None Include="SQL\Nav_Database.dbml.layout">
       <DependentUpon>Nav_Database.dbml</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
