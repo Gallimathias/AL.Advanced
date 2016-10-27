@@ -1,29 +1,30 @@
 ﻿using CoMaS;
+using Compiler.Core.Help;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CAlConverter
+namespace Compiler.Core.AL
 {
-    public class CALObject
+    public class ALObject
     {
         private StringNode node;
 
-        public CALObjectType ObjectType { get; set; }
+        public ALObjectType ObjectType { get; set; }
         public string Name { get; set; }
         public int Number { get; set; }
         public DateTime Date { get; set; }
         public string VersionList { get; set; }
         public bool Modifyed { get; set; }
-        public List<CALProperties> Properties { get; set; }
-        public CALCode Code { get; set; }
+        public List<ALProperties> Properties { get; set; }
+        public ALCode Code { get; set; }
         public string Documentation { get; set; }
 
         private CommandHandler<StringNode, bool> commandHandler;
 
-        public CALObject()
+        public ALObject()
         {
             commandHandler = new CommandHandler<StringNode, bool>();
 
@@ -33,24 +34,24 @@ namespace CAlConverter
 
         
 
-        public CALObject(string source) :this()
+        public ALObject(string source) :this()
         {
 
         }
 
-        public CALObject(StringNode node) : this()
+        public ALObject(StringNode node) : this()
         {
             this.node = node;
         }
 
-        public CALObject(StringNode node, string sourceText) : this(node)
+        public ALObject(StringNode node, string sourceText) : this(node)
         {
             var array = sourceText.Split().Where(s => !string.IsNullOrWhiteSpace(s)).ToArray();
 
             if (array[0] != "OBJECT")
                 throw new Exception("This is not a Object");
 
-            CALObjectType temp = new CALObjectType();
+            ALObjectType temp = new ALObjectType();
 
             if (Enum.TryParse(array[1], out temp))
                 ObjectType = temp;

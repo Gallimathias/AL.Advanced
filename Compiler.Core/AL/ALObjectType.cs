@@ -1,6 +1,6 @@
-﻿namespace CAlConverter
+﻿namespace Compiler.Core.AL
 {
-    public enum CALObjectType
+    public enum ALObjectType
     {
         Page,
         Record,

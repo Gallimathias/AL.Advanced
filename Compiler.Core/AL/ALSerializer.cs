@@ -1,18 +1,19 @@
-﻿using System;
+﻿using Compiler.Core.Help;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CAlConverter
+namespace Compiler.Core.AL
 {
-    public static class CALSerializer
+    public static class ALSerializer
     {
-        public static CALFile Deserialize(string path)
+        public static ALFile Deserialize(string path)
         {
             string tempSource;
-            List<CALObject> objects = new List<CALObject>();
+            List<ALObject> objects = new List<ALObject>();
 
             using (var reader = new StreamReader(path))
                 tempSource = reader.ReadToEnd();
@@ -33,13 +34,13 @@ namespace CAlConverter
                     length = clear.Length;
                 }
 
-                objects.Add(new CALObject(tree.BaseNode.Children[i],
+                objects.Add(new ALObject(tree.BaseNode.Children[i],
                     clear.Substring(lastI, length)));
             }
 
 
 
-            return new CALFile(path, tempSource, objects);
+            return new ALFile(path, tempSource, objects);
         }
     }
 }

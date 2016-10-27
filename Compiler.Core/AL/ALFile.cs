@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 
-namespace CAlConverter
+namespace Compiler.Core.AL
 {
-    public class CALFile
+    public class ALFile
     {
         private string path;
         private string tempSource;
         public FileInfo FileInfo { get; private set; }
 
-        public CALFile(string path, string tempSource, List<CALObject> objects)
+        public ALFile(string path, string tempSource, List<ALObject> objects)
         {
             this.path = path;
             this.tempSource = tempSource;

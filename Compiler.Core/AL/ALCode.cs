@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CAlConverter
+namespace Compiler.Core.AL
 {
-    public class CALCode
+    public class ALCode
     {
-        public List<CALMethod> CALMethods { get; set; }
-        public List<CALVar> Globals { get; set; }
+        public List<ALMethod> CALMethods { get; set; }
+        public List<ALVar> Globals { get; set; }
 
-        public CALCode(string source)
+        public ALCode(string source)
         {
             if (!source.StartsWith("CODE"))
                 return;
@@ -17,22 +17,22 @@ namespace CAlConverter
             CALMethods = GetMethods(source);
         }
 
-        private List<CALMethod> GetMethods(string source)
+        private List<ALMethod> GetMethods(string source)
         {
             throw new NotImplementedException();
         }
 
-        private List<CALVar> GetGlobals(string source)
+        private List<ALVar> GetGlobals(string source)
         {
             int start = source.IndexOf("VAR") + 3;
             int length = source.LastIndexOf("LOCAL") - start;
 
             var temp = source.Substring(start, length).Split(';');
 
-            var returnValue = new List<CALVar>();
+            var returnValue = new List<ALVar>();
 
             foreach (var item in temp)
-                returnValue.Add(new CALVar(item));
+                returnValue.Add(new ALVar(item));
 
             return returnValue;
         }
