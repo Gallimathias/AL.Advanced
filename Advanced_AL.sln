@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nav_API", "Nav_API\Nav_API.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compiler", "Compiler\Compiler.csproj", "{0A1BEB21-70D7-499E-86F6-78C37D3FF54E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compiler.Core", "Compiler.Core\Compiler.Core.csproj", "{592EAA1A-4E61-407F-8DEE-A6069B64B5BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0A1BEB21-70D7-499E-86F6-78C37D3FF54E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A1BEB21-70D7-499E-86F6-78C37D3FF54E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A1BEB21-70D7-499E-86F6-78C37D3FF54E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{592EAA1A-4E61-407F-8DEE-A6069B64B5BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{592EAA1A-4E61-407F-8DEE-A6069B64B5BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{592EAA1A-4E61-407F-8DEE-A6069B64B5BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{592EAA1A-4E61-407F-8DEE-A6069B64B5BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
