@@ -46,13 +46,7 @@
   <ItemGroup>
     <Compile Include="AL\ALCode.cs" />
     <Compile Include="AL\ALFile.cs" />
-    <Compile Include="AL\ALMethod.cs" />
-    <Compile Include="AL\ALObject.cs" />
-    <Compile Include="AL\ALObjectProperties.cs" />
-    <Compile Include="AL\ALObjectType.cs" />
-    <Compile Include="AL\ALProperties.cs" />
     <Compile Include="AL\ALSerializer.cs" />
-    <Compile Include="AL\ALVar.cs" />
     <Compile Include="Help\StringHelper.cs" />
     <Compile Include="Help\StringNode.cs" />
     <Compile Include="Help\StringTree.cs" />
