@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Manager.cs" />
     <Compile Include="NavObjectHandler.cs" />
     <Compile Include="NAV_Database\Database.cs" />
     <Compile Include="Interfaces\IObjectRecord.cs" />
