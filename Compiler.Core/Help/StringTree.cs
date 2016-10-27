@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CAlConverter
+namespace Compiler.Core.Help
 {
 
     internal class StringTree

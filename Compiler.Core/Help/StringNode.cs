@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CAlConverter
+namespace Compiler.Core.Help
 {
     public class StringNode
     {
