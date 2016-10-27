@@ -20,5 +20,19 @@ namespace Compiler.Core
         {
             databases.Add(database.ToString(), database);
         }
+
+        public static void AddDatabase(string connection)
+        {
+            
+        }
+
+        //public static Database GetDatabase(string connection) => new Database(connection);
+        
+        public static Database OpenDatabaseConnection(string connection)
+        {
+            var result = GetDatabase(connection);
+            AddDatabase(result);
+            return result;
+        }
     }
 }
