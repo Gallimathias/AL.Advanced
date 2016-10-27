@@ -47,6 +47,7 @@
     <Compile Include="AL\ALCode.cs" />
     <Compile Include="AL\ALFile.cs" />
     <Compile Include="AL\ALSerializer.cs" />
+    <Compile Include="DatabaseManager.cs" />
     <Compile Include="Help\StringHelper.cs" />
     <Compile Include="Help\StringNode.cs" />
     <Compile Include="Help\StringTree.cs" />
@@ -54,6 +55,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CSharp\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nav_API\Nav_API.csproj">
+      <Project>{A013CD46-A43F-4963-9992-65961C8FDCF1}</Project>
+      <Name>Nav_API</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
