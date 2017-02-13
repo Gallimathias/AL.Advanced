@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Demo Database NAV (10-0)" Class="DatabaseOne" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=KRUEGERM-NB\NAV90SQL;Initial Catalog=&quot;Demo Database NAV (10-0)&quot;;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True" SettingsObjectName="Test.Properties.Settings" SettingsPropertyName="Demo_Database_NAV__10_0_ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Object" Member="Object">
+    <Type Name="Object">
+      <Column Name="timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Company Name]" Member="Company_Name" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Modified" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Compiled" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="[BLOB Reference]" Member="BLOB_Reference" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="[BLOB Size]" Member="BLOB_Size" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[DBM Table No_]" Member="DBM_Table_No_" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Time" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="[Version List]" Member="Version_List" Type="System.String" DbType="VarChar(248) NOT NULL" CanBeNull="false" />
+      <Column Name="Locked" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="[Locked By]" Member="Locked_By" Type="System.String" DbType="VarChar(132) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Object Metadata]" Member="Object_Metadata">
+    <Type Name="Object_Metadata">
+      <Column Name="timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="[Object Type]" Member="Object_Type" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Object ID]" Member="Object_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Metadata" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="[User Code]" Member="User_Code" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="[User AL Code]" Member="User_AL_Code" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="[Metadata Version]" Member="Metadata_Version" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Hash" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="[Object Subtype]" Member="Object_Subtype" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="[Has Subscribers]" Member="Has_Subscribers" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
