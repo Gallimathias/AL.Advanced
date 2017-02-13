@@ -13,7 +13,7 @@ namespace Compiler.Core.AL
         public static ALFile Deserialize(string path)
         {
             string tempSource;
-            List<ALObject> objects = new List<ALObject>();
+            //List<ALObject> objects = new List<ALObject>();
 
             using (var reader = new StreamReader(path))
                 tempSource = reader.ReadToEnd();
@@ -34,13 +34,13 @@ namespace Compiler.Core.AL
                     length = clear.Length;
                 }
 
-                objects.Add(new ALObject(tree.BaseNode.Children[i],
-                    clear.Substring(lastI, length)));
+                //objects.Add(new ALObject(tree.BaseNode.Children[i],
+                //    clear.Substring(lastI, length)));
             }
 
 
 
-            return new ALFile(path, tempSource, objects);
+            return new ALFile();//path, tempSource, objects);
         }
     }
 }
