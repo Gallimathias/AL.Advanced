@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Compiler.Core;
+using Compiler.Core.AL;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,8 +15,8 @@ namespace CAlConverter
     {
         static void Main(string[] args)
         {
-           var obj = CALSerializer.Deserialize(@"C:\Users\BID01023\Desktop\CustomerCard21.txt");
-
+            var pas = new Parser(new ALScanner(File.ReadAllText(@"C:\Temp\examples\function.cs")));
+            pas.Parse();
         }
     }
 }
