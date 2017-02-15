@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Compiler.Core
 {
-    enum DefinitionFormat
+    public enum DefinitionFormat
     {
         AL,
         ALClassic,

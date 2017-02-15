@@ -107,10 +107,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ALAdvanced\AdvancedBuilder.cs" />
+    <Compile Include="ALAdvanced\CodeunitBuilder.cs" />
+    <Compile Include="ISubBuilder.cs" />
+    <Compile Include="ALAdvanced\MethodBuilder.cs" />
+    <Compile Include="IDefinitionBuilder.cs" />
     <Compile Include="AL\ALCode.cs" />
     <Compile Include="AL\ALFile.cs" />
+    <Compile Include="AL\ALScanner.cs" />
     <Compile Include="AL\ALSerializer.cs" />
-    <Compile Include="CSharp\CSharpBuilder.cs" />
+    <Compile Include="IScanner.cs" />
     <Compile Include="DatabaseManager.cs" />
     <Compile Include="DefinitionFormat.cs" />
     <Compile Include="Generator.cs" />
@@ -118,7 +124,6 @@
     <Compile Include="Help\StringNode.cs" />
     <Compile Include="Help\StringTree.cs" />
     <Compile Include="Parser.cs" />
-    <Compile Include="Scanner.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
