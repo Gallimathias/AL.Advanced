@@ -57,7 +57,9 @@ namespace Compiler.Core.ALAdvanced
                                      m => m.Kind() == SyntaxKind.ClassDeclaration &&
                                         ((ClassDeclarationSyntax)m).Identifier.ValueText == $"{methodName}_Scope");
                 var builder = new MethodBuilder(scope);
-                ((ClassDeclarationSyntax)CurrentNode).AddMembers(builder.Create());
+                CurrentNode = ((ClassDeclarationSyntax)CurrentNode).AddMembers(
+                    ((MethodDeclarationSyntax)builder.Create()).WithModifiers(
+                        method.Modifiers));
             }
 
         }

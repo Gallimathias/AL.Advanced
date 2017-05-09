@@ -60,6 +60,9 @@
       <HintPath>..\packages\Microsoft.CodeAnalysis.Workspaces.Common.1.3.2\lib\net45\Microsoft.CodeAnalysis.Workspaces.Desktop.dll</HintPath>
       <Private>True</Private>
     </Reference>
+	<Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Collections.Immutable, Version=1.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Collections.Immutable.1.3.1\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
@@ -101,6 +104,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\Compiler.API\Compiler.API.csproj">
+      <Project>{4aed056c-91d2-4f8c-a59b-897ed207d330}</Project>
+      <Name>Compiler.API</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Nav_API\Nav_API.csproj">
       <Project>{A013CD46-A43F-4963-9992-65961C8FDCF1}</Project>
       <Name>Nav_API</Name>
@@ -108,14 +115,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ALAdvanced\AdvancedBuilder.cs" />
+    <Compile Include="ALAdvanced\BodyBuilder.cs" />
     <Compile Include="ALAdvanced\CodeunitBuilder.cs" />
+    <Compile Include="IBlockBuilder.cs" />
+    <Compile Include="DefinitionManager.cs" />
     <Compile Include="ISubBuilder.cs" />
     <Compile Include="ALAdvanced\MethodBuilder.cs" />
     <Compile Include="IDefinitionBuilder.cs" />
-    <Compile Include="AL\ALCode.cs" />
-    <Compile Include="AL\ALFile.cs" />
     <Compile Include="AL\ALScanner.cs" />
-    <Compile Include="AL\ALSerializer.cs" />
     <Compile Include="IScanner.cs" />
     <Compile Include="DatabaseManager.cs" />
     <Compile Include="DefinitionFormat.cs" />

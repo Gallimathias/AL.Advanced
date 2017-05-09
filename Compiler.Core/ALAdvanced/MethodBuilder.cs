@@ -23,8 +23,21 @@ namespace Compiler.Core.ALAdvanced
         public MemberDeclarationSyntax Create()
         {
             baseMethod();
+            baseBody();
 
-            return CurrentNode;
+            return CurrentNode.NormalizeWhitespace();
+        }
+
+        private void baseBody()
+        {
+            var classDeclaration = (ClassDeclarationSyntax)CurrentSourceNode;
+            CurrentSourceNode = classDeclaration.Members.FirstOrDefault(
+                                     m => m.Kind() == SyntaxKind.MethodDeclaration &&
+                                        ((MethodDeclarationSyntax)m).Identifier.ValueText == $"OnRun");
+            var builder = new BodyBuilder((MethodDeclarationSyntax)CurrentSourceNode);
+            CurrentNode = ((MethodDeclarationSyntax)CurrentNode).WithBody(builder.Create());
+
+
         }
 
         private void baseMethod()
@@ -45,20 +58,11 @@ namespace Compiler.Core.ALAdvanced
                 }
             }
 
-            var modifierList = SyntaxFactory.TokenList();
-            modifierList.Add(SyntaxFactory.Token(SyntaxKind.PrivateKeyword));
-
             var methodDeclaration = SyntaxFactory.MethodDeclaration(
                 SyntaxFactory.ParseTypeName("void"),
                 name);
 
-            methodDeclaration = methodDeclaration.AddModifiers(SyntaxFactory.Token(SyntaxKind.PrivateKeyword));
-
-            methodDeclaration = methodDeclaration.WithBody(SyntaxFactory.Block());
-
-            methodDeclaration = methodDeclaration.NormalizeWhitespace();
-            var a = methodDeclaration.ToFullString();
-
+            CurrentNode = methodDeclaration;
         }
     }
 }

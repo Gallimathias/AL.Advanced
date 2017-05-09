@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUnit", "TestUnit\TestUn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advanced AL", "Advanced AL\Advanced AL.csproj", "{D17C1DDD-7981-4A81-8987-A26E15B1188B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compiler.API", "Compiler.API\Compiler.API.csproj", "{4AED056C-91D2-4F8C-A59B-897ED207D330}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Definition.ALAdvanced", "Definition.ALAdvanced\Definition.ALAdvanced.csproj", "{492D6931-71F5-478C-ADEA-7C0D08159664}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{D17C1DDD-7981-4A81-8987-A26E15B1188B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D17C1DDD-7981-4A81-8987-A26E15B1188B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D17C1DDD-7981-4A81-8987-A26E15B1188B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AED056C-91D2-4F8C-A59B-897ED207D330}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AED056C-91D2-4F8C-A59B-897ED207D330}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AED056C-91D2-4F8C-A59B-897ED207D330}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AED056C-91D2-4F8C-A59B-897ED207D330}.Release|Any CPU.Build.0 = Release|Any CPU
+		{492D6931-71F5-478C-ADEA-7C0D08159664}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{492D6931-71F5-478C-ADEA-7C0D08159664}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{492D6931-71F5-478C-ADEA-7C0D08159664}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{492D6931-71F5-478C-ADEA-7C0D08159664}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

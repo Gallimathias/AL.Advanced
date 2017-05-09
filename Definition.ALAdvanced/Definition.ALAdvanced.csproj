@@ -4,18 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0A1BEB21-70D7-499E-86F6-78C37D3FF54E}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{492D6931-71F5-478C-ADEA-7C0D08159664}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CAlConverter</RootNamespace>
-    <AssemblyName>CAlConverter</AssemblyName>
+    <RootNamespace>Definition.ALAdvanced</RootNamespace>
+    <AssemblyName>Definition.ALAdvanced</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -25,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -36,7 +33,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,20 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Compiler.Core\Compiler.Core.csproj">
-      <Project>{592eaa1a-4e61-407f-8dee-a6069b64b5bc}</Project>
-      <Name>Compiler.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Nav_API\Nav_API.csproj">
-      <Project>{a013cd46-a43f-4963-9992-65961c8fdcf1}</Project>
-      <Name>Nav_API</Name>
+    <ProjectReference Include="..\Compiler.API\Compiler.API.csproj">
+      <Project>{4aed056c-91d2-4f8c-a59b-897ed207d330}</Project>
+      <Name>Compiler.API</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
