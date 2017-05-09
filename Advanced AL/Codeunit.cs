@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CAlConverter
+namespace AL
 {
-    public class CALObjectProperties
+    public abstract class Codeunit : ICodeunit
     {
-        public CALObjectProperties(StringNode node, string sourcetext)
+        public virtual void Run()
         {
 
         }
