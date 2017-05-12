@@ -114,6 +114,7 @@
     <Compile Include="ALAdvanced\AdvancedBuilder.cs" />
     <Compile Include="ALAdvanced\BodyBuilder.cs" />
     <Compile Include="ALAdvanced\CodeunitBuilder.cs" />
+    <Compile Include="ObjectType.cs" />
     <Compile Include="ScannerResult.cs" />
     <Compile Include="ScannerResultSet.cs" />
     <Compile Include="IBlockBuilder.cs" />
