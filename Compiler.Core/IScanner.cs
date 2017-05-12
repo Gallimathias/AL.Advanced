@@ -4,7 +4,7 @@ namespace Compiler.Core
 {
     public interface IScanner
     {
-        CSharpSyntaxTree Result { get; }
+        ScannerResultSet Result { get; }
         DefinitionFormat SourceDefinition { get; }
     }
 }
