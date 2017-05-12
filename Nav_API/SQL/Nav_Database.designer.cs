@@ -11,19 +11,19 @@
 
 namespace Nav_API.SQL
 {
-    using System.Data.Linq;
-    using System.Data.Linq.Mapping;
-    using System.Data;
-    using System.Collections.Generic;
-    using System.Reflection;
-    using System.Linq;
-    using System.Linq.Expressions;
-    using System.ComponentModel;
-    using System;
-    using Interfaces;
-
-    [global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Demo Database NAV (10-0)")]
-	public partial class Nav_DatabaseDataContext : System.Data.Linq.DataContext, IDatabaseContext
+	using System.Data.Linq;
+	using System.Data.Linq.Mapping;
+	using System.Data;
+	using System.Collections.Generic;
+	using System.Reflection;
+	using System.Linq;
+	using System.Linq.Expressions;
+	using System.ComponentModel;
+	using System;
+	
+	
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Demo Database NAV (10-0)")]
+	public partial class Nav_DatabaseDataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -2389,8 +2389,6 @@ namespace Nav_API.SQL
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
-
-        
 	}
 }
 #pragma warning restore 1591
