@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nav_API", "Nav_API\Nav_API.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compiler", "Compiler\Compiler.csproj", "{0A1BEB21-70D7-499E-86F6-78C37D3FF54E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compiler.Core", "Compiler.Core\Compiler.Core.csproj", "{592EAA1A-4E61-407F-8DEE-A6069B64B5BC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compiler.Core2", "Compiler.Core2\Compiler.Core2.csproj", "{592EAA1A-4E61-407F-8DEE-A6069B64B5BC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{39D71A28-0040-485E-A0DC-060815EE72F0}"
 EndProject

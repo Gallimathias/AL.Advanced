@@ -52,7 +52,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Compiler.Core\Compiler.Core.csproj">
+    <ProjectReference Include="..\Compiler.Core2\Compiler.Core2.csproj">
       <Project>{592eaa1a-4e61-407f-8dee-a6069b64b5bc}</Project>
       <Name>Compiler.Core</Name>
     </ProjectReference>

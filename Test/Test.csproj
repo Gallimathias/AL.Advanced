@@ -185,7 +185,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Compiler.Core\Compiler.Core.csproj">
+    <ProjectReference Include="..\Compiler.Core2\Compiler.Core2.csproj">
       <Project>{592EAA1A-4E61-407F-8DEE-A6069B64B5BC}</Project>
       <Name>Compiler.Core</Name>
     </ProjectReference>
