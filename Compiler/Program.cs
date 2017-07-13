@@ -15,6 +15,9 @@ namespace CAlConverter
     {
         static void Main(string[] args)
         {
+            var scanner = new ALScanner(File.ReadAllText(@"C:\Temp\examples\function.cs"));
+            scanner.Scan();
+
             var pas = new Parser(new ALScanner(File.ReadAllText(@"C:\Temp\examples\function.cs")));
             pas.Parse();
         }

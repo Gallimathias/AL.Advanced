@@ -23,7 +23,7 @@ namespace Compiler.Core
         public void Parse()
         {
             DefinitionFormat sourceDefinition = scanner.SourceDefinition;
-            CSharpSyntaxTree tree = scanner.Result;
+            CSharpSyntaxTree tree = null; //scanner.Result;
 
             switch (sourceDefinition)
             {

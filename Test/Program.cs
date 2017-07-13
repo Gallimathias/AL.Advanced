@@ -28,31 +28,31 @@ namespace Test
         static void Main(string[] args)
         {
             var con = new DatabaseOne();
-            var id = 90000;
-            var type = 5;
+            var id = 90001;
+            ObjectType type = ObjectType.CodeUnit;
             var folder = "examples";
-            var meta = con.GetTable<Object_Metadata>().FirstOrDefault(m => m.Object_ID == id && m.Object_Type == type);
-            var obj = con.GetTable<Object>().FirstOrDefault(m => m.ID == id && m.Type == type);
+            var meta = con.GetTable<Object_Metadata>().FirstOrDefault(m => m.Object_ID == id && m.Object_Type == (int)type);
+            var obj = con.GetTable<Object>().FirstOrDefault(m => m.ID == id && m.Type == (int)type);
 
-            //var str = GetStringFromBLOB(meta.User_Code);
-            //File.Delete($@"C:\Temp\{folder}\{type.ToString()}_{obj.Name}.cs");
-            //using (var writer = new StreamWriter(File.OpenWrite($@"C:\Temp\{folder}\{type.ToString()}_{obj.Name}.cs")))
-            //{
-            //    writer.Write(str);
-            //}
+            var str = GetStringFromBLOB(meta.User_Code);
+            File.Delete($@"C:\Temp\{folder}\{(int)type}_{obj.Name}.cs");
+            using (var writer = new StreamWriter(File.OpenWrite($@"C:\Temp\{folder}\{(int)type}_{obj.Name}.cs")))
+            {
+                writer.Write(str);
+            }
 
             //var a = GetStringFromBLOB(obj.BLOB_Reference);
             //var b = Encoding.GetEncoding(1252).GetString(obj.BLOB_Reference.ToArray());
             //var c = Encoding.GetEncoding("Latin1").GetString(obj.BLOB_Reference.ToArray());
 
-            using (var binReader = new BinaryReader(new MemoryStream(DecompressBlob(obj.BLOB_Reference.ToArray()))))
-            {
-                binReader.ReadByte();
-                int count = binReader.ReadInt32();
-                var stream = new MemoryStream(binReader.ReadBytes(count));
-                var o = new BinaryFormatter().Deserialize(stream);
-            }
-            
+            //using (var binReader = new BinaryReader(new MemoryStream(DecompressBlob(obj.BLOB_Reference.ToArray()))))
+            //{
+            //    binReader.ReadByte();
+            //    int count = binReader.ReadInt32();
+            //    var stream = new MemoryStream(binReader.ReadBytes(count));
+            //    var o = new BinaryFormatter().Deserialize(stream);
+            //}
+
         }
         private static int BlobMagic = 0x02457D5B;
         public static string GetStringFromBLOB(Binary value)
@@ -67,9 +67,9 @@ namespace Test
                     long num2 = stream.Read(array2, 0, 4);
                     //if (BitConverter.ToInt32(array2, 0) != BlobMagic)
                     //    throw new NotSupportedException("Wrong magic");
-                    //using (DeflateStream deflateStream = new DeflateStream(stream, CompressionMode.Decompress))
-                    //    deflateStream.CopyTo(newStream);
-                    stream.CopyTo(newStream);
+                    using (DeflateStream deflateStream = new DeflateStream(stream, CompressionMode.Decompress))
+                        deflateStream.CopyTo(newStream);
+                    //stream.CopyTo(newStream);
                 }
 
                 return Encoding.UTF8.GetString(newStream.ToArray());
