@@ -16,5 +16,6 @@ namespace Compiler.Core
         public SyntaxKind RawType { get; internal set; }
         public BaseTypeSyntax SourceType { get; internal set; }
         public ScannerResult Parent { get; set; }
+        public MemberDeclarationSyntax Source { get; internal set; }
     }
 }

@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
 
 namespace Compiler.Core.AL
 {
@@ -32,7 +33,7 @@ namespace Compiler.Core.AL
 
         public ALScanner()
         {
-            Result = new ScannerResultSet(SourceDefinition);
+
         }
 
         public void Scan()
@@ -47,19 +48,42 @@ namespace Compiler.Core.AL
                 {
                     Name = obj.Identifier.ValueText,
                     SourceDefinition = SourceDefinition,
-                    RawType = SyntaxKind.ClassDeclaration
+                    RawType = obj.Kind(),
+                    Source = obj,
+                    SourceType = obj.BaseList.Types.FirstOrDefault()
                 };
 
-                var type = obj.BaseList.Types.FirstOrDefault(b => b.GetType().IsAbstract);
-                alResult.SourceType = type;
 
                 Result.Add(alResult);
+
+                GetResultsFromClass(alResult);
 
             }
         }
 
+        private void GetResultsFromClass(ScannerResult alResult)
+        {
+            var collection = ((ClassDeclarationSyntax)alResult.Source).Members.Where(
+                                 m => m.Kind() != SyntaxKind.ClassDeclaration);
+
+            foreach (var obj in collection)
+            {
+                Result.Add(new ScannerResult()
+                {
+                    //Name = obj.Identifier.ValueText,
+                    SourceDefinition = SourceDefinition,
+                    RawType = obj.Kind(),
+                    Source = obj,
+                    Parent = alResult
+                });
+                
+            }
+           
+        }
+
         private void ALScannerInit(string source)
         {
+            Result = new ScannerResultSet(SourceDefinition);
             syntaxTree = (CSharpSyntaxTree)CSharpSyntaxTree.ParseText(source);
             root = syntaxTree.GetCompilationUnitRoot();
         }

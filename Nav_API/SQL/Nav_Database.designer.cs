@@ -20,11 +20,11 @@ namespace Nav_API.SQL
 	using System.Linq.Expressions;
 	using System.ComponentModel;
 	using System;
-	
-	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Demo Database NAV (10-0)")]
-	public partial class Nav_DatabaseDataContext : System.Data.Linq.DataContext
-	{
+    using Nav_API.Interfaces;
+
+    [global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Demo Database NAV (10-0)")]
+	public partial class Nav_DatabaseDataContext : System.Data.Linq.DataContext, IDatabaseContext
+    {
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
 		
