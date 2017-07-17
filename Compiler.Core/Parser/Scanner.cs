@@ -12,7 +12,7 @@ namespace Compiler.Core.Parser
     public class Scanner
     {
         private MemberDeclarationSyntax[] tokens;
-        private Dictionary<int, SyntaxParsDelegate> syntaxDictionary;
+        private Dictionary<int, SyntaxParseDelegate> syntaxDictionary;
 
         public Scanner(params MemberDeclarationSyntax[] tokens)
         {
