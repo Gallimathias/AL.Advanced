@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace Compiler.Core.Syntax
+namespace Compiler.Core.Syntax.AL
 {
     class CodeUnitSnytax : ObjectSyntax
     {
