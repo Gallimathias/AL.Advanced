@@ -28,7 +28,7 @@ namespace Test
         static void Main(string[] args)
         {
             var con = new DatabaseOne();
-            var id = 90001;
+            var id = 95000;
             ObjectType type = ObjectType.CodeUnit;
             var folder = "examples";
             var meta = con.GetTable<Object_Metadata>().FirstOrDefault(m => m.Object_ID == id && m.Object_Type == (int)type);
@@ -52,7 +52,8 @@ namespace Test
             //    var stream = new MemoryStream(binReader.ReadBytes(count));
             //    var o = new BinaryFormatter().Deserialize(stream);
             //}
-
+            Console.WriteLine("Export is finished");
+            Console.ReadKey();
         }
         private static int BlobMagic = 0x02457D5B;
         public static string GetStringFromBLOB(Binary value)
