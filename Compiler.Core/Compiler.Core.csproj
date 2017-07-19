@@ -145,6 +145,7 @@
     <Compile Include="Parser\Scanner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Syntax\AL\CodeUnitSnytax.cs" />
+    <Compile Include="Syntax\AL\MethodHeadSyntax.cs" />
     <Compile Include="Syntax\MemberSyntax.cs" />
     <Compile Include="Syntax\ObjectSyntax.cs" />
     <Compile Include="Tokenizer\TokenScanner.cs" />
