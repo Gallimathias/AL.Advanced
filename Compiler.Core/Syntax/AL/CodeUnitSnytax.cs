@@ -11,13 +11,16 @@ namespace Compiler.Core.Syntax.AL
     class CodeUnitSnytax : ObjectSyntax
     {
         List<MemberSyntax> members;
+        ClassDeclarationSyntax classDeclaration;
+
         public CodeUnitSnytax()
         {
             members = new List<MemberSyntax>();
         }
-        private CodeUnitSnytax(CodeUnitSnytax origin) : this()
+        private CodeUnitSnytax(CodeUnitSnytax codeUnitSyntax) : this()
         {
-            members = origin.members;
+            members = codeUnitSyntax.members;
+            classDeclaration = codeUnitSyntax.classDeclaration;
         }
 
         public override bool TryParse(MemberDeclarationSyntax memberDeclaration,
@@ -25,14 +28,15 @@ namespace Compiler.Core.Syntax.AL
         {
             memberSyntax = null;
 
-            if (memberDeclaration is ClassDeclarationSyntax csharpClass)
+            if (memberDeclaration is ClassDeclarationSyntax classDeclaration)
             {
-                if (!ContainsBaseType(csharpClass.BaseList.Types))
+                if (!ContainsBaseType(classDeclaration.BaseList.Types))
                     return false;
 
-                foreach (var member in csharpClass.Members)
+                foreach (var member in classDeclaration.Members)
                     members.Add(analyser(member));
 
+                this.classDeclaration = classDeclaration;
                 memberSyntax = new CodeUnitSnytax(this);
                 return true;
             }
