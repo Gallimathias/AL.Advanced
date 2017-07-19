@@ -28,13 +28,14 @@ namespace Test
         static void Main(string[] args)
         {
             var con = new DatabaseOne();
-            var id = 95000;
+            var id = 90000;
             ObjectType type = ObjectType.CodeUnit;
             var folder = "examples";
             var meta = con.GetTable<Object_Metadata>().FirstOrDefault(m => m.Object_ID == id && m.Object_Type == (int)type);
             var obj = con.GetTable<Object>().FirstOrDefault(m => m.ID == id && m.Type == (int)type);
-
+            
             var str = GetStringFromBLOB(meta.User_Code);
+            var code = GetCodeFromBLOB(obj.BLOB_Reference);
             File.Delete($@"C:\Temp\{folder}\{(int)type}_{obj.Name}.cs");
             using (var writer = new StreamWriter(File.OpenWrite($@"C:\Temp\{folder}\{(int)type}_{obj.Name}.cs")))
             {
@@ -55,6 +56,14 @@ namespace Test
             Console.WriteLine("Export is finished");
             Console.ReadKey();
         }
+
+        private static string GetCodeFromBLOB(Binary bLOB_Reference)
+        {
+            var data = bLOB_Reference.ToArray();
+
+            return Encoding.UTF8.GetString(data);
+        }
+
         private static int BlobMagic = 0x02457D5B;
         public static string GetStringFromBLOB(Binary value)
         {
