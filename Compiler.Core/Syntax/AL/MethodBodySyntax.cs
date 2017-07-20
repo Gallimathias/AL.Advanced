@@ -8,7 +8,7 @@ using Microsoft.CodeAnalysis;
 
 namespace Compiler.Core.Syntax.AL
 {
-    
+
     public class MethodBodySyntax : ALSourceMemberSyntax<ClassDeclarationSyntax>
     {
         public MethodBodySyntax()
@@ -25,11 +25,14 @@ namespace Compiler.Core.Syntax.AL
         {
             memberSyntax = null;
 
-            if(memberDeclaration is ClassDeclarationSyntax classDeclaration)
+            if (memberDeclaration is ClassDeclarationSyntax classDeclaration)
             {
-                if (!ContainsBaseType(classDeclaration.BaseList.Types))
+                if (!(classDeclaration.Parent is ClassDeclarationSyntax))
                     return false;
 
+                if (!ContainsBaseType(classDeclaration.BaseList.Types))
+                    return false;
+                
                 CSharpMember = classDeclaration;
                 memberSyntax = new MethodBodySyntax(this);
                 return true;
