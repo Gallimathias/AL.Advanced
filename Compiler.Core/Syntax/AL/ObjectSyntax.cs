@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace Compiler.Core.Syntax
+namespace Compiler.Core.Syntax.AL
 {
-    public abstract class ObjectSyntax : MemberSyntax
+    public abstract class ObjectSyntax : ALSourceMemberSyntax<ClassDeclarationSyntax>
     {
         public override abstract bool TryParse(MemberDeclarationSyntax memberDeclaration, Func<MemberDeclarationSyntax, MemberSyntax> analyser, out MemberSyntax memberSyntax);
     }

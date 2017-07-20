@@ -8,6 +8,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Compiler.Core.Syntax.AL
 {
+    [SyntaxSource(SyntaxSource.ALSource)]
     class CodeUnitSnytax : ObjectSyntax
     {
         List<MemberSyntax> members;

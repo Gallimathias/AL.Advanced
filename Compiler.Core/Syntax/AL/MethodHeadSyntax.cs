@@ -7,9 +7,8 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Compiler.Core.Syntax.AL
 {
-    public class MethodHeadSyntax : MemberSyntax
+    public class MethodHeadSyntax : ALSourceMemberSyntax<MethodDeclarationSyntax>
     {
-        MethodDeclarationSyntax methodDeclaration;
 
         public MethodHeadSyntax()
         {
@@ -17,7 +16,7 @@ namespace Compiler.Core.Syntax.AL
         }
         private MethodHeadSyntax(MethodHeadSyntax methodHeadSyntax)
         {
-            methodDeclaration = methodHeadSyntax.methodDeclaration;
+            CSharpMember = methodHeadSyntax.CSharpMember;
         }
 
         public override bool TryParse(MemberDeclarationSyntax memberDeclaration,
@@ -27,7 +26,7 @@ namespace Compiler.Core.Syntax.AL
 
             if(memberDeclaration is MethodDeclarationSyntax methodDeclaration)
             {
-                this.methodDeclaration = methodDeclaration;
+                CSharpMember = methodDeclaration;
                 memberSyntax = new MethodHeadSyntax(this);
                 return true;
             }

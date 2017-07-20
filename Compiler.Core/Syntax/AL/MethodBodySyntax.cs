@@ -8,17 +8,16 @@ using Microsoft.CodeAnalysis;
 
 namespace Compiler.Core.Syntax.AL
 {
-    public class MethodBodySyntax : MemberSyntax
+    
+    public class MethodBodySyntax : ALSourceMemberSyntax<ClassDeclarationSyntax>
     {
-        ClassDeclarationSyntax classDeclaration;
-
         public MethodBodySyntax()
         {
 
         }
         private MethodBodySyntax(MethodBodySyntax methodBodySyntax)
         {
-            classDeclaration = methodBodySyntax.classDeclaration;
+            CSharpMember = methodBodySyntax.CSharpMember;
         }
 
         public override bool TryParse(MemberDeclarationSyntax memberDeclaration,
@@ -31,7 +30,7 @@ namespace Compiler.Core.Syntax.AL
                 if (!ContainsBaseType(classDeclaration.BaseList.Types))
                     return false;
 
-                this.classDeclaration = classDeclaration;
+                CSharpMember = classDeclaration;
                 memberSyntax = new MethodBodySyntax(this);
                 return true;
             }
