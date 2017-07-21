@@ -145,17 +145,20 @@
     <Compile Include="Parser\Scanner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Syntax\AL\ALSourceMemberSyntax.cs" />
+    <Compile Include="Parser\ALSyntaxTree.cs" />
     <Compile Include="Syntax\AL\CodeUnitSnytax.cs" />
     <Compile Include="Syntax\AL\MethodBodySyntax.cs" />
     <Compile Include="Syntax\AL\MethodHeadSyntax.cs" />
     <Compile Include="Syntax\AL\ObjectCtorSyntax.cs" />
     <Compile Include="Syntax\AL\PropertySyntax.cs" />
+    <Compile Include="Syntax\SyntaxMemberAttribute.cs" />
+    <Compile Include="Syntax\SyntaxMember.cs" />
     <Compile Include="Syntax\SyntaxSource.cs" />
     <Compile Include="Syntax\MemberSyntax.cs" />
     <Compile Include="Syntax\AL\ObjectSyntax.cs" />
     <Compile Include="Syntax\SyntaxSourceAttribute.cs" />
     <Compile Include="Syntax\SyntaxStream.cs" />
-    <Compile Include="Syntax\SyntaxTree.cs" />
+    <Compile Include="Parser\SyntaxTree.cs" />
     <Compile Include="Tokenizer\TokenScanner.cs" />
   </ItemGroup>
   <ItemGroup>
