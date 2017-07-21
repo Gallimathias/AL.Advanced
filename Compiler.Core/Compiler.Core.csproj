@@ -154,6 +154,8 @@
     <Compile Include="Syntax\MemberSyntax.cs" />
     <Compile Include="Syntax\AL\ObjectSyntax.cs" />
     <Compile Include="Syntax\SyntaxSourceAttribute.cs" />
+    <Compile Include="Syntax\SyntaxStream.cs" />
+    <Compile Include="Syntax\SyntaxTree.cs" />
     <Compile Include="Tokenizer\TokenScanner.cs" />
   </ItemGroup>
   <ItemGroup>

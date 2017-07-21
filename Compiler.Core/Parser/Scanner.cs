@@ -27,12 +27,14 @@ namespace Compiler.Core.Parser
             GetSnytax(source);
         }
 
-        public void Scan()
+        public Syntax.SyntaxTree Scan()
         {
             foreach (var token in tokens)
             {
                result.Add(Analyse(token));
             }
+
+            return Syntax.SyntaxTree.GetTree(result, SyntaxSource);
         }
 
         private MemberSyntax Analyse(MemberDeclarationSyntax memberDeclaration)
