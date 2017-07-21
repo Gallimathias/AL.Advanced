@@ -1,4 +1,5 @@
-﻿using Compiler.Core.Syntax;
+﻿using System;
+using Compiler.Core.Syntax;
 using Compiler.Core.Syntax.AL;
 
 namespace Compiler.Core.Parser
@@ -8,6 +9,12 @@ namespace Compiler.Core.Parser
     {
         public ALSyntaxTree(MemberSyntax memberSyntax) : base(memberSyntax)
         {
+            SyntaxSource = SyntaxSource.ALSource;
+        }
+
+        public override SyntaxTree Parse(SyntaxTree syntaxTree)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -12,6 +12,7 @@ namespace Compiler.Core.Parser
 {
     public abstract class SyntaxTree
     {
+        public SyntaxSource SyntaxSource { get; protected set; }
         public SyntaxStream SyntaxStream { get; protected set; }
         public MemberSyntax RootMember { get; protected set; }
 
@@ -23,6 +24,10 @@ namespace Compiler.Core.Parser
         {
 
         }
+
+        public abstract SyntaxTree Parse(SyntaxTree syntaxTree);
+        public virtual TSyntaxTree Parse<TSyntaxTree>(SyntaxTree syntaxTree) where TSyntaxTree : SyntaxTree 
+            => (TSyntaxTree)Parse(syntaxTree);
 
         internal static SyntaxTree GetTree(List<MemberSyntax> result, SyntaxSource syntaxSource)
         {
