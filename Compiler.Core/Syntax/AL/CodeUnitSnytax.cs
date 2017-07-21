@@ -49,7 +49,7 @@ namespace Compiler.Core.Syntax.AL
         {
             foreach (var type in types)
             {
-                if (((IdentifierNameSyntax)type.Type).Identifier.Text != "NavCodeunit")
+                if (type.Type.ToString() != "NavCodeunit")
                     continue;
 
                 return true;

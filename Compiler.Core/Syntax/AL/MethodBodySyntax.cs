@@ -27,12 +27,16 @@ namespace Compiler.Core.Syntax.AL
 
             if (memberDeclaration is ClassDeclarationSyntax classDeclaration)
             {
-                if (!(classDeclaration.Parent is ClassDeclarationSyntax))
+                if (classDeclaration.Parent is ClassDeclarationSyntax parentClass)
+                {
+                    if (!ContainsBaseType(classDeclaration.BaseList.Types, parentClass.Identifier.ToString()))
+                        return false;
+                }
+                else
+                {
                     return false;
+                }
 
-                if (!ContainsBaseType(classDeclaration.BaseList.Types))
-                    return false;
-                
                 CSharpMember = classDeclaration;
                 memberSyntax = new MethodBodySyntax(this);
                 return true;
@@ -41,11 +45,11 @@ namespace Compiler.Core.Syntax.AL
             return false;
         }
 
-        private bool ContainsBaseType(SeparatedSyntaxList<BaseTypeSyntax> types)
+        private bool ContainsBaseType(SeparatedSyntaxList<BaseTypeSyntax> types, string parentIdentifier)
         {
             foreach (var type in types)
             {
-                if (((IdentifierNameSyntax)type.Type).Identifier.Text != "NavMethodScope")
+                if (type.Type.ToString() != $"NavMethodScope<{parentIdentifier}>") //NavMethodScope<Codeunit93000>
                     continue;
 
                 return true;
