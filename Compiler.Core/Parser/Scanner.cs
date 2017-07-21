@@ -16,12 +16,14 @@ namespace Compiler.Core.Parser
 
         private MemberDeclarationSyntax[] tokens;
         private Dictionary<int, SyntaxParseDelegate> syntaxDictionary;
+        private List<MemberSyntax> result;
 
         public Scanner(SyntaxSource source, params MemberDeclarationSyntax[] tokens)
         {
             this.tokens = tokens;
             syntaxDictionary = new Dictionary<int, SyntaxParseDelegate>();
             SyntaxSource = source;
+            result = new List<MemberSyntax>();
             GetSnytax(source);
         }
 
@@ -29,7 +31,7 @@ namespace Compiler.Core.Parser
         {
             foreach (var token in tokens)
             {
-                Analyse(token);
+               result.Add(Analyse(token));
             }
         }
 
@@ -41,7 +43,10 @@ namespace Compiler.Core.Parser
                     return memberSyntax;
             }
 
-            throw new Exception($"{ memberDeclaration } is no valid expression");
+            throw new Exception($"{memberDeclaration.Kind()} [{memberDeclaration.RawKind}] " +
+                $"is no valid {SyntaxSource} expression. On Span " +
+                $"{memberDeclaration.FullSpan}");
+            
         }
 
         private void GetSnytax(SyntaxSource source)
