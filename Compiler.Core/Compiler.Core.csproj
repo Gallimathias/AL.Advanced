@@ -148,6 +148,8 @@
     <Compile Include="Syntax\AL\CodeUnitSnytax.cs" />
     <Compile Include="Syntax\AL\MethodBodySyntax.cs" />
     <Compile Include="Syntax\AL\MethodHeadSyntax.cs" />
+    <Compile Include="Syntax\AL\ObjectCtorSyntax.cs" />
+    <Compile Include="Syntax\AL\PropertySyntax.cs" />
     <Compile Include="Syntax\SyntaxSource.cs" />
     <Compile Include="Syntax\MemberSyntax.cs" />
     <Compile Include="Syntax\AL\ObjectSyntax.cs" />
