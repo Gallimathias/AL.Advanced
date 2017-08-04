@@ -4,10 +4,10 @@ using Compiler.Core.Syntax.AL;
 
 namespace Compiler.Core.Parser
 {
-    [SyntaxMember(SyntaxSource.ALSource, SyntaxMember.tree)]
+    [SyntaxElement(SyntaxSource.ALSource, SyntaxElement.Tree)]
     public class ALSyntaxTree : SyntaxTree
     {
-        public ALSyntaxTree(MemberSyntax memberSyntax) : base(memberSyntax)
+        public ALSyntaxTree(SyntaxMember memberSyntax) : base(memberSyntax)
         {
             SyntaxSource = SyntaxSource.ALSource;
         }

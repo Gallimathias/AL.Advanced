@@ -19,7 +19,7 @@ namespace Compiler.Core.Syntax.AL
             CSharpMember = objectCtorSyntax.CSharpMember;
         }
 
-        public override bool TryParse(MemberDeclarationSyntax memberDeclaration, Func<MemberDeclarationSyntax, MemberSyntax> analyser, out MemberSyntax memberSyntax)
+        public override bool TryParse(MemberDeclarationSyntax memberDeclaration, Func<MemberDeclarationSyntax, SyntaxMember> analyser, out SyntaxMember memberSyntax)
         {
             memberSyntax = null;
 

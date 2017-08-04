@@ -151,14 +151,14 @@
     <Compile Include="Syntax\AL\MethodHeadSyntax.cs" />
     <Compile Include="Syntax\AL\ObjectCtorSyntax.cs" />
     <Compile Include="Syntax\AL\PropertySyntax.cs" />
-    <Compile Include="Syntax\SyntaxMemberAttribute.cs" />
-    <Compile Include="Syntax\SyntaxMember.cs" />
+    <Compile Include="Syntax\SyntaxElementAttribute.cs" />
+    <Compile Include="Syntax\SyntaxElement.cs" />
     <Compile Include="Syntax\SyntaxSource.cs" />
-    <Compile Include="Syntax\MemberSyntax.cs" />
+    <Compile Include="Syntax\SyntaxMember.cs" />
     <Compile Include="Syntax\AL\ObjectSyntax.cs" />
     <Compile Include="Syntax\SyntaxSourceAttribute.cs" />
     <Compile Include="Syntax\SyntaxStream.cs" />
-    <Compile Include="Parser\SyntaxTree.cs" />
+    <Compile Include="Syntax\SyntaxTree.cs" />
     <Compile Include="Tokenizer\TokenScanner.cs" />
   </ItemGroup>
   <ItemGroup>

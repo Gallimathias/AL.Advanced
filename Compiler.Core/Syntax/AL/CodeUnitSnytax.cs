@@ -10,12 +10,12 @@ namespace Compiler.Core.Syntax.AL
 {
     class CodeUnitSnytax : ObjectSyntax
     {
-        List<MemberSyntax> members;
+        List<SyntaxMember> members;
         ClassDeclarationSyntax classDeclaration;
 
         public CodeUnitSnytax()
         {
-            members = new List<MemberSyntax>();
+            members = new List<SyntaxMember>();
         }
         private CodeUnitSnytax(CodeUnitSnytax codeUnitSyntax) : this()
         {
@@ -24,7 +24,7 @@ namespace Compiler.Core.Syntax.AL
         }
 
         public override bool TryParse(MemberDeclarationSyntax memberDeclaration,
-            Func<MemberDeclarationSyntax, MemberSyntax> analyser, out MemberSyntax memberSyntax)
+            Func<MemberDeclarationSyntax, SyntaxMember> analyser, out SyntaxMember memberSyntax)
         {
             memberSyntax = null;
 

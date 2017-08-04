@@ -16,32 +16,32 @@ namespace Compiler.Core.Parser
 
         private MemberDeclarationSyntax[] tokens;
         private Dictionary<int, SyntaxParseDelegate> syntaxDictionary;
-        private List<MemberSyntax> result;
+        private List<SyntaxMember> result;
 
         public Scanner(SyntaxSource source, params MemberDeclarationSyntax[] tokens)
         {
             this.tokens = tokens;
             syntaxDictionary = new Dictionary<int, SyntaxParseDelegate>();
             SyntaxSource = source;
-            result = new List<MemberSyntax>();
+            result = new List<SyntaxMember>();
             GetSnytax(source);
         }
 
-        public SyntaxTree Scan()
+        public Syntax.SyntaxTree Scan()
         {
             foreach (var token in tokens)
             {
                result.Add(Analyse(token));
             }
 
-            return SyntaxTree.GetTree(result, SyntaxSource);
+            return Syntax.SyntaxTree.GetTree(result, SyntaxSource);
         }
 
-        private MemberSyntax Analyse(MemberDeclarationSyntax memberDeclaration)
+        private SyntaxMember Analyse(MemberDeclarationSyntax memberDeclaration)
         {
             foreach (var syntax in syntaxDictionary)
             {
-                if (syntax.Value(memberDeclaration, Analyse, out MemberSyntax memberSyntax))
+                if (syntax.Value(memberDeclaration, Analyse, out SyntaxMember memberSyntax))
                     return memberSyntax;
             }
 
@@ -60,7 +60,7 @@ namespace Compiler.Core.Parser
 
             for (int i = 0; i < typeList.Length; i++)
             {
-                if (Activator.CreateInstance(typeList[i]) is MemberSyntax memberSyntax)
+                if (Activator.CreateInstance(typeList[i]) is SyntaxMember memberSyntax)
                     syntaxDictionary.Add(i, memberSyntax.TryParse);
             }
         }

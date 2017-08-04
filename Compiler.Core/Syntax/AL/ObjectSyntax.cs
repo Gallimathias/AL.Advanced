@@ -9,6 +9,6 @@ namespace Compiler.Core.Syntax.AL
 {
     public abstract class ObjectSyntax : ALSourceMemberSyntax<ClassDeclarationSyntax>
     {
-        public override abstract bool TryParse(MemberDeclarationSyntax memberDeclaration, Func<MemberDeclarationSyntax, MemberSyntax> analyser, out MemberSyntax memberSyntax);
+        public override abstract bool TryParse(MemberDeclarationSyntax memberDeclaration, Func<MemberDeclarationSyntax, SyntaxMember> analyser, out SyntaxMember memberSyntax);
     }
 }

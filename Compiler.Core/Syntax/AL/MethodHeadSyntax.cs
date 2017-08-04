@@ -20,7 +20,7 @@ namespace Compiler.Core.Syntax.AL
         }
 
         public override bool TryParse(MemberDeclarationSyntax memberDeclaration,
-            Func<MemberDeclarationSyntax, MemberSyntax> analyser, out MemberSyntax memberSyntax)
+            Func<MemberDeclarationSyntax, SyntaxMember> analyser, out SyntaxMember memberSyntax)
         {
             memberSyntax = null;
 

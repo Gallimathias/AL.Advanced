@@ -8,7 +8,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 namespace Compiler.Core.Syntax.AL
 {
     [SyntaxSource(SyntaxSource.ALSource)]
-    public abstract class ALSourceMemberSyntax<TCSharpMember> : MemberSyntax
+    public abstract class ALSourceMemberSyntax<TCSharpMember> : SyntaxMember
     {
         public ALSourceMemberSyntax()
         {
@@ -17,6 +17,6 @@ namespace Compiler.Core.Syntax.AL
 
         public TCSharpMember CSharpMember { get; protected set; }
 
-        public abstract override bool TryParse(MemberDeclarationSyntax memberDeclaration, Func<MemberDeclarationSyntax, MemberSyntax> analyser, out MemberSyntax memberSyntax);
+        public abstract override bool TryParse(MemberDeclarationSyntax memberDeclaration, Func<MemberDeclarationSyntax, SyntaxMember> analyser, out SyntaxMember memberSyntax);
     }
 }
