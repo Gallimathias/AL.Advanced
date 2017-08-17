@@ -8,16 +8,16 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Compiler.Core.Syntax.AL
 {
-    class CodeUnitSnytax : ObjectSyntax
+    public class CodeUnitSyntax : ObjectSyntax
     {
         List<SyntaxMember> members;
         ClassDeclarationSyntax classDeclaration;
 
-        public CodeUnitSnytax()
+        public CodeUnitSyntax()
         {
             members = new List<SyntaxMember>();
         }
-        private CodeUnitSnytax(CodeUnitSnytax codeUnitSyntax) : this()
+        private CodeUnitSyntax(CodeUnitSyntax codeUnitSyntax) : this()
         {
             members = codeUnitSyntax.members;
             classDeclaration = codeUnitSyntax.classDeclaration;
@@ -37,7 +37,7 @@ namespace Compiler.Core.Syntax.AL
                     members.Add(analyser(member));
 
                 this.classDeclaration = classDeclaration;
-                memberSyntax = new CodeUnitSnytax(this);
+                memberSyntax = new CodeUnitSyntax(this);
                 return true;
             }
 
