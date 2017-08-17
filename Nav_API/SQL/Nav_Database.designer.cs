@@ -24,7 +24,7 @@ namespace Nav_API.SQL
 
     [global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Demo Database NAV (10-0)")]
 	public partial class Nav_DatabaseDataContext : System.Data.Linq.DataContext, IDatabaseContext
-    {
+	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
 		
@@ -54,6 +54,15 @@ namespace Nav_API.SQL
     partial void InsertAL_BackUp(AL_BackUp instance);
     partial void UpdateAL_BackUp(AL_BackUp instance);
     partial void DeleteAL_BackUp(AL_BackUp instance);
+    partial void InsertNAV_App(NAV_App instance);
+    partial void UpdateNAV_App(NAV_App instance);
+    partial void DeleteNAV_App(NAV_App instance);
+    partial void InsertNAV_App_Object_Metadata(NAV_App_Object_Metadata instance);
+    partial void UpdateNAV_App_Object_Metadata(NAV_App_Object_Metadata instance);
+    partial void DeleteNAV_App_Object_Metadata(NAV_App_Object_Metadata instance);
+    partial void InsertNAV_App_Installed_App(NAV_App_Installed_App instance);
+    partial void UpdateNAV_App_Installed_App(NAV_App_Installed_App instance);
+    partial void DeleteNAV_App_Installed_App(NAV_App_Installed_App instance);
     #endregion
 		
 		public Nav_DatabaseDataContext() : 
@@ -147,6 +156,30 @@ namespace Nav_API.SQL
 			get
 			{
 				return this.GetTable<AL_BackUp>();
+			}
+		}
+		
+		public System.Data.Linq.Table<NAV_App> NAV_App
+		{
+			get
+			{
+				return this.GetTable<NAV_App>();
+			}
+		}
+		
+		public System.Data.Linq.Table<NAV_App_Object_Metadata> NAV_App_Object_Metadata
+		{
+			get
+			{
+				return this.GetTable<NAV_App_Object_Metadata>();
+			}
+		}
+		
+		public System.Data.Linq.Table<NAV_App_Installed_App> NAV_App_Installed_App
+		{
+			get
+			{
+				return this.GetTable<NAV_App_Installed_App>();
 			}
 		}
 	}
@@ -2366,6 +2399,1354 @@ namespace Nav_API.SQL
 					this._User_Code = value;
 					this.SendPropertyChanged("User_Code");
 					this.OnUser_CodeChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[NAV App]")]
+	public partial class NAV_App : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private System.Data.Linq.Binary _timestamp;
+		
+		private System.Guid _Package_ID;
+		
+		private System.Guid _ID;
+		
+		private string _Name;
+		
+		private string _Publisher;
+		
+		private int _Version_Major;
+		
+		private int _Version_Minor;
+		
+		private int _Version_Build;
+		
+		private int _Version_Revision;
+		
+		private int _Compatibility_Major;
+		
+		private int _Compatibility_Minor;
+		
+		private int _Compatibility_Build;
+		
+		private int _Compatibility_Revision;
+		
+		private string _Brief;
+		
+		private System.Data.Linq.Binary _Description;
+		
+		private string _Privacy_Statement;
+		
+		private string _EULA;
+		
+		private string _Url;
+		
+		private string _Help;
+		
+		private System.Guid _Logo;
+		
+		private System.Guid _Screenshots;
+		
+		private System.Data.Linq.Binary _Blob;
+		
+		private EntitySet<NAV_App_Object_Metadata> _NAV_App_Object_Metadata;
+		
+		private EntitySet<NAV_App_Installed_App> _NAV_App_Installed_App;
+		
+    #region Definitionen der Erweiterungsmethoden
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OntimestampChanging(System.Data.Linq.Binary value);
+    partial void OntimestampChanged();
+    partial void OnPackage_IDChanging(System.Guid value);
+    partial void OnPackage_IDChanged();
+    partial void OnIDChanging(System.Guid value);
+    partial void OnIDChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnPublisherChanging(string value);
+    partial void OnPublisherChanged();
+    partial void OnVersion_MajorChanging(int value);
+    partial void OnVersion_MajorChanged();
+    partial void OnVersion_MinorChanging(int value);
+    partial void OnVersion_MinorChanged();
+    partial void OnVersion_BuildChanging(int value);
+    partial void OnVersion_BuildChanged();
+    partial void OnVersion_RevisionChanging(int value);
+    partial void OnVersion_RevisionChanged();
+    partial void OnCompatibility_MajorChanging(int value);
+    partial void OnCompatibility_MajorChanged();
+    partial void OnCompatibility_MinorChanging(int value);
+    partial void OnCompatibility_MinorChanged();
+    partial void OnCompatibility_BuildChanging(int value);
+    partial void OnCompatibility_BuildChanged();
+    partial void OnCompatibility_RevisionChanging(int value);
+    partial void OnCompatibility_RevisionChanged();
+    partial void OnBriefChanging(string value);
+    partial void OnBriefChanged();
+    partial void OnDescriptionChanging(System.Data.Linq.Binary value);
+    partial void OnDescriptionChanged();
+    partial void OnPrivacy_StatementChanging(string value);
+    partial void OnPrivacy_StatementChanged();
+    partial void OnEULAChanging(string value);
+    partial void OnEULAChanged();
+    partial void OnUrlChanging(string value);
+    partial void OnUrlChanged();
+    partial void OnHelpChanging(string value);
+    partial void OnHelpChanged();
+    partial void OnLogoChanging(System.Guid value);
+    partial void OnLogoChanged();
+    partial void OnScreenshotsChanging(System.Guid value);
+    partial void OnScreenshotsChanged();
+    partial void OnBlobChanging(System.Data.Linq.Binary value);
+    partial void OnBlobChanged();
+    #endregion
+		
+		public NAV_App()
+		{
+			this._NAV_App_Object_Metadata = new EntitySet<NAV_App_Object_Metadata>(new Action<NAV_App_Object_Metadata>(this.attach_NAV_App_Object_Metadata), new Action<NAV_App_Object_Metadata>(this.detach_NAV_App_Object_Metadata));
+			this._NAV_App_Installed_App = new EntitySet<NAV_App_Installed_App>(new Action<NAV_App_Installed_App>(this.attach_NAV_App_Installed_App), new Action<NAV_App_Installed_App>(this.detach_NAV_App_Installed_App));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_timestamp", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary timestamp
+		{
+			get
+			{
+				return this._timestamp;
+			}
+			set
+			{
+				if ((this._timestamp != value))
+				{
+					this.OntimestampChanging(value);
+					this.SendPropertyChanging();
+					this._timestamp = value;
+					this.SendPropertyChanged("timestamp");
+					this.OntimestampChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Package ID]", Storage="_Package_ID", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Guid Package_ID
+		{
+			get
+			{
+				return this._Package_ID;
+			}
+			set
+			{
+				if ((this._Package_ID != value))
+				{
+					this.OnPackage_IDChanging(value);
+					this.SendPropertyChanging();
+					this._Package_ID = value;
+					this.SendPropertyChanged("Package_ID");
+					this.OnPackage_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="UniqueIdentifier NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.Guid ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(250) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Publisher", DbType="NVarChar(250) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Publisher
+		{
+			get
+			{
+				return this._Publisher;
+			}
+			set
+			{
+				if ((this._Publisher != value))
+				{
+					this.OnPublisherChanging(value);
+					this.SendPropertyChanging();
+					this._Publisher = value;
+					this.SendPropertyChanged("Publisher");
+					this.OnPublisherChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Version Major]", Storage="_Version_Major", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int Version_Major
+		{
+			get
+			{
+				return this._Version_Major;
+			}
+			set
+			{
+				if ((this._Version_Major != value))
+				{
+					this.OnVersion_MajorChanging(value);
+					this.SendPropertyChanging();
+					this._Version_Major = value;
+					this.SendPropertyChanged("Version_Major");
+					this.OnVersion_MajorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Version Minor]", Storage="_Version_Minor", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int Version_Minor
+		{
+			get
+			{
+				return this._Version_Minor;
+			}
+			set
+			{
+				if ((this._Version_Minor != value))
+				{
+					this.OnVersion_MinorChanging(value);
+					this.SendPropertyChanging();
+					this._Version_Minor = value;
+					this.SendPropertyChanged("Version_Minor");
+					this.OnVersion_MinorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Version Build]", Storage="_Version_Build", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int Version_Build
+		{
+			get
+			{
+				return this._Version_Build;
+			}
+			set
+			{
+				if ((this._Version_Build != value))
+				{
+					this.OnVersion_BuildChanging(value);
+					this.SendPropertyChanging();
+					this._Version_Build = value;
+					this.SendPropertyChanged("Version_Build");
+					this.OnVersion_BuildChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Version Revision]", Storage="_Version_Revision", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int Version_Revision
+		{
+			get
+			{
+				return this._Version_Revision;
+			}
+			set
+			{
+				if ((this._Version_Revision != value))
+				{
+					this.OnVersion_RevisionChanging(value);
+					this.SendPropertyChanging();
+					this._Version_Revision = value;
+					this.SendPropertyChanged("Version_Revision");
+					this.OnVersion_RevisionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Compatibility Major]", Storage="_Compatibility_Major", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int Compatibility_Major
+		{
+			get
+			{
+				return this._Compatibility_Major;
+			}
+			set
+			{
+				if ((this._Compatibility_Major != value))
+				{
+					this.OnCompatibility_MajorChanging(value);
+					this.SendPropertyChanging();
+					this._Compatibility_Major = value;
+					this.SendPropertyChanged("Compatibility_Major");
+					this.OnCompatibility_MajorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Compatibility Minor]", Storage="_Compatibility_Minor", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int Compatibility_Minor
+		{
+			get
+			{
+				return this._Compatibility_Minor;
+			}
+			set
+			{
+				if ((this._Compatibility_Minor != value))
+				{
+					this.OnCompatibility_MinorChanging(value);
+					this.SendPropertyChanging();
+					this._Compatibility_Minor = value;
+					this.SendPropertyChanged("Compatibility_Minor");
+					this.OnCompatibility_MinorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Compatibility Build]", Storage="_Compatibility_Build", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int Compatibility_Build
+		{
+			get
+			{
+				return this._Compatibility_Build;
+			}
+			set
+			{
+				if ((this._Compatibility_Build != value))
+				{
+					this.OnCompatibility_BuildChanging(value);
+					this.SendPropertyChanging();
+					this._Compatibility_Build = value;
+					this.SendPropertyChanged("Compatibility_Build");
+					this.OnCompatibility_BuildChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Compatibility Revision]", Storage="_Compatibility_Revision", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int Compatibility_Revision
+		{
+			get
+			{
+				return this._Compatibility_Revision;
+			}
+			set
+			{
+				if ((this._Compatibility_Revision != value))
+				{
+					this.OnCompatibility_RevisionChanging(value);
+					this.SendPropertyChanging();
+					this._Compatibility_Revision = value;
+					this.SendPropertyChanged("Compatibility_Revision");
+					this.OnCompatibility_RevisionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Brief", DbType="NVarChar(250) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Brief
+		{
+			get
+			{
+				return this._Brief;
+			}
+			set
+			{
+				if ((this._Brief != value))
+				{
+					this.OnBriefChanging(value);
+					this.SendPropertyChanging();
+					this._Brief = value;
+					this.SendPropertyChanged("Brief");
+					this.OnBriefChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Privacy Statement]", Storage="_Privacy_Statement", DbType="NVarChar(250) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Privacy_Statement
+		{
+			get
+			{
+				return this._Privacy_Statement;
+			}
+			set
+			{
+				if ((this._Privacy_Statement != value))
+				{
+					this.OnPrivacy_StatementChanging(value);
+					this.SendPropertyChanging();
+					this._Privacy_Statement = value;
+					this.SendPropertyChanged("Privacy_Statement");
+					this.OnPrivacy_StatementChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EULA", DbType="NVarChar(250) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string EULA
+		{
+			get
+			{
+				return this._EULA;
+			}
+			set
+			{
+				if ((this._EULA != value))
+				{
+					this.OnEULAChanging(value);
+					this.SendPropertyChanging();
+					this._EULA = value;
+					this.SendPropertyChanged("EULA");
+					this.OnEULAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Url", DbType="NVarChar(250) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Url
+		{
+			get
+			{
+				return this._Url;
+			}
+			set
+			{
+				if ((this._Url != value))
+				{
+					this.OnUrlChanging(value);
+					this.SendPropertyChanging();
+					this._Url = value;
+					this.SendPropertyChanged("Url");
+					this.OnUrlChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Help", DbType="NVarChar(250) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Help
+		{
+			get
+			{
+				return this._Help;
+			}
+			set
+			{
+				if ((this._Help != value))
+				{
+					this.OnHelpChanging(value);
+					this.SendPropertyChanging();
+					this._Help = value;
+					this.SendPropertyChanged("Help");
+					this.OnHelpChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Logo", DbType="UniqueIdentifier NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.Guid Logo
+		{
+			get
+			{
+				return this._Logo;
+			}
+			set
+			{
+				if ((this._Logo != value))
+				{
+					this.OnLogoChanging(value);
+					this.SendPropertyChanging();
+					this._Logo = value;
+					this.SendPropertyChanged("Logo");
+					this.OnLogoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Screenshots", DbType="UniqueIdentifier NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.Guid Screenshots
+		{
+			get
+			{
+				return this._Screenshots;
+			}
+			set
+			{
+				if ((this._Screenshots != value))
+				{
+					this.OnScreenshotsChanging(value);
+					this.SendPropertyChanging();
+					this._Screenshots = value;
+					this.SendPropertyChanged("Screenshots");
+					this.OnScreenshotsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Blob", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Blob
+		{
+			get
+			{
+				return this._Blob;
+			}
+			set
+			{
+				if ((this._Blob != value))
+				{
+					this.OnBlobChanging(value);
+					this.SendPropertyChanging();
+					this._Blob = value;
+					this.SendPropertyChanged("Blob");
+					this.OnBlobChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAV_App_NAV_App_Object_Metadata", Storage="_NAV_App_Object_Metadata", ThisKey="Package_ID", OtherKey="App_Package_ID")]
+		public EntitySet<NAV_App_Object_Metadata> NAV_App_Object_Metadata
+		{
+			get
+			{
+				return this._NAV_App_Object_Metadata;
+			}
+			set
+			{
+				this._NAV_App_Object_Metadata.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAV_App_NAV_App_Installed_App", Storage="_NAV_App_Installed_App", ThisKey="Package_ID", OtherKey="Package_ID")]
+		public EntitySet<NAV_App_Installed_App> NAV_App_Installed_App
+		{
+			get
+			{
+				return this._NAV_App_Installed_App;
+			}
+			set
+			{
+				this._NAV_App_Installed_App.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_NAV_App_Object_Metadata(NAV_App_Object_Metadata entity)
+		{
+			this.SendPropertyChanging();
+			entity.NAV_App = this;
+		}
+		
+		private void detach_NAV_App_Object_Metadata(NAV_App_Object_Metadata entity)
+		{
+			this.SendPropertyChanging();
+			entity.NAV_App = null;
+		}
+		
+		private void attach_NAV_App_Installed_App(NAV_App_Installed_App entity)
+		{
+			this.SendPropertyChanging();
+			entity.NAV_App = this;
+		}
+		
+		private void detach_NAV_App_Installed_App(NAV_App_Installed_App entity)
+		{
+			this.SendPropertyChanging();
+			entity.NAV_App = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[NAV App Object Metadata]")]
+	public partial class NAV_App_Object_Metadata : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private System.Data.Linq.Binary _timestamp;
+		
+		private System.Guid _App_Package_ID;
+		
+		private int _Object_Type;
+		
+		private int _Object_ID;
+		
+		private int _Metadata_Format;
+		
+		private System.Data.Linq.Binary _Metadata;
+		
+		private System.Data.Linq.Binary _User_Code;
+		
+		private System.Data.Linq.Binary _User_AL_Code;
+		
+		private int _Metadata_Version;
+		
+		private string _Object_Subtype;
+		
+		private string _Object_Name;
+		
+		private EntityRef<NAV_App> _NAV_App;
+		
+    #region Definitionen der Erweiterungsmethoden
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OntimestampChanging(System.Data.Linq.Binary value);
+    partial void OntimestampChanged();
+    partial void OnApp_Package_IDChanging(System.Guid value);
+    partial void OnApp_Package_IDChanged();
+    partial void OnObject_TypeChanging(int value);
+    partial void OnObject_TypeChanged();
+    partial void OnObject_IDChanging(int value);
+    partial void OnObject_IDChanged();
+    partial void OnMetadata_FormatChanging(int value);
+    partial void OnMetadata_FormatChanged();
+    partial void OnMetadataChanging(System.Data.Linq.Binary value);
+    partial void OnMetadataChanged();
+    partial void OnUser_CodeChanging(System.Data.Linq.Binary value);
+    partial void OnUser_CodeChanged();
+    partial void OnUser_AL_CodeChanging(System.Data.Linq.Binary value);
+    partial void OnUser_AL_CodeChanged();
+    partial void OnMetadata_VersionChanging(int value);
+    partial void OnMetadata_VersionChanged();
+    partial void OnObject_SubtypeChanging(string value);
+    partial void OnObject_SubtypeChanged();
+    partial void OnObject_NameChanging(string value);
+    partial void OnObject_NameChanged();
+    #endregion
+		
+		public NAV_App_Object_Metadata()
+		{
+			this._NAV_App = default(EntityRef<NAV_App>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_timestamp", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary timestamp
+		{
+			get
+			{
+				return this._timestamp;
+			}
+			set
+			{
+				if ((this._timestamp != value))
+				{
+					this.OntimestampChanging(value);
+					this.SendPropertyChanging();
+					this._timestamp = value;
+					this.SendPropertyChanged("timestamp");
+					this.OntimestampChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[App Package ID]", Storage="_App_Package_ID", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Guid App_Package_ID
+		{
+			get
+			{
+				return this._App_Package_ID;
+			}
+			set
+			{
+				if ((this._App_Package_ID != value))
+				{
+					this.OnApp_Package_IDChanging(value);
+					this.SendPropertyChanging();
+					this._App_Package_ID = value;
+					this.SendPropertyChanged("App_Package_ID");
+					this.OnApp_Package_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Object Type]", Storage="_Object_Type", DbType="Int NOT NULL", IsPrimaryKey=true, UpdateCheck=UpdateCheck.Never)]
+		public int Object_Type
+		{
+			get
+			{
+				return this._Object_Type;
+			}
+			set
+			{
+				if ((this._Object_Type != value))
+				{
+					this.OnObject_TypeChanging(value);
+					this.SendPropertyChanging();
+					this._Object_Type = value;
+					this.SendPropertyChanged("Object_Type");
+					this.OnObject_TypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Object ID]", Storage="_Object_ID", DbType="Int NOT NULL", IsPrimaryKey=true, UpdateCheck=UpdateCheck.Never)]
+		public int Object_ID
+		{
+			get
+			{
+				return this._Object_ID;
+			}
+			set
+			{
+				if ((this._Object_ID != value))
+				{
+					this.OnObject_IDChanging(value);
+					this.SendPropertyChanging();
+					this._Object_ID = value;
+					this.SendPropertyChanged("Object_ID");
+					this.OnObject_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Metadata Format]", Storage="_Metadata_Format", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int Metadata_Format
+		{
+			get
+			{
+				return this._Metadata_Format;
+			}
+			set
+			{
+				if ((this._Metadata_Format != value))
+				{
+					this.OnMetadata_FormatChanging(value);
+					this.SendPropertyChanging();
+					this._Metadata_Format = value;
+					this.SendPropertyChanged("Metadata_Format");
+					this.OnMetadata_FormatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Metadata", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Metadata
+		{
+			get
+			{
+				return this._Metadata;
+			}
+			set
+			{
+				if ((this._Metadata != value))
+				{
+					this.OnMetadataChanging(value);
+					this.SendPropertyChanging();
+					this._Metadata = value;
+					this.SendPropertyChanged("Metadata");
+					this.OnMetadataChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[User Code]", Storage="_User_Code", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary User_Code
+		{
+			get
+			{
+				return this._User_Code;
+			}
+			set
+			{
+				if ((this._User_Code != value))
+				{
+					this.OnUser_CodeChanging(value);
+					this.SendPropertyChanging();
+					this._User_Code = value;
+					this.SendPropertyChanged("User_Code");
+					this.OnUser_CodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[User AL Code]", Storage="_User_AL_Code", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary User_AL_Code
+		{
+			get
+			{
+				return this._User_AL_Code;
+			}
+			set
+			{
+				if ((this._User_AL_Code != value))
+				{
+					this.OnUser_AL_CodeChanging(value);
+					this.SendPropertyChanging();
+					this._User_AL_Code = value;
+					this.SendPropertyChanged("User_AL_Code");
+					this.OnUser_AL_CodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Metadata Version]", Storage="_Metadata_Version", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int Metadata_Version
+		{
+			get
+			{
+				return this._Metadata_Version;
+			}
+			set
+			{
+				if ((this._Metadata_Version != value))
+				{
+					this.OnMetadata_VersionChanging(value);
+					this.SendPropertyChanging();
+					this._Metadata_Version = value;
+					this.SendPropertyChanged("Metadata_Version");
+					this.OnMetadata_VersionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Object Subtype]", Storage="_Object_Subtype", DbType="NVarChar(30) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Object_Subtype
+		{
+			get
+			{
+				return this._Object_Subtype;
+			}
+			set
+			{
+				if ((this._Object_Subtype != value))
+				{
+					this.OnObject_SubtypeChanging(value);
+					this.SendPropertyChanging();
+					this._Object_Subtype = value;
+					this.SendPropertyChanged("Object_Subtype");
+					this.OnObject_SubtypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Object Name]", Storage="_Object_Name", DbType="NVarChar(30) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Object_Name
+		{
+			get
+			{
+				return this._Object_Name;
+			}
+			set
+			{
+				if ((this._Object_Name != value))
+				{
+					this.OnObject_NameChanging(value);
+					this.SendPropertyChanging();
+					this._Object_Name = value;
+					this.SendPropertyChanged("Object_Name");
+					this.OnObject_NameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAV_App_NAV_App_Object_Metadata", Storage="_NAV_App", ThisKey="App_Package_ID", OtherKey="Package_ID", IsForeignKey=true)]
+		public NAV_App NAV_App
+		{
+			get
+			{
+				return this._NAV_App.Entity;
+			}
+			set
+			{
+				NAV_App previousValue = this._NAV_App.Entity;
+				if (((previousValue != value) 
+							|| (this._NAV_App.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._NAV_App.Entity = null;
+						previousValue.NAV_App_Object_Metadata.Remove(this);
+					}
+					this._NAV_App.Entity = value;
+					if ((value != null))
+					{
+						value.NAV_App_Object_Metadata.Add(this);
+						this._App_Package_ID = value.Package_ID;
+					}
+					else
+					{
+						this._App_Package_ID = default(System.Guid);
+					}
+					this.SendPropertyChanged("NAV_App");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[NAV App Installed App]")]
+	public partial class NAV_App_Installed_App : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private System.Data.Linq.Binary _timestamp;
+		
+		private System.Guid _App_ID;
+		
+		private System.Guid _Package_ID;
+		
+		private string _Name;
+		
+		private string _Publisher;
+		
+		private int _Version_Major;
+		
+		private int _Version_Minor;
+		
+		private int _Version_Build;
+		
+		private int _Version_Revision;
+		
+		private int _Compatibility_Major;
+		
+		private int _Compatibility_Minor;
+		
+		private int _Compatibility_Build;
+		
+		private int _Compatibility_Revision;
+		
+		private EntityRef<NAV_App> _NAV_App;
+		
+    #region Definitionen der Erweiterungsmethoden
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OntimestampChanging(System.Data.Linq.Binary value);
+    partial void OntimestampChanged();
+    partial void OnApp_IDChanging(System.Guid value);
+    partial void OnApp_IDChanged();
+    partial void OnPackage_IDChanging(System.Guid value);
+    partial void OnPackage_IDChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnPublisherChanging(string value);
+    partial void OnPublisherChanged();
+    partial void OnVersion_MajorChanging(int value);
+    partial void OnVersion_MajorChanged();
+    partial void OnVersion_MinorChanging(int value);
+    partial void OnVersion_MinorChanged();
+    partial void OnVersion_BuildChanging(int value);
+    partial void OnVersion_BuildChanged();
+    partial void OnVersion_RevisionChanging(int value);
+    partial void OnVersion_RevisionChanged();
+    partial void OnCompatibility_MajorChanging(int value);
+    partial void OnCompatibility_MajorChanged();
+    partial void OnCompatibility_MinorChanging(int value);
+    partial void OnCompatibility_MinorChanged();
+    partial void OnCompatibility_BuildChanging(int value);
+    partial void OnCompatibility_BuildChanged();
+    partial void OnCompatibility_RevisionChanging(int value);
+    partial void OnCompatibility_RevisionChanged();
+    #endregion
+		
+		public NAV_App_Installed_App()
+		{
+			this._NAV_App = default(EntityRef<NAV_App>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_timestamp", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary timestamp
+		{
+			get
+			{
+				return this._timestamp;
+			}
+			set
+			{
+				if ((this._timestamp != value))
+				{
+					this.OntimestampChanging(value);
+					this.SendPropertyChanging();
+					this._timestamp = value;
+					this.SendPropertyChanged("timestamp");
+					this.OntimestampChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[App ID]", Storage="_App_ID", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Guid App_ID
+		{
+			get
+			{
+				return this._App_ID;
+			}
+			set
+			{
+				if ((this._App_ID != value))
+				{
+					this.OnApp_IDChanging(value);
+					this.SendPropertyChanging();
+					this._App_ID = value;
+					this.SendPropertyChanged("App_ID");
+					this.OnApp_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Package ID]", Storage="_Package_ID", DbType="UniqueIdentifier NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.Guid Package_ID
+		{
+			get
+			{
+				return this._Package_ID;
+			}
+			set
+			{
+				if ((this._Package_ID != value))
+				{
+					this.OnPackage_IDChanging(value);
+					this.SendPropertyChanging();
+					this._Package_ID = value;
+					this.SendPropertyChanged("Package_ID");
+					this.OnPackage_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(250) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Publisher", DbType="NVarChar(250) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Publisher
+		{
+			get
+			{
+				return this._Publisher;
+			}
+			set
+			{
+				if ((this._Publisher != value))
+				{
+					this.OnPublisherChanging(value);
+					this.SendPropertyChanging();
+					this._Publisher = value;
+					this.SendPropertyChanged("Publisher");
+					this.OnPublisherChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Version Major]", Storage="_Version_Major", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int Version_Major
+		{
+			get
+			{
+				return this._Version_Major;
+			}
+			set
+			{
+				if ((this._Version_Major != value))
+				{
+					this.OnVersion_MajorChanging(value);
+					this.SendPropertyChanging();
+					this._Version_Major = value;
+					this.SendPropertyChanged("Version_Major");
+					this.OnVersion_MajorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Version Minor]", Storage="_Version_Minor", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int Version_Minor
+		{
+			get
+			{
+				return this._Version_Minor;
+			}
+			set
+			{
+				if ((this._Version_Minor != value))
+				{
+					this.OnVersion_MinorChanging(value);
+					this.SendPropertyChanging();
+					this._Version_Minor = value;
+					this.SendPropertyChanged("Version_Minor");
+					this.OnVersion_MinorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Version Build]", Storage="_Version_Build", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int Version_Build
+		{
+			get
+			{
+				return this._Version_Build;
+			}
+			set
+			{
+				if ((this._Version_Build != value))
+				{
+					this.OnVersion_BuildChanging(value);
+					this.SendPropertyChanging();
+					this._Version_Build = value;
+					this.SendPropertyChanged("Version_Build");
+					this.OnVersion_BuildChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Version Revision]", Storage="_Version_Revision", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int Version_Revision
+		{
+			get
+			{
+				return this._Version_Revision;
+			}
+			set
+			{
+				if ((this._Version_Revision != value))
+				{
+					this.OnVersion_RevisionChanging(value);
+					this.SendPropertyChanging();
+					this._Version_Revision = value;
+					this.SendPropertyChanged("Version_Revision");
+					this.OnVersion_RevisionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Compatibility Major]", Storage="_Compatibility_Major", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int Compatibility_Major
+		{
+			get
+			{
+				return this._Compatibility_Major;
+			}
+			set
+			{
+				if ((this._Compatibility_Major != value))
+				{
+					this.OnCompatibility_MajorChanging(value);
+					this.SendPropertyChanging();
+					this._Compatibility_Major = value;
+					this.SendPropertyChanged("Compatibility_Major");
+					this.OnCompatibility_MajorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Compatibility Minor]", Storage="_Compatibility_Minor", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int Compatibility_Minor
+		{
+			get
+			{
+				return this._Compatibility_Minor;
+			}
+			set
+			{
+				if ((this._Compatibility_Minor != value))
+				{
+					this.OnCompatibility_MinorChanging(value);
+					this.SendPropertyChanging();
+					this._Compatibility_Minor = value;
+					this.SendPropertyChanged("Compatibility_Minor");
+					this.OnCompatibility_MinorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Compatibility Build]", Storage="_Compatibility_Build", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int Compatibility_Build
+		{
+			get
+			{
+				return this._Compatibility_Build;
+			}
+			set
+			{
+				if ((this._Compatibility_Build != value))
+				{
+					this.OnCompatibility_BuildChanging(value);
+					this.SendPropertyChanging();
+					this._Compatibility_Build = value;
+					this.SendPropertyChanged("Compatibility_Build");
+					this.OnCompatibility_BuildChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Compatibility Revision]", Storage="_Compatibility_Revision", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int Compatibility_Revision
+		{
+			get
+			{
+				return this._Compatibility_Revision;
+			}
+			set
+			{
+				if ((this._Compatibility_Revision != value))
+				{
+					this.OnCompatibility_RevisionChanging(value);
+					this.SendPropertyChanging();
+					this._Compatibility_Revision = value;
+					this.SendPropertyChanged("Compatibility_Revision");
+					this.OnCompatibility_RevisionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAV_App_NAV_App_Installed_App", Storage="_NAV_App", ThisKey="Package_ID", OtherKey="Package_ID", IsForeignKey=true)]
+		public NAV_App NAV_App
+		{
+			get
+			{
+				return this._NAV_App.Entity;
+			}
+			set
+			{
+				NAV_App previousValue = this._NAV_App.Entity;
+				if (((previousValue != value) 
+							|| (this._NAV_App.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._NAV_App.Entity = null;
+						previousValue.NAV_App_Installed_App.Remove(this);
+					}
+					this._NAV_App.Entity = value;
+					if ((value != null))
+					{
+						value.NAV_App_Installed_App.Add(this);
+						this._Package_ID = value.Package_ID;
+					}
+					else
+					{
+						this._Package_ID = default(System.Guid);
+					}
+					this.SendPropertyChanged("NAV_App");
 				}
 			}
 		}

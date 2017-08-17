@@ -108,4 +108,66 @@
       <Column Name="[User Code]" Member="User_Code" Type="System.Data.Linq.Binary" DbType="image" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
+  <Table Name="dbo.[NAV App]" Member="NAV_App">
+    <Type Name="NAV_App">
+      <Column Name="timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="[Package ID]" Member="Package_ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Publisher" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="[Version Major]" Member="Version_Major" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Version Minor]" Member="Version_Minor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Version Build]" Member="Version_Build" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Version Revision]" Member="Version_Revision" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Compatibility Major]" Member="Compatibility_Major" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Compatibility Minor]" Member="Compatibility_Minor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Compatibility Build]" Member="Compatibility_Build" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Compatibility Revision]" Member="Compatibility_Revision" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Brief" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="[Privacy Statement]" Member="Privacy_Statement" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="EULA" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Help" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Logo" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Screenshots" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Blob" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Association Name="NAV_App_NAV_App_Object_Metadata" Member="NAV_App_Object_Metadata" ThisKey="Package_ID" OtherKey="App_Package_ID" Type="NAV_App_Object_Metadata" />
+      <Association Name="NAV_App_NAV_App_Installed_App" Member="NAV_App_Installed_App" ThisKey="Package_ID" OtherKey="Package_ID" Type="NAV_App_Installed_App" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[NAV App Object Metadata]" Member="NAV_App_Object_Metadata">
+    <Type Name="NAV_App_Object_Metadata">
+      <Column Name="timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="[App Package ID]" Member="App_Package_ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Object Type]" Member="Object_Type" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Object ID]" Member="Object_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Metadata Format]" Member="Metadata_Format" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Metadata" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="[User Code]" Member="User_Code" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="[User AL Code]" Member="User_AL_Code" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="[Metadata Version]" Member="Metadata_Version" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Object Subtype]" Member="Object_Subtype" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="[Object Name]" Member="Object_Name" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="NAV_App_NAV_App_Object_Metadata" Member="NAV_App" ThisKey="App_Package_ID" OtherKey="Package_ID" Type="NAV_App" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[NAV App Installed App]" Member="NAV_App_Installed_App">
+    <Type Name="NAV_App_Installed_App">
+      <Column Name="timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="[App ID]" Member="App_ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Package ID]" Member="Package_ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Publisher" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="[Version Major]" Member="Version_Major" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Version Minor]" Member="Version_Minor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Version Build]" Member="Version_Build" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Version Revision]" Member="Version_Revision" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Compatibility Major]" Member="Compatibility_Major" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Compatibility Minor]" Member="Compatibility_Minor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Compatibility Build]" Member="Compatibility_Build" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Compatibility Revision]" Member="Compatibility_Revision" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="NAV_App_NAV_App_Installed_App" Member="NAV_App" ThisKey="Package_ID" OtherKey="Package_ID" Type="NAV_App" IsForeignKey="true" />
+    </Type>
+  </Table>
 </Database>
