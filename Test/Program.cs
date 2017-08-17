@@ -5,6 +5,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Editing;
+using Microsoft.Dynamics.Nav.Model.IO.Txt;
 using Nav_API;
 using Nav_API.NAV_Database;
 using Nav_API.SQL;
@@ -20,6 +21,8 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using Test.IO;
+using Test.IO.Nea;
 
 namespace Test
 {
@@ -27,20 +30,38 @@ namespace Test
     {
         static void Main(string[] args)
         {
+            //var stream = new FileStream(@"C:\Temp\NAV\C_Functions.fob", FileMode.Open,FileAccess.Read);
+            //var encoded = NeaStreamReader.IsSupported(stream);
+
+            //var reader = new NeaStreamReader(stream, true);
+
+            //var import = new TxtImporter(TxtFileModelInfo.Instance);
+            //var res = import.ImportFromStream(stream);
+
             var con = new DatabaseOne();
-            var id = 90000;
+            var id = 1070;
             ObjectType type = ObjectType.CodeUnit;
             var folder = "examples";
-            var meta = con.GetTable<Object_Metadata>().FirstOrDefault(m => m.Object_ID == id && m.Object_Type == (int)type);
-            var obj = con.GetTable<Object>().FirstOrDefault(m => m.ID == id && m.Type == (int)type);
-            
-            var str = GetStringFromBLOB(meta.User_Code);
-            var code = GetCodeFromBLOB(obj.BLOB_Reference);
-            File.Delete($@"C:\Temp\{folder}\{(int)type}_{obj.Name}.cs");
-            using (var writer = new StreamWriter(File.OpenWrite($@"C:\Temp\{folder}\{(int)type}_{obj.Name}.cs")))
-            {
-                writer.Write(str);
-            }
+
+            var obj = con.GetTable<NAV_App_Object_Metadata>().FirstOrDefault(o => o.Object_ID == id && o.Object_Type == (int)type);
+            var pck = con.GetTable<NAV_App>().FirstOrDefault();
+            var str = GetStringFromBLOB(obj.User_AL_Code);
+            var code = GetStringFromBLOB(obj.User_Code);
+
+            var pack = GetStringFromBLOB(pck.Blob);
+            var a = 12;
+            //var meta = con.GetTable<Object_Metadata>().FirstOrDefault(m => m.Object_ID == id && m.Object_Type == (int)type);
+            //var obj = con.GetTable<Object>().FirstOrDefault(m => m.ID == id && m.Type == (int)type);
+
+
+
+            //var str = GetStringFromBLOB(meta.User_Code);
+            //var code = GetCodeFromBLOB(obj.BLOB_Reference);
+            //File.Delete($@"C:\Temp\{folder}\{(int)type}_{obj.Name}.cs");
+            //using (var writer = new StreamWriter(File.OpenWrite($@"C:\Temp\{folder}\{(int)type}_{obj.Name}.cs")))
+            //{
+            //    writer.Write(str);
+            //}
 
             //var a = GetStringFromBLOB(obj.BLOB_Reference);
             //var b = Encoding.GetEncoding(1252).GetString(obj.BLOB_Reference.ToArray());
@@ -59,9 +80,21 @@ namespace Test
 
         private static string GetCodeFromBLOB(Binary bLOB_Reference)
         {
-            var data = bLOB_Reference.ToArray();
+            var data = DecompressBlob(bLOB_Reference);// bLOB_Reference.ToArray();
 
-            return Encoding.UTF8.GetString(data);
+            var stream = new Rc4Stream(new MemoryStream(data), NeaStream.Key, true);
+            var buffer = new byte[data.Length];
+            var count = stream.Read(buffer, 0, (int)stream.Length);
+
+            File.WriteAllBytes(@"C:\temp\test.rc4",buffer);
+            
+
+            //using (var reader = new StreamReader(stream, true))//
+            //{
+            //    var code = reader.ReadToEnd();
+            //}
+            var res = Encoding.GetEncoding(437).GetString(buffer);
+            return res; //Encoding.UTF8.GetString(data);
         }
 
         private static int BlobMagic = 0x02457D5B;
@@ -97,9 +130,9 @@ namespace Test
                     long num2 = stream.Read(array2, 0, 4);
                     //if (BitConverter.ToInt32(array2, 0) != BlobMagic)
                     //    throw new NotSupportedException("Wrong magic");
-                    //using (DeflateStream deflateStream = new DeflateStream(stream, CompressionMode.Decompress))
-                    //    deflateStream.CopyTo(newStream);
-                    stream.CopyTo(newStream);
+                    using (DeflateStream deflateStream = new DeflateStream(stream, CompressionMode.Decompress))
+                        deflateStream.CopyTo(newStream);
+                    //stream.CopyTo(newStream);
                 }
 
                 return newStream.ToArray();
