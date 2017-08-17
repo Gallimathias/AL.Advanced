@@ -142,15 +142,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Parser\ALAdvancedSyntaxTree.cs" />
+    <Compile Include="Translators\AlToAdvanced.cs" />
+    <Compile Include="Translators\ALToALAdvancedMaps\CodeUnitMap.cs" />
+    <Compile Include="Translators\Translator.cs" />
     <Compile Include="Parser\Scanner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Syntax\ALAdvanced\CodeUnitSyntax.cs" />
+    <Compile Include="Syntax\ALAdvanced\ObjectSyntax.cs" />
     <Compile Include="Syntax\AL\ALSourceMemberSyntax.cs" />
     <Compile Include="Parser\ALSyntaxTree.cs" />
-    <Compile Include="Syntax\AL\CodeUnitSnytax.cs" />
+    <Compile Include="Syntax\AL\CodeUnitSyntax.cs" />
     <Compile Include="Syntax\AL\MethodBodySyntax.cs" />
     <Compile Include="Syntax\AL\MethodHeadSyntax.cs" />
     <Compile Include="Syntax\AL\ObjectCtorSyntax.cs" />
     <Compile Include="Syntax\AL\PropertySyntax.cs" />
+    <Compile Include="Syntax\ALAdvanced\ALAdvancedSourceMemberSyntax.cs" />
     <Compile Include="Syntax\SyntaxElementAttribute.cs" />
     <Compile Include="Syntax\SyntaxElement.cs" />
     <Compile Include="Syntax\SyntaxSource.cs" />

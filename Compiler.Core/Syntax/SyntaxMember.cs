@@ -11,5 +11,9 @@ namespace Compiler.Core.Syntax
     public abstract class SyntaxMember 
     {
         public abstract bool TryParse(MemberDeclarationSyntax memberDeclaration, Func<MemberDeclarationSyntax, SyntaxMember> analyser, out SyntaxMember memberSyntax);
+
+        internal abstract void ParseCSharp();
+
+        internal abstract MemberDeclarationSyntax GetCSharpSyntax();
     }
 }
