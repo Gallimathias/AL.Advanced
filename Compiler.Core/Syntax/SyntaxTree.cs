@@ -22,14 +22,23 @@ namespace Compiler.Core.Syntax
         }
         public SyntaxTree(List<SyntaxMember> memberSyntaxList)
         {
-
+            RootMember = memberSyntaxList[0];
         }
 
         public abstract SyntaxTree Parse(SyntaxTree syntaxTree);
         public virtual TSyntaxTree Parse<TSyntaxTree>(SyntaxTree syntaxTree) where TSyntaxTree : SyntaxTree
             => (TSyntaxTree)Parse(syntaxTree);
 
-        internal static TSyntaxTree GetTree<TSyntaxTree>(List<SyntaxMember> result) where TSyntaxTree : SyntaxTree
-            => Activator.CreateInstance<TSyntaxTree>();
+        internal static SyntaxTree GetTree(List<SyntaxMember> syntaxMember, SyntaxSource source)
+        {
+            var type = Assembly.GetAssembly(typeof(SyntaxTree)).GetTypes().FirstOrDefault(t =>
+             {
+                 var attribute = t.GetCustomAttribute<SyntaxElementAttribute>();
+
+                 return attribute != null ? attribute.SyntaxSource == source : false;
+
+             });
+            return (SyntaxTree)Activator.CreateInstance(type, syntaxMember);
+        }
     }
 }

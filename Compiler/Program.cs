@@ -24,7 +24,7 @@ namespace CAlConverter
 
             var tokenscanner = new TokenScanner(File.ReadAllText(@"C:\Temp\examples\function.cs"));
             var scanner = new Scanner(SyntaxSource.ALSource, tokenscanner.Scan());
-            scanner.Scan();
+            var tree = scanner.Scan();
         }
     }
 }
