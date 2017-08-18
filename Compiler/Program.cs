@@ -1,6 +1,7 @@
 ﻿using Compiler.Core;
 using Compiler.Core.Parser;
 using Compiler.Core.Tokenizer;
+using Compiler.Core.Translators;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,15 +17,10 @@ namespace CAlConverter
     {
         static void Main(string[] args)
         {
-            //var scanner = new ALScanner(File.ReadAllText(@"C:\Temp\examples\function.cs"));
-            //scanner.Scan();
-
-            //var pas = new Parser(new ALScanner(File.ReadAllText(@"C:\Temp\examples\function.cs")));
-            //pas.Parse();
-
             var tokenscanner = new TokenScanner(File.ReadAllText(@"C:\Temp\examples\function.cs"));
             var scanner = new Scanner(SyntaxSource.ALSource, tokenscanner.Scan());
-            var tree = scanner.Scan();
+            var translator = new AlToAdvanced((ALSyntaxTree)scanner.Scan());
+            var target = translator.Translate();
         }
     }
 }
