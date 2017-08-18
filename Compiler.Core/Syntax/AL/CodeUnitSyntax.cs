@@ -5,22 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeAnalysis.CSharp;
 
 namespace Compiler.Core.Syntax.AL
 {
     public class CodeUnitSyntax : ObjectSyntax
     {
-        List<SyntaxMember> members;
-        ClassDeclarationSyntax classDeclaration;
-
-        public CodeUnitSyntax()
+        public CodeUnitSyntax() : base()
         {
-            members = new List<SyntaxMember>();
-        }
-        private CodeUnitSyntax(CodeUnitSyntax codeUnitSyntax) : this()
-        {
-            members = codeUnitSyntax.members;
-            classDeclaration = codeUnitSyntax.classDeclaration;
         }
 
         public override bool TryParse(MemberDeclarationSyntax memberDeclaration,
@@ -34,15 +26,48 @@ namespace Compiler.Core.Syntax.AL
                     return false;
 
                 foreach (var member in classDeclaration.Members)
-                    members.Add(analyser(member));
+                    AddMember(analyser(member));
 
-                this.classDeclaration = classDeclaration;
-                memberSyntax = new CodeUnitSyntax(this);
+                ExtractNameAndId(classDeclaration);
+
+                Modifier = classDeclaration.Modifiers.First().Kind();
+
+                memberSyntax = new CodeUnitSyntax
+                {
+                    CSharpMember = classDeclaration,
+                    Name = Name,
+                    ID = ID,
+                    members = members,
+                    Modifier = Modifier
+
+                };
+
                 return true;
             }
 
             return false;
 
+        }
+
+        public override string ToString() => $"Codeunit[{ID}] {Name}";
+        
+        internal override void ParseCSharp()
+        {
+            var tmp = new List<MemberDeclarationSyntax>();
+
+            foreach (var member in members)
+            {
+                member.ParseCSharp();
+                tmp.Add(member.GetCSharpSyntax());
+            }
+
+            CSharpMember = SyntaxFactory.ClassDeclaration($"Codeunit{ID}")
+                .AddModifiers(SyntaxFactory.Token(Modifier))
+                .AddModifiers(SyntaxFactory.Token(SyntaxKind.SealedKeyword))
+                .AddBaseListTypes(SyntaxFactory.SimpleBaseType(SyntaxFactory.ParseTypeName("NavCodeunit")))
+                .AddAttributeLists(SyntaxFactory.AttributeList().AddAttributes(SyntaxFactory.Attribute(SyntaxFactory.ParseName("NavCodeunitOptions"))))
+                .AddMembers(tmp.ToArray())
+                .NormalizeWhitespace();
         }
 
         private bool ContainsBaseType(SeparatedSyntaxList<BaseTypeSyntax> types)
@@ -57,5 +82,23 @@ namespace Compiler.Core.Syntax.AL
 
             return false;
         }
+
+        private void ExtractNameAndId(ClassDeclarationSyntax classDeclaration)
+        {
+            ID = int.Parse(((string)classDeclaration.Identifier.Value).Replace("Codeunit", ""));
+
+            var prop = (PropertyDeclarationSyntax)classDeclaration.Members.Where(m => m.Kind() == SyntaxKind.PropertyDeclaration)
+                .FirstOrDefault(p => (string)((PropertyDeclarationSyntax)p).Identifier.Value == "ObjectName");
+
+            var returnStatement = (ReturnStatementSyntax)prop.AccessorList.Accessors
+                .First(a => a.Kind() == SyntaxKind.GetAccessorDeclaration)
+                .Body.Statements
+                .First(s => s.Kind() == SyntaxKind.ReturnStatement);
+
+            Name = (string)((ParenthesizedExpressionSyntax)returnStatement.Expression)
+                .Expression.GetFirstToken()
+                .Value;
+        }
+
     }
 }

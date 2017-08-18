@@ -31,5 +31,20 @@ namespace Compiler.Core.Syntax.AL
 
             return false;
         }
+
+        internal override MemberDeclarationSyntax GetCSharpSyntax()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal override void Normalize()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal override void ParseCSharp()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

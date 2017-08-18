@@ -8,9 +8,11 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 namespace Compiler.Core.Syntax.ALAdvanced
 {
     [SyntaxSource(SyntaxSource.ALAdvanced)]
-    public abstract class ALAdvancedSourceMemberSyntax<TCSharpMember> : SyntaxMember
+    public abstract class ALAdvancedSourceMemberSyntax<TCSharpMember> : SyntaxMember  where TCSharpMember : MemberDeclarationSyntax
     {
         public TCSharpMember CSharpMember { get; protected set; }
+
+        internal override MemberDeclarationSyntax GetCSharpSyntax() => CSharpMember;
 
         public abstract override bool TryParse(MemberDeclarationSyntax memberDeclaration,
             Func<MemberDeclarationSyntax, SyntaxMember> analyser, out SyntaxMember memberSyntax);

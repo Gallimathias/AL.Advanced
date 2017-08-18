@@ -20,6 +20,8 @@ namespace Compiler.Core.Syntax.AL
             CSharpMember = methodBodySyntax.CSharpMember;
         }
 
+        public string Identifier { get; internal set; }
+
         public override bool TryParse(MemberDeclarationSyntax memberDeclaration,
             Func<MemberDeclarationSyntax, SyntaxMember> analyser, out SyntaxMember memberSyntax)
         {
@@ -43,6 +45,17 @@ namespace Compiler.Core.Syntax.AL
             }
 
             return false;
+        }
+
+
+        internal override void Normalize()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal override void ParseCSharp()
+        {
+            throw new NotImplementedException();
         }
 
         private bool ContainsBaseType(SeparatedSyntaxList<BaseTypeSyntax> types, string parentIdentifier)

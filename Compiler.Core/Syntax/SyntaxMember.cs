@@ -10,10 +10,14 @@ namespace Compiler.Core.Syntax
     public delegate bool SyntaxParseDelegate(MemberDeclarationSyntax memberDeclaration, Func<MemberDeclarationSyntax, SyntaxMember> analyser, out SyntaxMember memberSyntax);
     public abstract class SyntaxMember 
     {
+        public SyntaxMember Parent { get; set; }
+
         public abstract bool TryParse(MemberDeclarationSyntax memberDeclaration, Func<MemberDeclarationSyntax, SyntaxMember> analyser, out SyntaxMember memberSyntax);
 
         internal abstract void ParseCSharp();
 
         internal abstract MemberDeclarationSyntax GetCSharpSyntax();
+
+        internal abstract void Normalize();        
     }
 }
