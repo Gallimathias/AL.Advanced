@@ -55,6 +55,8 @@ namespace Test
 
 
 
+            File.WriteAllText("test", "test", Encoding.UTF8);
+
             //var str = GetStringFromBLOB(meta.User_Code);
             //var code = GetCodeFromBLOB(obj.BLOB_Reference);
             //File.Delete($@"C:\Temp\{folder}\{(int)type}_{obj.Name}.cs");

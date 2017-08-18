@@ -9,15 +9,11 @@ using Microsoft.CodeAnalysis;
 namespace Compiler.Core.Syntax.AL
 {
 
-    public class MethodBodySyntax : ALSourceMemberSyntax<ClassDeclarationSyntax>
+    public class MethodBodySyntax : ObjectSyntax
     {
         public MethodBodySyntax()
         {
 
-        }
-        private MethodBodySyntax(MethodBodySyntax methodBodySyntax)
-        {
-            CSharpMember = methodBodySyntax.CSharpMember;
         }
 
         public string Identifier { get; internal set; }
@@ -39,8 +35,18 @@ namespace Compiler.Core.Syntax.AL
                     return false;
                 }
 
-                CSharpMember = classDeclaration;
-                memberSyntax = new MethodBodySyntax(this);
+                foreach (var member in classDeclaration.Members)
+                    AddMember(analyser(member));
+
+                
+
+                memberSyntax = new MethodBodySyntax
+                {
+                    CSharpMember = classDeclaration,
+                    members = members,
+                    Identifier = (string)classDeclaration.Identifier.Value
+
+                };
                 return true;
             }
 
