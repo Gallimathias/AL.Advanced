@@ -143,8 +143,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Parser\ALAdvancedSyntaxTree.cs" />
+    <Compile Include="Syntax\ALAdvanced\MethodSyntax.cs" />
     <Compile Include="Translators\AlToAdvanced.cs" />
-    <Compile Include="Translators\ALToALAdvancedMaps\CodeUnitMap.cs" />
+    <Compile Include="Translators\Maps\AlToAdvancedMemberMap.cs" />
     <Compile Include="Translators\Translator.cs" />
     <Compile Include="Parser\Scanner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
