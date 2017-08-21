@@ -15,13 +15,13 @@ namespace Compiler.Core.Parser
         public SyntaxSource SyntaxSource { get; private set; }
 
         private MemberDeclarationSyntax[] tokens;
-        private Dictionary<int, SyntaxParseDelegate> syntaxDictionary;
+        private Dictionary<int, SyntaxMemberParseDelegate> syntaxDictionary;
         private List<SyntaxMember> result;
 
         public Scanner(SyntaxSource source, params MemberDeclarationSyntax[] tokens)
         {
             this.tokens = tokens;
-            syntaxDictionary = new Dictionary<int, SyntaxParseDelegate>();
+            syntaxDictionary = new Dictionary<int, SyntaxMemberParseDelegate>();
             SyntaxSource = source;
             result = new List<SyntaxMember>();
             GetSnytax(source);
