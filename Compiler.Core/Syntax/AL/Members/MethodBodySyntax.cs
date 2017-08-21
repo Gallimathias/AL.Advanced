@@ -5,12 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
 
-namespace Compiler.Core.Syntax.AL
+namespace Compiler.Core.Syntax.AL.Members
 {
 
     public class MethodBodySyntax : ObjectSyntax
     {
+        public List<SyntaxStatement> Statements { get; set; }
+
         public MethodBodySyntax()
         {
 
@@ -38,13 +41,28 @@ namespace Compiler.Core.Syntax.AL
                 foreach (var member in classDeclaration.Members)
                     AddMember(analyser(member));
 
-                
+                var body =(MethodHeadSyntax)members.FirstOrDefault(m =>
+                {
+                    if(m is MethodHeadSyntax head)
+                    {
+                        if (head.Identifier == "OnRun")
+                            return true;
+                    }
 
+                    return false;
+                });
+
+                var tmpList = new List<SyntaxStatement>();
+
+                foreach (var statement in body.CSharpMember.Body.Statements)
+                   tmpList.Add(AlParser.ParseStatement(statement));
+                
                 memberSyntax = new MethodBodySyntax
                 {
                     CSharpMember = classDeclaration,
                     members = members,
-                    Identifier = (string)classDeclaration.Identifier.Value
+                    Identifier = (string)classDeclaration.Identifier.Value,
+                    Statements = tmpList
 
                 };
                 return true;
@@ -53,15 +71,27 @@ namespace Compiler.Core.Syntax.AL
             return false;
         }
 
-
-        internal override void Normalize()
-        {
-            throw new NotImplementedException();
-        }
+        public override string ToString() => $"Method Body {Identifier}";
 
         internal override void ParseCSharp()
         {
-            throw new NotImplementedException();
+            var tmp = new List<MemberDeclarationSyntax>();
+            foreach (var member in members)
+            {
+                member.ParseCSharp();
+                tmp.Add(member.GetCSharpSyntax());
+            }
+
+            var codeunit = (CodeUnitSyntax)Parent;
+            CSharpMember = SyntaxFactory.ClassDeclaration(Identifier)
+                .WithKeyword(SyntaxFactory.Token(SyntaxKind.PrivateKeyword))
+                .AddBaseListTypes(SyntaxFactory.SimpleBaseType(SyntaxFactory.ParseTypeName($"NavMethodScope<{codeunit.Name}>")))
+                .AddAttributeLists(SyntaxFactory.AttributeList().AddAttributes(SyntaxFactory.Attribute(SyntaxFactory.ParseName("SourceSpans"),
+                    SyntaxFactory.AttributeArgumentList()
+                    .AddArguments(
+                        SyntaxFactory.AttributeArgument(SyntaxFactory.ParseExpression("0"))))))
+                .AddMembers(tmp.ToArray())
+                .NormalizeWhitespace();
         }
 
         private bool ContainsBaseType(SeparatedSyntaxList<BaseTypeSyntax> types, string parentIdentifier)
@@ -76,5 +106,7 @@ namespace Compiler.Core.Syntax.AL
 
             return false;
         }
+
+
     }
 }

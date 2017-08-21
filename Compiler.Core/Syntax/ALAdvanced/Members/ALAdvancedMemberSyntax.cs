@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace Compiler.Core.Syntax.ALAdvanced
+namespace Compiler.Core.Syntax.ALAdvanced.Members
 {
     [SyntaxSource(SyntaxSource.ALAdvanced)]
-    public abstract class ALAdvancedSourceMemberSyntax<TCSharpMember> : SyntaxMember  where TCSharpMember : MemberDeclarationSyntax
+    public abstract class ALAdvancedMemberSyntax<TCSharpMember> : SyntaxMember  where TCSharpMember : MemberDeclarationSyntax
     {
         public TCSharpMember CSharpMember { get; protected set; }
 

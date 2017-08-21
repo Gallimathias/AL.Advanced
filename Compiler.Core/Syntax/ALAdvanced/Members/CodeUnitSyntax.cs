@@ -7,7 +7,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 
-namespace Compiler.Core.Syntax.ALAdvanced
+namespace Compiler.Core.Syntax.ALAdvanced.Members
 {
     public class CodeUnitSyntax : ObjectSyntax
     {       

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace Compiler.Core.Syntax.AL
+namespace Compiler.Core.Syntax.AL.Members
 {
     [SyntaxSource(SyntaxSource.ALSource)]
     public abstract class ALSourceMemberSyntax<TCSharpMember> : SyntaxMember where TCSharpMember : MemberDeclarationSyntax

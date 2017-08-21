@@ -1,31 +1,32 @@
-﻿using Microsoft.CodeAnalysis.CSharp.Syntax;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeAnalysis;
 
-namespace Compiler.Core.Syntax.AL
+namespace Compiler.Core.Syntax.AL.Members
 {
-    public class PropertySyntax : ALSourceMemberSyntax<PropertyDeclarationSyntax>
+    public class ObjectCtorSyntax : ALSourceMemberSyntax<ConstructorDeclarationSyntax>
     {
-        public PropertySyntax()
+        public ObjectCtorSyntax()
         {
 
         }
-        private PropertySyntax(PropertySyntax propertySyntax)
+        private ObjectCtorSyntax(ObjectCtorSyntax objectCtorSyntax)
         {
-            CSharpMember = propertySyntax.CSharpMember;
+            CSharpMember = objectCtorSyntax.CSharpMember;
         }
 
         public override bool TryParse(MemberDeclarationSyntax memberDeclaration, Func<MemberDeclarationSyntax, SyntaxMember> analyser, out SyntaxMember memberSyntax)
         {
             memberSyntax = null;
 
-            if(memberDeclaration is PropertyDeclarationSyntax propertyDeclaration)
+            if(memberDeclaration is ConstructorDeclarationSyntax ctorDeclaration)
             {
-                CSharpMember = propertyDeclaration;
-                memberSyntax = new PropertySyntax(this);
+                CSharpMember = ctorDeclaration;
+                memberSyntax = new ObjectCtorSyntax(this);
                 return true;
             }
 

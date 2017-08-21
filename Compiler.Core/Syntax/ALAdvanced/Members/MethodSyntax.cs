@@ -1,15 +1,15 @@
-﻿using System;
+﻿using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis;
 
-namespace Compiler.Core.Syntax.AL
+namespace Compiler.Core.Syntax.ALAdvanced.Members
 {
-    public class MethodHeadSyntax : ALSourceMemberSyntax<MethodDeclarationSyntax>
+    public class MethodSyntax : ALAdvancedMemberSyntax<MethodDeclarationSyntax>
     {
         public string Identifier { get; set; }
         public SyntaxKind Modifier { get; set; }
@@ -35,11 +35,15 @@ namespace Compiler.Core.Syntax.AL
             }
         }
 
+        public BlockSyntax Body { get; set; }
+
         private SyntaxKind @override;
         private SyntaxKind @static;
 
-
-        private BlockSyntax block;
+        public MethodSyntax()
+        {
+            Body = SyntaxFactory.Block();
+        }
 
         public override bool TryParse(MemberDeclarationSyntax memberDeclaration,
             Func<MemberDeclarationSyntax, SyntaxMember> analyser, out SyntaxMember memberSyntax)
@@ -50,10 +54,8 @@ namespace Compiler.Core.Syntax.AL
             {
                 var @override = methodDeclaration.Modifiers.FirstOrDefault(m => m.Kind() == SyntaxKind.OverrideKeyword).Kind();
                 var @static = methodDeclaration.Modifiers.FirstOrDefault(m => m.Kind() == SyntaxKind.StaticKeyword).Kind();
-                
-                
 
-                memberSyntax = new MethodHeadSyntax
+                memberSyntax = new MethodSyntax
                 {
                     CSharpMember = methodDeclaration,
                     Identifier = (string)methodDeclaration.Identifier.Value,
@@ -61,41 +63,28 @@ namespace Compiler.Core.Syntax.AL
                     IsStatic = @static == SyntaxKind.StaticKeyword,
                     IsOverride = @override == SyntaxKind.OverrideKeyword
                 };
-
                 return true;
             }
 
             return false;
         }
-
+        
         internal override void Normalize()
         {
+            if (Identifier.Length > 0)
+                Identifier = Identifier.Substring(0, 1).ToUpper() + Identifier.Substring(1);
+
             CSharpMember = CSharpMember.NormalizeWhitespace();
         }
 
         internal override void ParseCSharp()
         {
-            if (!IsStatic && !IsOverride)
-                block = BuildBlock();
-            else
-                block = SyntaxFactory.Block().NormalizeWhitespace();
-
             CSharpMember = SyntaxFactory.MethodDeclaration(SyntaxFactory.ParseTypeName("void"), Identifier)
                 .AddModifiers(SyntaxFactory.Token(Modifier))
-                .WithBody(block)
+                .WithBody(Body)
                 .NormalizeWhitespace();
         }
 
-        public override string ToString() => $"MethodHead {Identifier}";
-
-        private BlockSyntax BuildBlock()
-        {
-            var use = (UsingStatementSyntax)SyntaxFactory.ParseStatement($"using({Identifier}_Scope scope = new {Identifier}_Scope(this))");
-            var exp = SyntaxFactory.ParseStatement(@"scope.Run();");
-
-            use = use.WithStatement(exp).NormalizeWhitespace();
-
-            return SyntaxFactory.Block(use);
-        }
+        public override string ToString() => $"Method {Identifier}";
     }
 }

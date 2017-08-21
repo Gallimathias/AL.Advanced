@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Compiler.Core.Syntax.ALAdvanced
+namespace Compiler.Core.Syntax.ALAdvanced.Members
 {
-    public abstract class ObjectSyntax : ALAdvancedSourceMemberSyntax<ClassDeclarationSyntax>
+    public abstract class ObjectSyntax : ALAdvancedMemberSyntax<ClassDeclarationSyntax>
     {
         public int ID { get; set; }
         public string Name { get; set; }
