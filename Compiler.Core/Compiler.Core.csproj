@@ -143,27 +143,37 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Parser\ALAdvancedSyntaxTree.cs" />
-    <Compile Include="Syntax\ALAdvanced\MethodSyntax.cs" />
+    <Compile Include="Syntax\ALAdvanced\Members\MethodSyntax.cs" />
+    <Compile Include="Syntax\ALAdvanced\Statements\AlAdvancedStatementSyntax.cs" />
+    <Compile Include="Syntax\AL\AlParser.cs" />
+    <Compile Include="Syntax\AL\Members\FieldSyntax.cs" />
+    <Compile Include="Syntax\AL\Statements\AlSourceStatementSyntax.cs" />
+    <Compile Include="Syntax\AL\Statements\ExpressionSyntax.cs" />
+    <Compile Include="Syntax\AL\Statements\LocalDeclarationSyntax.cs" />
+    <Compile Include="Syntax\SyntaxStatement.cs" />
     <Compile Include="Translators\AlToAdvanced.cs" />
     <Compile Include="Translators\Maps\AlToAdvancedMemberMap.cs" />
+    <Compile Include="Translators\Maps\AlToAdvancedStatementMap.cs" />
+    <Compile Include="Translators\Maps\AlToAdvancedTypeMap.cs" />
+    <Compile Include="Translators\Maps\Map.cs" />
     <Compile Include="Translators\Translator.cs" />
     <Compile Include="Parser\Scanner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Syntax\ALAdvanced\CodeUnitSyntax.cs" />
-    <Compile Include="Syntax\ALAdvanced\ObjectSyntax.cs" />
-    <Compile Include="Syntax\AL\ALSourceMemberSyntax.cs" />
+    <Compile Include="Syntax\ALAdvanced\Members\CodeUnitSyntax.cs" />
+    <Compile Include="Syntax\ALAdvanced\Members\ObjectSyntax.cs" />
+    <Compile Include="Syntax\AL\Members\ALSourceMemberSyntax.cs" />
     <Compile Include="Parser\ALSyntaxTree.cs" />
-    <Compile Include="Syntax\AL\CodeUnitSyntax.cs" />
-    <Compile Include="Syntax\AL\MethodBodySyntax.cs" />
-    <Compile Include="Syntax\AL\MethodHeadSyntax.cs" />
-    <Compile Include="Syntax\AL\ObjectCtorSyntax.cs" />
-    <Compile Include="Syntax\AL\PropertySyntax.cs" />
-    <Compile Include="Syntax\ALAdvanced\ALAdvancedSourceMemberSyntax.cs" />
+    <Compile Include="Syntax\AL\Members\CodeUnitSyntax.cs" />
+    <Compile Include="Syntax\AL\Members\MethodBodySyntax.cs" />
+    <Compile Include="Syntax\AL\Members\MethodHeadSyntax.cs" />
+    <Compile Include="Syntax\AL\Members\ObjectCtorSyntax.cs" />
+    <Compile Include="Syntax\AL\Members\PropertySyntax.cs" />
+    <Compile Include="Syntax\ALAdvanced\Members\ALAdvancedMemberSyntax.cs" />
     <Compile Include="Syntax\SyntaxElementAttribute.cs" />
     <Compile Include="Syntax\SyntaxElement.cs" />
     <Compile Include="Syntax\SyntaxSource.cs" />
     <Compile Include="Syntax\SyntaxMember.cs" />
-    <Compile Include="Syntax\AL\ObjectSyntax.cs" />
+    <Compile Include="Syntax\AL\Members\ObjectSyntax.cs" />
     <Compile Include="Syntax\SyntaxSourceAttribute.cs" />
     <Compile Include="Syntax\SyntaxStream.cs" />
     <Compile Include="Syntax\SyntaxTree.cs" />
@@ -179,6 +189,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Generator\" />
+    <Folder Include="Syntax\ALAdvanced\Types\" />
+    <Folder Include="Syntax\AL\Types\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

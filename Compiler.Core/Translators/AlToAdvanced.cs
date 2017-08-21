@@ -5,9 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Compiler.Core.Syntax;
 using Compiler.Core.Parser;
-using AL = Compiler.Core.Syntax.AL;
-using Advanced = Compiler.Core.Syntax.ALAdvanced;
+using ALMember = Compiler.Core.Syntax.AL.Members;
+using AdvancedMember = Compiler.Core.Syntax.ALAdvanced.Members;
 using Compiler.Core.Translators.Maps;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeAnalysis.CSharp;
 
 namespace Compiler.Core.Translators
 {
@@ -19,9 +22,9 @@ namespace Compiler.Core.Translators
 
         public ALAdvancedSyntaxTree Translate()
         {
-            var root = Translate<Advanced.CodeUnitSyntax>(SourceTree.RootMember);
+            var root = Translate<AdvancedMember.CodeUnitSyntax>(SourceTree.RootMember);
 
-            TranslateMember((AL.ObjectSyntax)SourceTree.RootMember, root);
+            TranslateMember((ALMember.ObjectSyntax)SourceTree.RootMember, root);
 
             root.Normalize();
             root.ParseCSharp();
@@ -29,13 +32,13 @@ namespace Compiler.Core.Translators
             return new ALAdvancedSyntaxTree(root);
         }
 
-        private void TranslateMember(AL.ObjectSyntax rootMember, Advanced.ObjectSyntax root)
+        public void TranslateMember(ALMember.ObjectSyntax rootMember, AdvancedMember.ObjectSyntax root)
         {
-            var map = new AlToAdvancedMemberMap();
-           
+            var map = new AlToAdvancedMemberMap(this);
+
             var members = rootMember.Members;
             var tmp = new List<SyntaxMember>();
-            
+
             foreach (var member in members)
             {
                 var type = member.GetType();
@@ -48,10 +51,25 @@ namespace Compiler.Core.Translators
             root.AddMember(tmp.ToArray());
         }
 
-        public T Translate<T>(AL.ObjectSyntax source) where T : Advanced.ObjectSyntax
+        public T Translate<T>(ALMember.ObjectSyntax source) where T : AdvancedMember.ObjectSyntax
         {
             return base.Translate<T>(source);
         }
 
+        internal List<SyntaxStatement> TranslateStatements(List<SyntaxStatement> statements)
+        {
+            var map = new AlToAdvancedStatementMap(this);
+            var tmp = new List<SyntaxStatement>();
+
+            foreach (var statement in statements)
+            {
+                var obj = map.Invoke(statement.Name, statement);
+
+                if (obj is SyntaxStatement syntaxStatement)
+                    tmp.Add(syntaxStatement);
+            }
+
+            return tmp;
+        }
     }
 }
