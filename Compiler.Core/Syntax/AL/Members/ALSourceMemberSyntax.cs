@@ -19,7 +19,5 @@ namespace Compiler.Core.Syntax.AL.Members
         internal override MemberDeclarationSyntax GetCSharpSyntax() => CSharpMember;
 
         public TCSharpMember CSharpMember { get; protected set; }
-
-        public abstract override bool TryParse(MemberDeclarationSyntax memberDeclaration, Func<MemberDeclarationSyntax, SyntaxMember> analyser, out SyntaxMember memberSyntax);
     }
 }

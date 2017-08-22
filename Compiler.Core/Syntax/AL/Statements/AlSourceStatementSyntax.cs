@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeAnalysis;
 
 namespace Compiler.Core.Syntax.AL.Statements
 {
@@ -11,8 +12,8 @@ namespace Compiler.Core.Syntax.AL.Statements
     public abstract class AlSourceStatementSyntax<TCSharpStatement> : SyntaxStatement where TCSharpStatement : StatementSyntax
     {
         public TCSharpStatement CSharpStatement { get; protected set; }
-        public abstract override bool TryParse(StatementSyntax statementSyntax, Func<StatementSyntax, SyntaxStatement> analyser, out SyntaxStatement syntaxStatement);
+        internal override StatementSyntax GetCSharpSyntax() => CSharpStatement;
 
-        internal override StatementSyntax GetCSharpSyntax() => CSharpStatement; 
+        internal override void Normalize() => CSharpStatement.NormalizeWhitespace();
     }
 }
