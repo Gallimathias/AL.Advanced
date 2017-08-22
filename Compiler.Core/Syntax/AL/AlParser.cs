@@ -12,25 +12,40 @@ namespace Compiler.Core.Syntax.AL
     {
         private static Dictionary<int, SyntaxMemberParseDelegate> memberDictionary;
         private static Dictionary<int, SyntaxStatementParseDelegate> statementDictionary;
+        private static Dictionary<int, SyntaxTypeParseDelegate> typeDictionary;
 
         static AlParser()
         {
             memberDictionary = new Dictionary<int, SyntaxMemberParseDelegate>();
             statementDictionary = new Dictionary<int, SyntaxStatementParseDelegate>();
+            typeDictionary = new Dictionary<int, SyntaxTypeParseDelegate>();
             GetSnytax();
         }
 
-        public static SyntaxStatement ParseStatement(StatementSyntax statement)
+        public static SyntaxStatement ParseStatement(StatementSyntax statementSyntax)
         {
-            foreach (var syntax in statementDictionary)
+            foreach (var statement in statementDictionary)
             {
-                if (syntax.Value(statement, ParseStatement, out SyntaxStatement syntaxStatement))
+                if (statement.Value(statementSyntax, ParseStatement, out SyntaxStatement syntaxStatement))
                     return syntaxStatement;
             }
 
-            throw new Exception($"{statement.Kind()} [{statement.RawKind}] " +
-                $"is no valid {SyntaxSource.ALSource} expression. On Span " +
-                $"{statement.FullSpan}");
+            throw new Exception($"{statementSyntax.Kind()} [{statementSyntax.RawKind}] " +
+                $"is no valid {SyntaxSource.ALSource} statement. On Span " +
+                $"{statementSyntax.FullSpan}");
+        }
+
+        public static SyntaxType ParseType(TypeSyntax typeSyntax)
+        {
+            foreach (var type in typeDictionary)
+            {
+                if (type.Value(typeSyntax, ParseType, out SyntaxType syntaxType))
+                    return syntaxType;
+            }
+
+            throw new Exception($"{typeSyntax.Kind()} [{typeSyntax.RawKind}] " +
+                $"is no valid {SyntaxSource.ALSource} type. On Span " +
+                $"{typeSyntax.FullSpan}");
         }
        
 
@@ -49,6 +64,9 @@ namespace Compiler.Core.Syntax.AL
                     memberDictionary.Add(i, memberSyntax.TryParse);
                 else if (obj is SyntaxStatement statement)
                     statementDictionary.Add(i, statement.TryParse);
+                else if (obj is SyntaxType type)
+                    typeDictionary.Add(i, type.TryParse);
+
             }
         }
     }
