@@ -35,6 +35,7 @@ namespace Compiler.Core.Syntax.ALAdvanced.Members
             }
         }
 
+        public List<SyntaxStatement> Statements { get; set; }
         public BlockSyntax Body { get; set; }
 
         private SyntaxKind @override;
@@ -43,6 +44,7 @@ namespace Compiler.Core.Syntax.ALAdvanced.Members
         public MethodSyntax()
         {
             Body = SyntaxFactory.Block();
+            Statements = new List<SyntaxStatement>();
         }
 
         public override bool TryParse(MemberDeclarationSyntax memberDeclaration,
@@ -79,6 +81,15 @@ namespace Compiler.Core.Syntax.ALAdvanced.Members
 
         internal override void ParseCSharp()
         {
+            Body = SyntaxFactory.Block();
+
+            foreach (var statement in Statements)
+            {
+                statement.ParseCSharp();
+                Body = Body.AddStatements(statement.GetCSharpSyntax());
+            }
+
+
             CSharpMember = SyntaxFactory.MethodDeclaration(SyntaxFactory.ParseTypeName("void"), Identifier)
                 .AddModifiers(SyntaxFactory.Token(Modifier))
                 .WithBody(Body)
