@@ -1,4 +1,5 @@
 ﻿using Compiler.Core.Syntax;
+using Compiler.Core.Syntax.ALAdvanced.Members;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,5 +18,7 @@ namespace Compiler.Core.Parser
         {
             throw new NotImplementedException();
         }
+
+        public string ToFullString() => ((ObjectSyntax)RootMember).CSharpMember.ToFullString();
     }
 }
