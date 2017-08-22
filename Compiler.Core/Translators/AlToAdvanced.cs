@@ -56,20 +56,28 @@ namespace Compiler.Core.Translators
             return base.Translate<T>(source);
         }
 
-        internal List<SyntaxStatement> TranslateStatements(List<SyntaxStatement> statements)
+        internal SyntaxStatement TranslateStatement(SyntaxStatement statement)
         {
             var map = new AlToAdvancedStatementMap(this);
-            var tmp = new List<SyntaxStatement>();
-
-            foreach (var statement in statements)
-            {
+            
                 var obj = map.Invoke(statement.Name, statement);
 
                 if (obj is SyntaxStatement syntaxStatement)
-                    tmp.Add(syntaxStatement);
-            }
+                    return syntaxStatement;
 
-            return tmp;
+            return null;
+        }
+
+        internal SyntaxType TranslateType(SyntaxType syntaxType)
+        {
+            var map = new AlToAdvancedTypeMap(this);
+
+            var obj = map.Invoke(syntaxType.Name, syntaxType);
+
+            if (obj is SyntaxType type)
+                return type;
+
+            return null;
         }
     }
 }

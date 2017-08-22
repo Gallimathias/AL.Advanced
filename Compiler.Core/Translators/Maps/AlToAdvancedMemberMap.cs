@@ -42,21 +42,17 @@ namespace Compiler.Core.Translators.Maps
             if (body == null)
                 return null;
 
-            var onRun = (ALMember.MethodHeadSyntax)body.Members.FirstOrDefault(m =>
+            foreach (var statement in body.Statements)
             {
-                if (m is ALMember.MethodHeadSyntax onRunHead)
-                {
-                    if (onRunHead.Identifier == "OnRun")
-                        return true;
-                }
-                return false;
-            });
+                var tmp = ((AlToAdvanced)Translator).TranslateStatement(statement);
 
-            var block = onRun.CSharpMember.Body;
+                if (tmp == null)
+                    continue;
 
-            var statements = ((AlToAdvanced)Translator).TranslateStatements(block.Statements);
+                tmp.Parent = method;
+                method.Statements.Add(tmp);
+            };
             
-
             return method;
         }
 
@@ -65,33 +61,6 @@ namespace Compiler.Core.Translators.Maps
         public object PropertySyntax(ALMember.PropertySyntax property) => null;
 
         public object FieldSyntax(ALMember.FieldSyntax syntax) => null;
-
-        private T Copy<T>(object source)
-        {
-            var target = Activator.CreateInstance<T>();
-
-            var sourceProps = source.GetType().GetProperties();
-            var targetProps = target.GetType().GetProperties();
-
-            foreach (var sourceProp in sourceProps)
-            {
-                if (!sourceProp.CanRead)
-                    continue;
-
-                var targetProp = targetProps.FirstOrDefault(p => p.Name == sourceProp.Name);
-
-                if (targetProp == null)
-                    continue;
-
-                if (!targetProp.CanWrite)
-                    continue;
-
-                targetProp.SetValue(target, sourceProp.GetValue(source));
-
-            }
-
-            return target;
-        }
         
     }
 }
