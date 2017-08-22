@@ -17,10 +17,12 @@ namespace CAlConverter
     {
         static void Main(string[] args)
         {
-            var tokenscanner = new TokenScanner(File.ReadAllText(@"C:\Temp\examples\function.cs"));
+            var tokenscanner = new TokenScanner(File.ReadAllText(@"C:\Temp\test\onRun.cs"));
             var scanner = new Scanner(SyntaxSource.ALSource, tokenscanner.Scan());
             var translator = new AlToAdvanced((ALSyntaxTree)scanner.Scan());
             var target = translator.Translate();
+
+            File.WriteAllText(@"C:\Temp\test\result_onRun.cs", target.ToFullString());
         }
     }
 }
