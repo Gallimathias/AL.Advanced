@@ -46,7 +46,7 @@ namespace Compiler.Core.Parser
             }
 
             throw new Exception($"{memberDeclaration.Kind()} [{memberDeclaration.RawKind}] " +
-                $"is no valid {SyntaxSource} expression. On Span " +
+                $"is no valid {SyntaxSource} member. On Span " +
                 $"{memberDeclaration.FullSpan}");
             
         }
