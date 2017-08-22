@@ -145,12 +145,19 @@
     <Compile Include="Parser\ALAdvancedSyntaxTree.cs" />
     <Compile Include="Syntax\ALAdvanced\Members\MethodSyntax.cs" />
     <Compile Include="Syntax\ALAdvanced\Statements\AlAdvancedStatementSyntax.cs" />
+    <Compile Include="Syntax\ALAdvanced\Statements\ExpressionSyntax.cs" />
+    <Compile Include="Syntax\ALAdvanced\Statements\LocalDeclarationSyntax.cs" />
+    <Compile Include="Syntax\ALAdvanced\Types\AlAdvancedTypeSyntax.cs" />
+    <Compile Include="Syntax\ALAdvanced\Types\IntegerSyntax.cs" />
     <Compile Include="Syntax\AL\AlParser.cs" />
     <Compile Include="Syntax\AL\Members\FieldSyntax.cs" />
     <Compile Include="Syntax\AL\Statements\AlSourceStatementSyntax.cs" />
     <Compile Include="Syntax\AL\Statements\ExpressionSyntax.cs" />
     <Compile Include="Syntax\AL\Statements\LocalDeclarationSyntax.cs" />
+    <Compile Include="Syntax\AL\Types\AlSourceTypeSyntax.cs" />
+    <Compile Include="Syntax\AL\Types\IntegerSyntax.cs" />
     <Compile Include="Syntax\SyntaxStatement.cs" />
+    <Compile Include="Syntax\SyntaxType.cs" />
     <Compile Include="Translators\AlToAdvanced.cs" />
     <Compile Include="Translators\Maps\AlToAdvancedMemberMap.cs" />
     <Compile Include="Translators\Maps\AlToAdvancedStatementMap.cs" />
@@ -189,8 +196,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Generator\" />
-    <Folder Include="Syntax\ALAdvanced\Types\" />
-    <Folder Include="Syntax\AL\Types\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
