@@ -13,11 +13,11 @@ namespace Compiler.Core.Syntax.AL.Statements
     {
         public SyntaxType Type { get; protected set; }
 
-        public List<KeyValuePair<string, string>> Variables { get; set; }
+        public Dictionary<string, string> Variables { get; set; }
 
         public LocalDeclarationSyntax()
         {
-            Variables = new List<KeyValuePair<string, string>>();
+            Variables = new Dictionary<string, string>();
         }
 
         public override bool TryParse(StatementSyntax statementSyntax,
@@ -35,7 +35,7 @@ namespace Compiler.Core.Syntax.AL.Statements
                     var initializer = Type.GetInitializer(variable.Initializer);
                     var identifier = variable.Identifier.Text;
 
-                    Variables.Add(new KeyValuePair<string, string>(identifier, initializer));
+                    Variables.Add(identifier, initializer);
                 }
 
                 syntaxStatement = new LocalDeclarationSyntax()

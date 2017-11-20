@@ -13,6 +13,8 @@ namespace Compiler.Core.Syntax.AL.Statements
     {
         public string Expression { get; set; }
 
+        public string Kind { get; set; }
+
         public override bool TryParse(StatementSyntax statementSyntax, 
             Func<StatementSyntax, SyntaxStatement> analyser, out SyntaxStatement syntaxStatement)
         {
@@ -23,7 +25,8 @@ namespace Compiler.Core.Syntax.AL.Statements
                 syntaxStatement = new ExpressionSyntax {
                     CSharpStatement = expression,
                     Name = nameof(ExpressionSyntax),
-                    Expression = expression.ToString().TrimEnd(';')
+                    Expression = expression.ToString().TrimEnd(';'),
+                    Kind = expression.Expression.Kind().ToString()
                 };
 
                 return true;
