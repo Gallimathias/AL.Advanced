@@ -13,8 +13,9 @@ namespace Compiler.Core.Syntax.AL.Members
     {
         public string Identifier { get; set; }
         public SyntaxKind Modifier { get; set; }
+        public SyntaxType ReturnType { get; set; }
 
-        public Dictionary<string,SyntaxType> Parameters { get; set; }
+        public Dictionary<string, SyntaxType> Parameters { get; set; }
 
         public bool IsOverride
         {
@@ -43,7 +44,7 @@ namespace Compiler.Core.Syntax.AL.Members
 
 
         private BlockSyntax block;
-        
+
 
         public override bool TryParse(MemberDeclarationSyntax memberDeclaration,
             Func<MemberDeclarationSyntax, SyntaxMember> analyser, out SyntaxMember memberSyntax)
@@ -71,7 +72,8 @@ namespace Compiler.Core.Syntax.AL.Members
                     Modifier = methodDeclaration.Modifiers.First().Kind(),
                     IsStatic = @static == SyntaxKind.StaticKeyword,
                     IsOverride = @override == SyntaxKind.OverrideKeyword,
-                    Parameters = Parameters
+                    Parameters = Parameters,
+                    ReturnType = AlParser.ParseType(methodDeclaration.ReturnType)
                 };
 
                 return true;

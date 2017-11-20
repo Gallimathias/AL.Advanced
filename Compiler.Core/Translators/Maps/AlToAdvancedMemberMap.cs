@@ -29,6 +29,8 @@ namespace Compiler.Core.Translators.Maps
 
             var method = Copy<AdvancedMember.MethodSyntax>(head);
 
+            method.ReturnType = ((AlToAdvanced)Translator).TranslateType(head.ReturnType);
+
             var body = (ALMember.MethodBodySyntax)parent.Members.FirstOrDefault(m =>
             {
                 if (m is ALMember.MethodBodySyntax bodySyntax)
@@ -53,11 +55,12 @@ namespace Compiler.Core.Translators.Maps
                 tmp.Parent = method;
                 method.Statements.Add(tmp);
             };
+
             var parameters = new Dictionary<string, SyntaxType>();
             foreach (var parameter in head.Parameters)
             {
                 parameters.Add(parameter.Key,
-                    ((AlToAdvanced)Translator).TranslateType(parameter.Value));                
+                    ((AlToAdvanced)Translator).TranslateType(parameter.Value));
             }
 
             method.Parameters = parameters;
@@ -70,6 +73,6 @@ namespace Compiler.Core.Translators.Maps
         public object PropertySyntax(ALMember.PropertySyntax property) => null;
 
         public object FieldSyntax(ALMember.FieldSyntax syntax) => null;
-        
+
     }
 }

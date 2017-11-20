@@ -38,6 +38,7 @@ namespace Compiler.Core.Syntax.ALAdvanced.Members
         public List<SyntaxStatement> Statements { get; set; }
         public Dictionary<string, SyntaxType> Parameters { get; set; }
         public BlockSyntax Body { get; set; }
+        public SyntaxType ReturnType { get; set; }
 
         private SyntaxKind @override;
         private SyntaxKind @static;
@@ -107,7 +108,7 @@ namespace Compiler.Core.Syntax.ALAdvanced.Members
                         parameter.Value.GetCSharpSyntax()));
             }
 
-            CSharpMember = SyntaxFactory.MethodDeclaration(SyntaxFactory.ParseTypeName("void"), Identifier)
+            CSharpMember = SyntaxFactory.MethodDeclaration(ReturnType.GetCSharpSyntax(), Identifier)
                 .AddModifiers(SyntaxFactory.Token(Modifier))
                 .WithBody(Body)
                 .WithParameterList(list)
