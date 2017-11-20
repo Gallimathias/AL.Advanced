@@ -36,6 +36,7 @@ namespace Compiler.Core.Syntax.ALAdvanced.Members
         }
 
         public List<SyntaxStatement> Statements { get; set; }
+        public Dictionary<string, SyntaxType> Parameters { get; set; }
         public BlockSyntax Body { get; set; }
 
         private SyntaxKind @override;
@@ -45,6 +46,7 @@ namespace Compiler.Core.Syntax.ALAdvanced.Members
         {
             Body = SyntaxFactory.Block();
             Statements = new List<SyntaxStatement>();
+            Parameters = new Dictionary<string, SyntaxType>();
         }
 
         public override bool TryParse(MemberDeclarationSyntax memberDeclaration,
@@ -70,7 +72,7 @@ namespace Compiler.Core.Syntax.ALAdvanced.Members
 
             return false;
         }
-        
+
         internal override void Normalize()
         {
             if (Identifier.Length > 0)
@@ -89,10 +91,26 @@ namespace Compiler.Core.Syntax.ALAdvanced.Members
                 Body = Body.AddStatements(statement.GetCSharpSyntax());
             }
 
+            var list = SyntaxFactory.ParameterList();
+
+            foreach (var parameter in Parameters)
+            {
+                if (parameter.Value == null)
+                    continue;
+
+                parameter.Value.ParseCSharp();
+
+                list = list.AddParameters(
+                    SyntaxFactory.Parameter(
+                        SyntaxFactory.ParseToken(parameter.Key))
+                        .WithType(
+                        parameter.Value.GetCSharpSyntax()));
+            }
 
             CSharpMember = SyntaxFactory.MethodDeclaration(SyntaxFactory.ParseTypeName("void"), Identifier)
                 .AddModifiers(SyntaxFactory.Token(Modifier))
                 .WithBody(Body)
+                .WithParameterList(list)
                 .NormalizeWhitespace();
         }
 

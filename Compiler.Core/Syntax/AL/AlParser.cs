@@ -43,6 +43,8 @@ namespace Compiler.Core.Syntax.AL
                     return syntaxType;
             }
 
+            return null;
+
             throw new Exception($"{typeSyntax.Kind()} [{typeSyntax.RawKind}] " +
                 $"is no valid {SyntaxSource.ALSource} type. On Span " +
                 $"{typeSyntax.FullSpan}");

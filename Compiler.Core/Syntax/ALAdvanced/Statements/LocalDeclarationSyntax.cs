@@ -13,11 +13,11 @@ namespace Compiler.Core.Syntax.ALAdvanced.Statements
     {
         public SyntaxType Type { get; protected set; }
 
-        public List<KeyValuePair<string, string>> Variables { get; set; }
+        public Dictionary<string, string> Variables { get; set; }
 
         public LocalDeclarationSyntax()
         {
-            Variables = new List<KeyValuePair<string, string>>();
+            Variables = new Dictionary<string, string>();
         }
 
         public override bool TryParse(StatementSyntax statementSyntax,
