@@ -1,28 +1,10 @@
 ﻿using Compiler.Core;
-using Compiler.Core.AL;
-using Microsoft.Build.Construction;
-using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.CodeAnalysis.Editing;
-using Microsoft.Dynamics.Nav.Model.IO.Txt;
-using Nav_API;
-using Nav_API.NAV_Database;
-using Nav_API.SQL;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data.Linq;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
-using System.Reflection;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
 using Test.IO;
 using Test.IO.Nea;
 
@@ -41,10 +23,10 @@ namespace Test
             //var res = import.ImportFromStream(stream);
 
             var con = new DatabaseOne();
-            var id = 101;
-            ObjectType type = ObjectType.Report;
+            var id = 95001;
+            ObjectType type = ObjectType.CodeUnit;
             var folder = "examples";
-            var t = new string[6];
+            //var t = new string[6];
             //var obj = con.GetTable<NAV_App_Object_Metadata>().FirstOrDefault(o => o.Object_ID == id && o.Object_Type == (int)type);
             //var pck = con.GetTable<NAV_App>().FirstOrDefault();
             //var str = GetStringFromBLOB(obj.User_AL_Code);
@@ -58,17 +40,17 @@ namespace Test
             //File.WriteAllText("test", "test", Encoding.UTF8);
 
             var str = GetStringFromBLOB(meta.User_Code);
-            var code = GetCodeFromBLOB(obj.BLOB_Reference);
-            var metaData = GetStringFromBLOB(meta.Metadata);
+            //var code = GetCodeFromBLOB(obj.BLOB_Reference);
+            //var metaData = GetStringFromBLOB(meta.Metadata);
 
-            var str2 = GetStringFromBLOB(File.ReadAllBytes(@"C:\Users\BID01023\Desktop\Empty.fob"));
-            var code2 = GetCodeFromBLOB(File.ReadAllBytes(@"C:\Users\BID01023\Desktop\Empty.fob"));
+            //var str2 = GetStringFromBLOB(File.ReadAllBytes(@"C:\Users\BID01023\Desktop\Empty.fob"));
+            //var code2 = GetCodeFromBLOB(File.ReadAllBytes(@"C:\Users\BID01023\Desktop\Empty.fob"));
             File.Delete($@"C:\Temp\{folder}\{(int)type}_{obj.Name}.cs");
             using (var writer = new StreamWriter(File.OpenWrite($@"C:\Temp\{folder}\{(int)type}_{obj.Name}.cs")))
             {
                 writer.Write(str);
             }
-            return;
+            //return;
             //var a = GetStringFromBLOB(obj.BLOB_Reference);
             //var b = Encoding.GetEncoding(1252).GetString(obj.BLOB_Reference.ToArray());
             //var c = Encoding.GetEncoding("Latin1").GetString(obj.BLOB_Reference.ToArray());
@@ -81,7 +63,7 @@ namespace Test
             //    var o = new BinaryFormatter().Deserialize(stream);
             //}
             Console.WriteLine("Export is finished");
-            Console.ReadKey();
+            //Console.ReadKey();
         }
 
         private static string GetCodeFromBLOB(Binary bLOB_Reference)
