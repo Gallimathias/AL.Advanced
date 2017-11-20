@@ -7,6 +7,7 @@ using ALMember = Compiler.Core.Syntax.AL.Members;
 using AdvancedMember = Compiler.Core.Syntax.ALAdvanced.Members;
 using System.Reflection;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Compiler.Core.Syntax;
 
 namespace Compiler.Core.Translators.Maps
 {
@@ -52,7 +53,15 @@ namespace Compiler.Core.Translators.Maps
                 tmp.Parent = method;
                 method.Statements.Add(tmp);
             };
-            
+            var parameters = new Dictionary<string, SyntaxType>();
+            foreach (var parameter in head.Parameters)
+            {
+                parameters.Add(parameter.Key,
+                    ((AlToAdvanced)Translator).TranslateType(parameter.Value));                
+            }
+
+            method.Parameters = parameters;
+
             return method;
         }
 

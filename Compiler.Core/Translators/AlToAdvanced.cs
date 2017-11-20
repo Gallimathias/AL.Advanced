@@ -70,8 +70,11 @@ namespace Compiler.Core.Translators
 
         internal SyntaxType TranslateType(SyntaxType syntaxType)
         {
-            var map = new AlToAdvancedTypeMap(this);
+            if (syntaxType == null)
+                return null;
 
+            var map = new AlToAdvancedTypeMap(this);
+            
             var obj = map.Invoke(syntaxType.Name, syntaxType);
 
             if (obj is SyntaxType type)
