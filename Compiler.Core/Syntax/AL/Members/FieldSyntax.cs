@@ -9,6 +9,8 @@ namespace Compiler.Core.Syntax.AL.Members
 {
     public class FieldSyntax : ALSourceMemberSyntax<FieldDeclarationSyntax>
     {
+        public string Identifier { get; set; }
+
         public override bool TryParse(MemberDeclarationSyntax memberDeclaration,
             Func<MemberDeclarationSyntax, SyntaxMember> analyser, out SyntaxMember memberSyntax)
         {
@@ -19,7 +21,8 @@ namespace Compiler.Core.Syntax.AL.Members
 
                 memberSyntax = new FieldSyntax
                 {
-                    CSharpMember = syntax
+                    CSharpMember = syntax,
+                    Identifier = syntax.Declaration.Variables[0].Identifier.Text
                 };
                 return true;
             }

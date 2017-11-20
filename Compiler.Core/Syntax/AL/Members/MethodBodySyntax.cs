@@ -54,17 +54,24 @@ namespace Compiler.Core.Syntax.AL.Members
 
                 var tmpList = new List<SyntaxStatement>();
 
-                foreach (var statement in body.CSharpMember.Body.Statements)
-                   tmpList.Add(AlParser.ParseStatement(statement));
-                
-                memberSyntax = new MethodBodySyntax
+                var bodySyntax = new MethodBodySyntax
                 {
                     CSharpMember = classDeclaration,
                     members = members,
-                    Identifier = (string)classDeclaration.Identifier.Value,
-                    Statements = tmpList
-
+                    Identifier = (string)classDeclaration.Identifier.Value
                 };
+
+                foreach (var statement in body.CSharpMember.Body.Statements)
+                {
+                    var tmpStatement = AlParser.ParseStatement(statement);
+                    tmpStatement.Parent = bodySyntax;
+                    tmpList.Add(tmpStatement);
+                }
+
+                bodySyntax.Statements = tmpList;
+
+                memberSyntax = bodySyntax;
+               
                 return true;
             }
 

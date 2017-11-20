@@ -13,6 +13,9 @@ namespace Compiler.Core.Syntax.AL.Members
     {
         public string Identifier { get; set; }
         public SyntaxKind Modifier { get; set; }
+
+        public Dictionary<string,SyntaxType> Parameters { get; set; }
+
         public bool IsOverride
         {
             get => @override == SyntaxKind.OverrideKeyword; set
@@ -40,18 +43,26 @@ namespace Compiler.Core.Syntax.AL.Members
 
 
         private BlockSyntax block;
+        
 
         public override bool TryParse(MemberDeclarationSyntax memberDeclaration,
             Func<MemberDeclarationSyntax, SyntaxMember> analyser, out SyntaxMember memberSyntax)
         {
             memberSyntax = null;
+            Parameters = new Dictionary<string, SyntaxType>();
 
             if (memberDeclaration is MethodDeclarationSyntax methodDeclaration)
             {
                 var @override = methodDeclaration.Modifiers.FirstOrDefault(m => m.Kind() == SyntaxKind.OverrideKeyword).Kind();
                 var @static = methodDeclaration.Modifiers.FirstOrDefault(m => m.Kind() == SyntaxKind.StaticKeyword).Kind();
-                
-                
+
+                foreach (var parameter in methodDeclaration.ParameterList.Parameters)
+                {
+                    var type = AlParser.ParseType(parameter.Type);
+                    var name = parameter.Identifier.Text;
+
+                    Parameters.Add(name, type);
+                }
 
                 memberSyntax = new MethodHeadSyntax
                 {
@@ -59,7 +70,8 @@ namespace Compiler.Core.Syntax.AL.Members
                     Identifier = (string)methodDeclaration.Identifier.Value,
                     Modifier = methodDeclaration.Modifiers.First().Kind(),
                     IsStatic = @static == SyntaxKind.StaticKeyword,
-                    IsOverride = @override == SyntaxKind.OverrideKeyword
+                    IsOverride = @override == SyntaxKind.OverrideKeyword,
+                    Parameters = Parameters
                 };
 
                 return true;
