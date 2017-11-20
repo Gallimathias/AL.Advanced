@@ -10,12 +10,14 @@ using Nav_API;
 using Nav_API.NAV_Database;
 using Nav_API.SQL;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.Linq;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
 using System.Text;
@@ -39,32 +41,34 @@ namespace Test
             //var res = import.ImportFromStream(stream);
 
             var con = new DatabaseOne();
-            var id = 1070;
-            ObjectType type = ObjectType.CodeUnit;
+            var id = 101;
+            ObjectType type = ObjectType.Report;
             var folder = "examples";
+            var t = new string[6];
+            //var obj = con.GetTable<NAV_App_Object_Metadata>().FirstOrDefault(o => o.Object_ID == id && o.Object_Type == (int)type);
+            //var pck = con.GetTable<NAV_App>().FirstOrDefault();
+            //var str = GetStringFromBLOB(obj.User_AL_Code);
+            //var code = GetStringFromBLOB(obj.User_Code);
 
-            var obj = con.GetTable<NAV_App_Object_Metadata>().FirstOrDefault(o => o.Object_ID == id && o.Object_Type == (int)type);
-            var pck = con.GetTable<NAV_App>().FirstOrDefault();
-            var str = GetStringFromBLOB(obj.User_AL_Code);
-            var code = GetStringFromBLOB(obj.User_Code);
+            //var pack = GetStringFromBLOB(pck.Blob);
+            //var a = 12;
+            var meta = con.GetTable<Object_Metadata>().FirstOrDefault(m => m.Object_ID == id && m.Object_Type == (int)type);
+            var obj = con.GetTable<Object>().FirstOrDefault(m => m.ID == id && m.Type == (int)type);
+            
+            //File.WriteAllText("test", "test", Encoding.UTF8);
 
-            var pack = GetStringFromBLOB(pck.Blob);
-            var a = 12;
-            //var meta = con.GetTable<Object_Metadata>().FirstOrDefault(m => m.Object_ID == id && m.Object_Type == (int)type);
-            //var obj = con.GetTable<Object>().FirstOrDefault(m => m.ID == id && m.Type == (int)type);
+            var str = GetStringFromBLOB(meta.User_Code);
+            var code = GetCodeFromBLOB(obj.BLOB_Reference);
+            var metaData = GetStringFromBLOB(meta.Metadata);
 
-
-
-            File.WriteAllText("test", "test", Encoding.UTF8);
-
-            //var str = GetStringFromBLOB(meta.User_Code);
-            //var code = GetCodeFromBLOB(obj.BLOB_Reference);
-            //File.Delete($@"C:\Temp\{folder}\{(int)type}_{obj.Name}.cs");
-            //using (var writer = new StreamWriter(File.OpenWrite($@"C:\Temp\{folder}\{(int)type}_{obj.Name}.cs")))
-            //{
-            //    writer.Write(str);
-            //}
-
+            var str2 = GetStringFromBLOB(File.ReadAllBytes(@"C:\Users\BID01023\Desktop\Empty.fob"));
+            var code2 = GetCodeFromBLOB(File.ReadAllBytes(@"C:\Users\BID01023\Desktop\Empty.fob"));
+            File.Delete($@"C:\Temp\{folder}\{(int)type}_{obj.Name}.cs");
+            using (var writer = new StreamWriter(File.OpenWrite($@"C:\Temp\{folder}\{(int)type}_{obj.Name}.cs")))
+            {
+                writer.Write(str);
+            }
+            return;
             //var a = GetStringFromBLOB(obj.BLOB_Reference);
             //var b = Encoding.GetEncoding(1252).GetString(obj.BLOB_Reference.ToArray());
             //var c = Encoding.GetEncoding("Latin1").GetString(obj.BLOB_Reference.ToArray());
@@ -116,8 +120,9 @@ namespace Test
                         deflateStream.CopyTo(newStream);
                     //stream.CopyTo(newStream);
                 }
-
-                return Encoding.UTF8.GetString(newStream.ToArray());
+                
+                //return Encoding.UTF8.GetString(newStream.ToArray());
+                return Encoding.GetEncoding(1252).GetString(newStream.ToArray());
             }
         }
         public static byte[] DecompressBlob(Binary value)

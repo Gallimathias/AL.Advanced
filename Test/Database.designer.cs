@@ -83,20 +83,7 @@ namespace Test
 				return this.GetTable<Object_Metadata>();
 			}
 		}
-
-        public static void CreateTable<T>(T table)
-        {
-            var type = typeof(T);
-
-            foreach (var prob in type.GetCustomAttributes<ColumnAttribute>())
-            {
-                
-            }
-
-          
-            
-        }
-    }
+	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Object")]
 	public partial class Object : INotifyPropertyChanging, INotifyPropertyChanged
@@ -315,7 +302,7 @@ namespace Test
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[BLOB Reference]", Storage="_BLOB_Reference", DbType="Image", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[BLOB Reference]", Storage="_BLOB_Reference", DbType="Image", UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary BLOB_Reference
 		{
 			get
@@ -613,7 +600,7 @@ namespace Test
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Metadata", DbType="Image", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Metadata", DbType="Image", UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary Metadata
 		{
 			get
@@ -633,7 +620,7 @@ namespace Test
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[User Code]", Storage="_User_Code", DbType="Image", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[User Code]", Storage="_User_Code", DbType="Image", UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary User_Code
 		{
 			get
@@ -653,7 +640,7 @@ namespace Test
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[User AL Code]", Storage="_User_AL_Code", DbType="Image", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[User AL Code]", Storage="_User_AL_Code", DbType="Image", UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary User_AL_Code
 		{
 			get
