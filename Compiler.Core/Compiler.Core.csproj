@@ -147,11 +147,13 @@
     <Compile Include="Syntax\ALAdvanced\Statements\AlAdvancedStatementSyntax.cs" />
     <Compile Include="Syntax\ALAdvanced\Statements\ExpressionSyntax.cs" />
     <Compile Include="Syntax\ALAdvanced\Statements\LocalDeclarationSyntax.cs" />
+    <Compile Include="Syntax\ALAdvanced\Statements\ReturnSyntax.cs" />
     <Compile Include="Syntax\ALAdvanced\Types\AlAdvancedTypeSyntax.cs" />
     <Compile Include="Syntax\ALAdvanced\Types\IntegerSyntax.cs" />
     <Compile Include="Syntax\AL\AlParser.cs" />
     <Compile Include="Syntax\AL\Members\FieldSyntax.cs" />
     <Compile Include="Syntax\AL\Statements\AlSourceStatementSyntax.cs" />
+    <Compile Include="Syntax\AL\Statements\ExitStatementSyntax.cs" />
     <Compile Include="Syntax\AL\Statements\ExpressionSyntax.cs" />
     <Compile Include="Syntax\AL\Statements\LocalDeclarationSyntax.cs" />
     <Compile Include="Syntax\AL\Types\AlSourceTypeSyntax.cs" />
