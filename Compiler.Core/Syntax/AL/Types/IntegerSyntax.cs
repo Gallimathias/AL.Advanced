@@ -13,10 +13,16 @@ namespace Compiler.Core.Syntax.AL.Types
         public override bool TryParse(TypeSyntax typeSyntax, Func<TypeSyntax, SyntaxType> analyser, out SyntaxType syntaxType)
         {
             syntaxType = null;
-            
-            if(typeSyntax is PredefinedTypeSyntax predefinedType)
+
+            if (typeSyntax is IdentifierNameSyntax nameSyntax)
             {
-                if (predefinedType.Keyword.ValueText != "int" && predefinedType.Keyword.ValueText != "Int32")
+                if (nameSyntax.Identifier.ValueText == "Int32")
+                    typeSyntax = SyntaxFactory.ParseTypeName("int");
+            }
+
+            if (typeSyntax is PredefinedTypeSyntax predefinedType)
+            {
+                if (predefinedType.Keyword.ValueText != "int")
                     return false;
 
                 syntaxType = new IntegerSyntax
