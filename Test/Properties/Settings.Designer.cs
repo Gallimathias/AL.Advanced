@@ -12,7 +12,7 @@ namespace Test.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.3.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,12 +26,12 @@ namespace Test.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=KRUEGERM-NB\\NAV90SQL;Initial Catalog=\"Demo Database NAV (10-0)\";Integ" +
-            "rated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=KRUEGERM-NB\\NAV90SQL;Initial Catalog=\"Demo Database NAV (11-0)\";Integ" +
+            "rated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True" +
             "")]
-        public string Demo_Database_NAV__10_0_ConnectionString {
+        public string Demo_Database_NAV__11_0_ConnectionString {
             get {
-                return ((string)(this["Demo_Database_NAV__10_0_ConnectionString"]));
+                return ((string)(this["Demo_Database_NAV__11_0_ConnectionString"]));
             }
         }
     }
