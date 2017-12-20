@@ -1,13 +1,7 @@
-﻿using Nav_API.Interfaces;
-using Nav_API.SQL;
-using System;
-using System.Collections.Generic;
+﻿using Nav.API.Interfaces;
 using System.Data.Linq;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Nav_API.NAV_Database
+namespace Nav.API.Database
 {
     public class Database
     {

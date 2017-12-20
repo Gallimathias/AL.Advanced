@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Demo Database NAV (10-0)" Class="Nav_DatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=KRUEGERM-NB\NAV90SQL;Initial Catalog=&quot;Demo Database NAV (10-0)&quot;;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True" SettingsObjectName="Nav_API.Properties.Settings" SettingsPropertyName="Demo_Database_NAV__10_0_ConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=KRUEGERM-NB\NAV90SQL;Initial Catalog=&quot;Demo Database NAV (10-0)&quot;;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True" SettingsObjectName="Nav.API.Properties.Settings" SettingsPropertyName="Demo_Database_NAV__10_0_ConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Object" Member="Object">
     <Type Name="Object">
       <Column Name="timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />

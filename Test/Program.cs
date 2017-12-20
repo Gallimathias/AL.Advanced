@@ -80,7 +80,7 @@ namespace Test
             var con = new DatabaseOne();
             var folder = "nav_app";
 
-            //var meta = con.GetTable<Object_Metadata>().FirstOrDefault(m => m.Object_ID == id && m.Object_Type == (int)type);
+            //var meta = con.GetTab,le<Object_Metadata>().FirstOrDefault(m => m.Object_ID == id && m.Object_Type == (int)type);
             //var obj = con.GetTable<Object>().FirstOrDefault(m => m.ID == id && m.Type == (int)type);
 
             var app = con.GetTable<NAV_App>().FirstOrDefault(n => n.ID == new Guid("186E76FE-79D3-4AEB-A7AC-078B66FC258D"));

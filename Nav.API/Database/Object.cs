@@ -1,9 +1,9 @@
-﻿using Nav_API.Interfaces;
+﻿using Nav.API.Interfaces;
 using System.Collections.Generic;
 using System.Data.Linq;
 using System.Linq;
 
-namespace Nav_API.NAV_Database
+namespace Nav.API.Database
 {
     internal class Object
     {

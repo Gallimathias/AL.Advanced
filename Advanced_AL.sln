@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nav_API", "Nav_API\Nav_API.csproj", "{A013CD46-A43F-4963-9992-65961C8FDCF1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nav.API", "Nav.API\Nav.API.csproj", "{A013CD46-A43F-4963-9992-65961C8FDCF1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compiler", "Compiler\Compiler.csproj", "{0A1BEB21-70D7-499E-86F6-78C37D3FF54E}"
 EndProject

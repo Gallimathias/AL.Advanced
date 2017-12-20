@@ -7,8 +7,8 @@
     <ProjectGuid>{A013CD46-A43F-4963-9992-65961C8FDCF1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Nav_API</RootNamespace>
-    <AssemblyName>Nav_API</AssemblyName>
+    <RootNamespace>Nav.API</RootNamespace>
+    <AssemblyName>Nav.API</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -44,12 +44,12 @@
   <ItemGroup>
     <Compile Include="Manager.cs" />
     <Compile Include="NavObjectHandler.cs" />
-    <Compile Include="NAV_Database\Database.cs" />
+    <Compile Include="Database\Database.cs" />
     <Compile Include="Interfaces\IObjectRecord.cs" />
     <Compile Include="Interfaces\IObjectMetadata.cs" />
     <Compile Include="Interfaces\IDatabaseContext.cs" />
-    <Compile Include="NAV_Database\Metadata.cs" />
-    <Compile Include="NAV_Database\Object.cs" />
+    <Compile Include="Database\Metadata.cs" />
+    <Compile Include="Database\Object.cs" />
     <Compile Include="SQL\Nav_Database.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

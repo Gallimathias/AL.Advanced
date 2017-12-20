@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Nav_API.SQL
+namespace Nav.API.SQL
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -20,7 +20,7 @@ namespace Nav_API.SQL
 	using System.Linq.Expressions;
 	using System.ComponentModel;
 	using System;
-    using Nav_API.Interfaces;
+    using Nav.API.Interfaces;
 
     [global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Demo Database NAV (10-0)")]
 	public partial class Nav_DatabaseDataContext : System.Data.Linq.DataContext, IDatabaseContext
@@ -66,7 +66,7 @@ namespace Nav_API.SQL
     #endregion
 		
 		public Nav_DatabaseDataContext() : 
-				base(global::Nav_API.Properties.Settings.Default.Demo_Database_NAV__10_0_ConnectionString, mappingSource)
+				base(global::Nav.API.Properties.Settings.Default.Demo_Database_NAV__10_0_ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

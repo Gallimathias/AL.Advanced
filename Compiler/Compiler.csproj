@@ -60,9 +60,9 @@
       <Project>{2c9d13a0-4101-45a2-95f0-9c8474059385}</Project>
       <Name>Compiler.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nav_API\Nav_API.csproj">
+    <ProjectReference Include="..\Nav_API\Nav.API.csproj">
       <Project>{a013cd46-a43f-4963-9992-65961c8fdcf1}</Project>
-      <Name>Nav_API</Name>
+      <Name>Nav.API</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

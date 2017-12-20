@@ -1,4 +1,4 @@
-﻿using Nav_API.Interfaces;
+﻿using Nav.API.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data.Linq;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nav_API
+namespace Nav.API
 {
     public class NavObjectHandler<TTable> where TTable : ITable<IObjectRecord>
     {

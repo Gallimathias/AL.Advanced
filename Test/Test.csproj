@@ -196,11 +196,11 @@
   <ItemGroup>
     <ProjectReference Include="..\Compiler.Core2\Compiler.Core2.csproj">
       <Project>{592EAA1A-4E61-407F-8DEE-A6069B64B5BC}</Project>
-      <Name>Compiler.Core</Name>
+      <Name>Compiler.Core2</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nav_API\Nav_API.csproj">
+    <ProjectReference Include="..\Nav_API\Nav.API.csproj">
       <Project>{a013cd46-a43f-4963-9992-65961c8fdcf1}</Project>
-      <Name>Nav_API</Name>
+      <Name>Nav.API</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

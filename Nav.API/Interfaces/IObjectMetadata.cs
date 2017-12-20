@@ -1,6 +1,6 @@
 ﻿using System.Data.Linq;
 
-namespace Nav_API.Interfaces
+namespace Nav.API.Interfaces
 {
     public interface IObjectMetadata
     {

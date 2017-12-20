@@ -104,7 +104,7 @@
         <elementListCompartment Id="42efb4ec-2c40-4cec-907a-d63cb05edcaa" absoluteBounds="12.515, 8.46, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(13.375 : 6.79002115885417); (13.375 : 8)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(13.375 : 6.79002115885417); (13.375 : 8)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/Nav_DatabaseDataContext/NAV_App/NAV_App_NAV_App_Object_Metadata" />
       <nodes>
         <classShapeMoniker Id="fee6c66f-ead0-4f06-946b-28f84798ef33" />
@@ -117,7 +117,7 @@
         <elementListCompartment Id="90e0a698-4a07-4787-b2af-9c4c1afef145" absoluteBounds="15.515, 3.71, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(14.25 : 4.90465413411458); (15.5 : 4.90465413411458)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(14.25 : 4.90465413411458); (15.5 : 4.90465413411458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/Nav_DatabaseDataContext/NAV_App/NAV_App_NAV_App_Installed_App" />
       <nodes>
         <classShapeMoniker Id="fee6c66f-ead0-4f06-946b-28f84798ef33" />

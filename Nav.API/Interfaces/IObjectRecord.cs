@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Data.Linq;
 
-namespace Nav_API.Interfaces
+namespace Nav.API.Interfaces
 {
     public interface IObjectRecord
     {
