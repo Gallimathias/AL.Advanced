@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nav_API", "Nav_API\Nav_API.csproj", "{A013CD46-A43F-4963-9992-65961C8FDCF1}"
 EndProject
@@ -20,6 +20,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Definition.ALAdvanced", "Definition.ALAdvanced\Definition.ALAdvanced.csproj", "{492D6931-71F5-478C-ADEA-7C0D08159664}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compiler.Core", "Compiler.Core\Compiler.Core.csproj", "{2C9D13A0-4101-45A2-95F0-9C8474059385}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nav.Object.Explorer", "Nav.Object.Explorer\Nav.Object.Explorer.csproj", "{7D8CE30E-1115-44E0-9146-93B0E5263D11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nav.Object.Explorer.Core", "Nav.Object.Explorer.Core\Nav.Object.Explorer.Core.csproj", "{77E1331A-3054-4883-9BBB-26F5E61AC7D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,8 +67,19 @@ Global
 		{2C9D13A0-4101-45A2-95F0-9C8474059385}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C9D13A0-4101-45A2-95F0-9C8474059385}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C9D13A0-4101-45A2-95F0-9C8474059385}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D8CE30E-1115-44E0-9146-93B0E5263D11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D8CE30E-1115-44E0-9146-93B0E5263D11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D8CE30E-1115-44E0-9146-93B0E5263D11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D8CE30E-1115-44E0-9146-93B0E5263D11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77E1331A-3054-4883-9BBB-26F5E61AC7D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77E1331A-3054-4883-9BBB-26F5E61AC7D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77E1331A-3054-4883-9BBB-26F5E61AC7D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77E1331A-3054-4883-9BBB-26F5E61AC7D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E29BC1B7-2C2F-4976-BD3B-CD740682C7F0}
 	EndGlobalSection
 EndGlobal
