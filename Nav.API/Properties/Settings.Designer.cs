@@ -26,12 +26,12 @@ namespace Nav.API.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=KRUEGERM-NB\\NAV90SQL;Initial Catalog=\"Demo Database NAV (10-0)\";Integ" +
-            "rated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=KRUEGERM-NB\\NAV90SQL;Initial Catalog=\"Demo Database NAV (11-0)\";Integ" +
+            "rated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True" +
             "")]
-        public string Demo_Database_NAV__10_0_ConnectionString {
+        public string Demo_Database_NAV__11_0_ConnectionString {
             get {
-                return ((string)(this["Demo_Database_NAV__10_0_ConnectionString"]));
+                return ((string)(this["Demo_Database_NAV__11_0_ConnectionString"]));
             }
         }
     }

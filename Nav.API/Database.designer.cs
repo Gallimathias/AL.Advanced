@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Nav.API.SQL
+namespace Nav.API
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -23,7 +23,7 @@ namespace Nav.API.SQL
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Demo Database NAV (11-0)")]
-	public partial class DatabaseOne : System.Data.Linq.DataContext
+	public partial class NavDatabaseContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -33,66 +33,66 @@ namespace Nav.API.SQL
     partial void InsertObject(Object instance);
     partial void UpdateObject(Object instance);
     partial void DeleteObject(Object instance);
-    partial void InsertObject_Metadata(Object_Metadata instance);
-    partial void UpdateObject_Metadata(Object_Metadata instance);
-    partial void DeleteObject_Metadata(Object_Metadata instance);
-    partial void InsertNAV_App(NAV_App instance);
-    partial void UpdateNAV_App(NAV_App instance);
-    partial void DeleteNAV_App(NAV_App instance);
-    partial void InsertNAV_App_Capabilities(NAV_App_Capabilities instance);
-    partial void UpdateNAV_App_Capabilities(NAV_App_Capabilities instance);
-    partial void DeleteNAV_App_Capabilities(NAV_App_Capabilities instance);
-    partial void InsertNAV_App_Dependencies(NAV_App_Dependencies instance);
-    partial void UpdateNAV_App_Dependencies(NAV_App_Dependencies instance);
-    partial void DeleteNAV_App_Dependencies(NAV_App_Dependencies instance);
-    partial void InsertNAV_App_Data_Archive(NAV_App_Data_Archive instance);
-    partial void UpdateNAV_App_Data_Archive(NAV_App_Data_Archive instance);
-    partial void DeleteNAV_App_Data_Archive(NAV_App_Data_Archive instance);
-    partial void InsertNAV_App_Installed_App(NAV_App_Installed_App instance);
-    partial void UpdateNAV_App_Installed_App(NAV_App_Installed_App instance);
-    partial void DeleteNAV_App_Installed_App(NAV_App_Installed_App instance);
-    partial void InsertNAV_App_Object_Metadata(NAV_App_Object_Metadata instance);
-    partial void UpdateNAV_App_Object_Metadata(NAV_App_Object_Metadata instance);
-    partial void DeleteNAV_App_Object_Metadata(NAV_App_Object_Metadata instance);
-    partial void InsertNAV_App_Object_Prerequisites(NAV_App_Object_Prerequisites instance);
-    partial void UpdateNAV_App_Object_Prerequisites(NAV_App_Object_Prerequisites instance);
-    partial void DeleteNAV_App_Object_Prerequisites(NAV_App_Object_Prerequisites instance);
-    partial void InsertNAV_App_Resource(NAV_App_Resource instance);
-    partial void UpdateNAV_App_Resource(NAV_App_Resource instance);
-    partial void DeleteNAV_App_Resource(NAV_App_Resource instance);
-    partial void InsertNAV_App_Tenant_Add_In(NAV_App_Tenant_Add_In instance);
-    partial void UpdateNAV_App_Tenant_Add_In(NAV_App_Tenant_Add_In instance);
-    partial void DeleteNAV_App_Tenant_Add_In(NAV_App_Tenant_Add_In instance);
-    partial void InsertNAV_App_Tenant_App(NAV_App_Tenant_App instance);
-    partial void UpdateNAV_App_Tenant_App(NAV_App_Tenant_App instance);
-    partial void DeleteNAV_App_Tenant_App(NAV_App_Tenant_App instance);
+    partial void InsertObjectMetadata(ObjectMetadata instance);
+    partial void UpdateObjectMetadata(ObjectMetadata instance);
+    partial void DeleteObjectMetadata(ObjectMetadata instance);
+    partial void InsertNAVApp(NAVApp instance);
+    partial void UpdateNAVApp(NAVApp instance);
+    partial void DeleteNAVApp(NAVApp instance);
+    partial void InsertNAVAppCapabilities(NAVAppCapabilities instance);
+    partial void UpdateNAVAppCapabilities(NAVAppCapabilities instance);
+    partial void DeleteNAVAppCapabilities(NAVAppCapabilities instance);
+    partial void InsertNAVAppDependencies(NAVAppDependencies instance);
+    partial void UpdateNAVAppDependencies(NAVAppDependencies instance);
+    partial void DeleteNAVAppDependencies(NAVAppDependencies instance);
+    partial void InsertNAVAppDataArchive(NAVAppDataArchive instance);
+    partial void UpdateNAVAppDataArchive(NAVAppDataArchive instance);
+    partial void DeleteNAVAppDataArchive(NAVAppDataArchive instance);
+    partial void InsertNAVAppInstalledApp(NAVAppInstalledApp instance);
+    partial void UpdateNAVAppInstalledApp(NAVAppInstalledApp instance);
+    partial void DeleteNAVAppInstalledApp(NAVAppInstalledApp instance);
+    partial void InsertNAVAppObjectMetadata(NAVAppObjectMetadata instance);
+    partial void UpdateNAVAppObjectMetadata(NAVAppObjectMetadata instance);
+    partial void DeleteNAVAppObjectMetadata(NAVAppObjectMetadata instance);
+    partial void InsertNAVAppObjectPrerequisites(NAVAppObjectPrerequisites instance);
+    partial void UpdateNAVAppObjectPrerequisites(NAVAppObjectPrerequisites instance);
+    partial void DeleteNAVAppObjectPrerequisites(NAVAppObjectPrerequisites instance);
+    partial void InsertNAVAppResource(NAVAppResource instance);
+    partial void UpdateNAVAppResource(NAVAppResource instance);
+    partial void DeleteNAVAppResource(NAVAppResource instance);
+    partial void InsertNAVAppTenantAddIn(NAVAppTenantAddIn instance);
+    partial void UpdateNAVAppTenantAddIn(NAVAppTenantAddIn instance);
+    partial void DeleteNAVAppTenantAddIn(NAVAppTenantAddIn instance);
+    partial void InsertNAVAppTenantApp(NAVAppTenantApp instance);
+    partial void UpdateNAVAppTenantApp(NAVAppTenantApp instance);
+    partial void DeleteNAVAppTenantApp(NAVAppTenantApp instance);
     #endregion
 		
-		public DatabaseOne() : 
-				base(global::Test.Properties.Settings.Default.Demo_Database_NAV__11_0_ConnectionString, mappingSource)
+		public NavDatabaseContext() : 
+				base(global::Nav.API.Properties.Settings.Default.Demo_Database_NAV__11_0_ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DatabaseOne(string connection) : 
+		public NavDatabaseContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DatabaseOne(System.Data.IDbConnection connection) : 
+		public NavDatabaseContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DatabaseOne(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public NavDatabaseContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DatabaseOne(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public NavDatabaseContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
@@ -106,91 +106,91 @@ namespace Nav.API.SQL
 			}
 		}
 		
-		public System.Data.Linq.Table<Object_Metadata> Object_Metadata
+		public System.Data.Linq.Table<ObjectMetadata> ObjectMetadata
 		{
 			get
 			{
-				return this.GetTable<Object_Metadata>();
+				return this.GetTable<ObjectMetadata>();
 			}
 		}
 		
-		public System.Data.Linq.Table<NAV_App> NAV_App
+		public System.Data.Linq.Table<NAVApp> NAVApp
 		{
 			get
 			{
-				return this.GetTable<NAV_App>();
+				return this.GetTable<NAVApp>();
 			}
 		}
 		
-		public System.Data.Linq.Table<NAV_App_Capabilities> NAV_App_Capabilities
+		public System.Data.Linq.Table<NAVAppCapabilities> NAVAppCapabilities
 		{
 			get
 			{
-				return this.GetTable<NAV_App_Capabilities>();
+				return this.GetTable<NAVAppCapabilities>();
 			}
 		}
 		
-		public System.Data.Linq.Table<NAV_App_Dependencies> NAV_App_Dependencies
+		public System.Data.Linq.Table<NAVAppDependencies> NAVAppDependencies
 		{
 			get
 			{
-				return this.GetTable<NAV_App_Dependencies>();
+				return this.GetTable<NAVAppDependencies>();
 			}
 		}
 		
-		public System.Data.Linq.Table<NAV_App_Data_Archive> NAV_App_Data_Archive
+		public System.Data.Linq.Table<NAVAppDataArchive> NAVAppDataArchive
 		{
 			get
 			{
-				return this.GetTable<NAV_App_Data_Archive>();
+				return this.GetTable<NAVAppDataArchive>();
 			}
 		}
 		
-		public System.Data.Linq.Table<NAV_App_Installed_App> NAV_App_Installed_App
+		public System.Data.Linq.Table<NAVAppInstalledApp> NAVAppInstalledApp
 		{
 			get
 			{
-				return this.GetTable<NAV_App_Installed_App>();
+				return this.GetTable<NAVAppInstalledApp>();
 			}
 		}
 		
-		public System.Data.Linq.Table<NAV_App_Object_Metadata> NAV_App_Object_Metadata
+		public System.Data.Linq.Table<NAVAppObjectMetadata> NAVAppObjectMetadata
 		{
 			get
 			{
-				return this.GetTable<NAV_App_Object_Metadata>();
+				return this.GetTable<NAVAppObjectMetadata>();
 			}
 		}
 		
-		public System.Data.Linq.Table<NAV_App_Object_Prerequisites> NAV_App_Object_Prerequisites
+		public System.Data.Linq.Table<NAVAppObjectPrerequisites> NAVAppObjectPrerequisites
 		{
 			get
 			{
-				return this.GetTable<NAV_App_Object_Prerequisites>();
+				return this.GetTable<NAVAppObjectPrerequisites>();
 			}
 		}
 		
-		public System.Data.Linq.Table<NAV_App_Resource> NAV_App_Resource
+		public System.Data.Linq.Table<NAVAppResource> NAVAppResource
 		{
 			get
 			{
-				return this.GetTable<NAV_App_Resource>();
+				return this.GetTable<NAVAppResource>();
 			}
 		}
 		
-		public System.Data.Linq.Table<NAV_App_Tenant_Add_In> NAV_App_Tenant_Add_In
+		public System.Data.Linq.Table<NAVAppTenantAddIn> NAVAppTenantAddIn
 		{
 			get
 			{
-				return this.GetTable<NAV_App_Tenant_Add_In>();
+				return this.GetTable<NAVAppTenantAddIn>();
 			}
 		}
 		
-		public System.Data.Linq.Table<NAV_App_Tenant_App> NAV_App_Tenant_App
+		public System.Data.Linq.Table<NAVAppTenantApp> NAVAppTenantApp
 		{
 			get
 			{
-				return this.GetTable<NAV_App_Tenant_App>();
+				return this.GetTable<NAVAppTenantApp>();
 			}
 		}
 	}
@@ -231,7 +231,7 @@ namespace Nav.API.SQL
 		
 		private string _Locked_By;
 		
-		private EntitySet<Object_Metadata> _Object_Metadata;
+		private EntitySet<ObjectMetadata> _Object_Metadata;
 		
     #region Definitionen der Erweiterungsmethoden
     partial void OnLoaded();
@@ -241,8 +241,8 @@ namespace Nav.API.SQL
     partial void OntimestampChanged();
     partial void OnTypeChanging(int value);
     partial void OnTypeChanged();
-    partial void OnCompany_NameChanging(string value);
-    partial void OnCompany_NameChanged();
+    partial void OnCompanyNameChanging(string value);
+    partial void OnCompanyNameChanged();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
     partial void OnNameChanging(string value);
@@ -251,12 +251,12 @@ namespace Nav.API.SQL
     partial void OnModifiedChanged();
     partial void OnCompiledChanging(byte value);
     partial void OnCompiledChanged();
-    partial void OnBLOB_ReferenceChanging(System.Data.Linq.Binary value);
-    partial void OnBLOB_ReferenceChanged();
-    partial void OnBLOB_SizeChanging(int value);
-    partial void OnBLOB_SizeChanged();
-    partial void OnDBM_Table_No_Changing(int value);
-    partial void OnDBM_Table_No_Changed();
+    partial void OnBLOBReferenceChanging(System.Data.Linq.Binary value);
+    partial void OnBLOBReferenceChanged();
+    partial void OnBLOBSizeChanging(int value);
+    partial void OnBLOBSizeChanged();
+    partial void OnDBMTableNoChanging(int value);
+    partial void OnDBMTableNoChanged();
     partial void OnDateChanging(System.DateTime value);
     partial void OnDateChanged();
     partial void OnTimeChanging(System.DateTime value);
@@ -265,13 +265,13 @@ namespace Nav.API.SQL
     partial void OnVersion_ListChanged();
     partial void OnLockedChanging(byte value);
     partial void OnLockedChanged();
-    partial void OnLocked_ByChanging(string value);
-    partial void OnLocked_ByChanged();
+    partial void OnLockedByChanging(string value);
+    partial void OnLockedByChanged();
     #endregion
 		
 		public Object()
 		{
-			this._Object_Metadata = new EntitySet<Object_Metadata>(new Action<Object_Metadata>(this.attach_Object_Metadata), new Action<Object_Metadata>(this.detach_Object_Metadata));
+			this._Object_Metadata = new EntitySet<ObjectMetadata>(new Action<ObjectMetadata>(this.attach_Object_Metadata), new Action<ObjectMetadata>(this.detach_Object_Metadata));
 			OnCreated();
 		}
 		
@@ -316,7 +316,7 @@ namespace Nav.API.SQL
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Company Name]", Storage="_Company_Name", DbType="VarChar(30) NOT NULL", CanBeNull=false, IsPrimaryKey=true, UpdateCheck=UpdateCheck.Never)]
-		public string Company_Name
+		public string CompanyName
 		{
 			get
 			{
@@ -326,11 +326,11 @@ namespace Nav.API.SQL
 			{
 				if ((this._Company_Name != value))
 				{
-					this.OnCompany_NameChanging(value);
+					this.OnCompanyNameChanging(value);
 					this.SendPropertyChanging();
 					this._Company_Name = value;
-					this.SendPropertyChanged("Company_Name");
-					this.OnCompany_NameChanged();
+					this.SendPropertyChanged("CompanyName");
+					this.OnCompanyNameChanged();
 				}
 			}
 		}
@@ -416,7 +416,7 @@ namespace Nav.API.SQL
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[BLOB Reference]", Storage="_BLOB_Reference", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary BLOB_Reference
+		public System.Data.Linq.Binary BLOBReference
 		{
 			get
 			{
@@ -426,17 +426,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._BLOB_Reference != value))
 				{
-					this.OnBLOB_ReferenceChanging(value);
+					this.OnBLOBReferenceChanging(value);
 					this.SendPropertyChanging();
 					this._BLOB_Reference = value;
-					this.SendPropertyChanged("BLOB_Reference");
-					this.OnBLOB_ReferenceChanged();
+					this.SendPropertyChanged("BLOBReference");
+					this.OnBLOBReferenceChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[BLOB Size]", Storage="_BLOB_Size", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int BLOB_Size
+		public int BLOBSize
 		{
 			get
 			{
@@ -446,17 +446,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._BLOB_Size != value))
 				{
-					this.OnBLOB_SizeChanging(value);
+					this.OnBLOBSizeChanging(value);
 					this.SendPropertyChanging();
 					this._BLOB_Size = value;
-					this.SendPropertyChanged("BLOB_Size");
-					this.OnBLOB_SizeChanged();
+					this.SendPropertyChanged("BLOBSize");
+					this.OnBLOBSizeChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[DBM Table No_]", Storage="_DBM_Table_No_", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int DBM_Table_No_
+		public int DBMTableNo
 		{
 			get
 			{
@@ -466,11 +466,11 @@ namespace Nav.API.SQL
 			{
 				if ((this._DBM_Table_No_ != value))
 				{
-					this.OnDBM_Table_No_Changing(value);
+					this.OnDBMTableNoChanging(value);
 					this.SendPropertyChanging();
 					this._DBM_Table_No_ = value;
-					this.SendPropertyChanged("DBM_Table_No_");
-					this.OnDBM_Table_No_Changed();
+					this.SendPropertyChanged("DBMTableNo");
+					this.OnDBMTableNoChanged();
 				}
 			}
 		}
@@ -556,7 +556,7 @@ namespace Nav.API.SQL
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Locked By]", Storage="_Locked_By", DbType="VarChar(132) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string Locked_By
+		public string LockedBy
 		{
 			get
 			{
@@ -566,17 +566,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Locked_By != value))
 				{
-					this.OnLocked_ByChanging(value);
+					this.OnLockedByChanging(value);
 					this.SendPropertyChanging();
 					this._Locked_By = value;
-					this.SendPropertyChanged("Locked_By");
-					this.OnLocked_ByChanged();
+					this.SendPropertyChanged("LockedBy");
+					this.OnLockedByChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Object_Object_Metadata", Storage="_Object_Metadata", ThisKey="Type,ID", OtherKey="Object_Type,Object_ID")]
-		public EntitySet<Object_Metadata> Object_Metadata
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Object_ObjectMetadata", Storage="_Object_Metadata", ThisKey="Type,ID", OtherKey="ObjectType,ObjectID")]
+		public EntitySet<ObjectMetadata> ObjectMetadata
 		{
 			get
 			{
@@ -608,13 +608,13 @@ namespace Nav.API.SQL
 			}
 		}
 		
-		private void attach_Object_Metadata(Object_Metadata entity)
+		private void attach_Object_Metadata(ObjectMetadata entity)
 		{
 			this.SendPropertyChanging();
 			entity.Object = this;
 		}
 		
-		private void detach_Object_Metadata(Object_Metadata entity)
+		private void detach_Object_Metadata(ObjectMetadata entity)
 		{
 			this.SendPropertyChanging();
 			entity.Object = null;
@@ -622,7 +622,7 @@ namespace Nav.API.SQL
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[Object Metadata]")]
-	public partial class Object_Metadata : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class ObjectMetadata : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -657,29 +657,29 @@ namespace Nav.API.SQL
     partial void OnCreated();
     partial void OntimestampChanging(System.Data.Linq.Binary value);
     partial void OntimestampChanged();
-    partial void OnObject_TypeChanging(int value);
-    partial void OnObject_TypeChanged();
-    partial void OnObject_IDChanging(int value);
-    partial void OnObject_IDChanged();
+    partial void OnObjectTypeChanging(int value);
+    partial void OnObjectTypeChanged();
+    partial void OnObjectIDChanging(int value);
+    partial void OnObjectIDChanged();
     partial void OnMetadataChanging(System.Data.Linq.Binary value);
     partial void OnMetadataChanged();
-    partial void OnUser_CodeChanging(System.Data.Linq.Binary value);
-    partial void OnUser_CodeChanged();
-    partial void OnUser_AL_CodeChanging(System.Data.Linq.Binary value);
-    partial void OnUser_AL_CodeChanged();
-    partial void OnMetadata_VersionChanging(int value);
-    partial void OnMetadata_VersionChanged();
+    partial void OnUserCodeChanging(System.Data.Linq.Binary value);
+    partial void OnUserCodeChanged();
+    partial void OnUserALCodeChanging(System.Data.Linq.Binary value);
+    partial void OnUserALCodeChanged();
+    partial void OnMetadataVersionChanging(int value);
+    partial void OnMetadataVersionChanged();
     partial void OnHashChanging(string value);
     partial void OnHashChanged();
-    partial void OnObject_SubtypeChanging(string value);
-    partial void OnObject_SubtypeChanged();
-    partial void OnHas_SubscribersChanging(byte value);
-    partial void OnHas_SubscribersChanged();
-    partial void OnSymbol_ReferenceChanging(System.Data.Linq.Binary value);
-    partial void OnSymbol_ReferenceChanged();
+    partial void OnObjectSubtypeChanging(string value);
+    partial void OnObjectSubtypeChanged();
+    partial void OnHasSubscribersChanging(byte value);
+    partial void OnHasSubscribersChanged();
+    partial void OnSymbolReferenceChanging(System.Data.Linq.Binary value);
+    partial void OnSymbolReferenceChanged();
     #endregion
 		
-		public Object_Metadata()
+		public ObjectMetadata()
 		{
 			this._Object = default(EntityRef<Object>);
 			OnCreated();
@@ -706,7 +706,7 @@ namespace Nav.API.SQL
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Object Type]", Storage="_Object_Type", DbType="Int NOT NULL", IsPrimaryKey=true, UpdateCheck=UpdateCheck.Never)]
-		public int Object_Type
+		public int ObjectType
 		{
 			get
 			{
@@ -716,17 +716,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Object_Type != value))
 				{
-					this.OnObject_TypeChanging(value);
+					this.OnObjectTypeChanging(value);
 					this.SendPropertyChanging();
 					this._Object_Type = value;
-					this.SendPropertyChanged("Object_Type");
-					this.OnObject_TypeChanged();
+					this.SendPropertyChanged("ObjectType");
+					this.OnObjectTypeChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Object ID]", Storage="_Object_ID", DbType="Int NOT NULL", IsPrimaryKey=true, UpdateCheck=UpdateCheck.Never)]
-		public int Object_ID
+		public int ObjectID
 		{
 			get
 			{
@@ -736,11 +736,11 @@ namespace Nav.API.SQL
 			{
 				if ((this._Object_ID != value))
 				{
-					this.OnObject_IDChanging(value);
+					this.OnObjectIDChanging(value);
 					this.SendPropertyChanging();
 					this._Object_ID = value;
-					this.SendPropertyChanged("Object_ID");
-					this.OnObject_IDChanged();
+					this.SendPropertyChanged("ObjectID");
+					this.OnObjectIDChanged();
 				}
 			}
 		}
@@ -766,7 +766,7 @@ namespace Nav.API.SQL
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[User Code]", Storage="_User_Code", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary User_Code
+		public System.Data.Linq.Binary UserCode
 		{
 			get
 			{
@@ -776,17 +776,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._User_Code != value))
 				{
-					this.OnUser_CodeChanging(value);
+					this.OnUserCodeChanging(value);
 					this.SendPropertyChanging();
 					this._User_Code = value;
-					this.SendPropertyChanged("User_Code");
-					this.OnUser_CodeChanged();
+					this.SendPropertyChanged("UserCode");
+					this.OnUserCodeChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[User AL Code]", Storage="_User_AL_Code", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary User_AL_Code
+		public System.Data.Linq.Binary UserALCode
 		{
 			get
 			{
@@ -796,17 +796,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._User_AL_Code != value))
 				{
-					this.OnUser_AL_CodeChanging(value);
+					this.OnUserALCodeChanging(value);
 					this.SendPropertyChanging();
 					this._User_AL_Code = value;
-					this.SendPropertyChanged("User_AL_Code");
-					this.OnUser_AL_CodeChanged();
+					this.SendPropertyChanged("UserALCode");
+					this.OnUserALCodeChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Metadata Version]", Storage="_Metadata_Version", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Metadata_Version
+		public int MetadataVersion
 		{
 			get
 			{
@@ -816,11 +816,11 @@ namespace Nav.API.SQL
 			{
 				if ((this._Metadata_Version != value))
 				{
-					this.OnMetadata_VersionChanging(value);
+					this.OnMetadataVersionChanging(value);
 					this.SendPropertyChanging();
 					this._Metadata_Version = value;
-					this.SendPropertyChanged("Metadata_Version");
-					this.OnMetadata_VersionChanged();
+					this.SendPropertyChanged("MetadataVersion");
+					this.OnMetadataVersionChanged();
 				}
 			}
 		}
@@ -846,7 +846,7 @@ namespace Nav.API.SQL
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Object Subtype]", Storage="_Object_Subtype", DbType="NVarChar(30) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string Object_Subtype
+		public string ObjectSubtype
 		{
 			get
 			{
@@ -856,17 +856,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Object_Subtype != value))
 				{
-					this.OnObject_SubtypeChanging(value);
+					this.OnObjectSubtypeChanging(value);
 					this.SendPropertyChanging();
 					this._Object_Subtype = value;
-					this.SendPropertyChanged("Object_Subtype");
-					this.OnObject_SubtypeChanged();
+					this.SendPropertyChanged("ObjectSubtype");
+					this.OnObjectSubtypeChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Has Subscribers]", Storage="_Has_Subscribers", DbType="TinyInt NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public byte Has_Subscribers
+		public byte HasSubscribers
 		{
 			get
 			{
@@ -876,17 +876,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Has_Subscribers != value))
 				{
-					this.OnHas_SubscribersChanging(value);
+					this.OnHasSubscribersChanging(value);
 					this.SendPropertyChanging();
 					this._Has_Subscribers = value;
-					this.SendPropertyChanged("Has_Subscribers");
-					this.OnHas_SubscribersChanged();
+					this.SendPropertyChanged("HasSubscribers");
+					this.OnHasSubscribersChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Symbol Reference]", Storage="_Symbol_Reference", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary Symbol_Reference
+		public System.Data.Linq.Binary SymbolReference
 		{
 			get
 			{
@@ -896,16 +896,16 @@ namespace Nav.API.SQL
 			{
 				if ((this._Symbol_Reference != value))
 				{
-					this.OnSymbol_ReferenceChanging(value);
+					this.OnSymbolReferenceChanging(value);
 					this.SendPropertyChanging();
 					this._Symbol_Reference = value;
-					this.SendPropertyChanged("Symbol_Reference");
-					this.OnSymbol_ReferenceChanged();
+					this.SendPropertyChanged("SymbolReference");
+					this.OnSymbolReferenceChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Object_Object_Metadata", Storage="_Object", ThisKey="Object_Type,Object_ID", OtherKey="Type,ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Object_ObjectMetadata", Storage="_Object", ThisKey="ObjectType,ObjectID", OtherKey="Type,ID", IsForeignKey=true)]
 		public Object Object
 		{
 			get
@@ -922,12 +922,12 @@ namespace Nav.API.SQL
 					if ((previousValue != null))
 					{
 						this._Object.Entity = null;
-						previousValue.Object_Metadata.Remove(this);
+						previousValue.ObjectMetadata.Remove(this);
 					}
 					this._Object.Entity = value;
 					if ((value != null))
 					{
-						value.Object_Metadata.Add(this);
+						value.ObjectMetadata.Add(this);
 						this._Object_Type = value.Type;
 						this._Object_ID = value.ID;
 					}
@@ -963,7 +963,7 @@ namespace Nav.API.SQL
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[NAV App]")]
-	public partial class NAV_App : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class NAVApp : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -1022,21 +1022,21 @@ namespace Nav.API.SQL
 		
 		private byte _Show_My_Code;
 		
-		private EntitySet<NAV_App_Capabilities> _NAV_App_Capabilities;
+		private EntitySet<NAVAppCapabilities> _NAV_App_Capabilities;
 		
-		private EntitySet<NAV_App_Data_Archive> _NAV_App_Data_Archive;
+		private EntitySet<NAVAppDataArchive> _NAV_App_Data_Archive;
 		
-		private EntitySet<NAV_App_Installed_App> _NAV_App_Installed_App;
+		private EntitySet<NAVAppInstalledApp> _NAV_App_Installed_App;
 		
-		private EntitySet<NAV_App_Object_Metadata> _NAV_App_Object_Metadata;
+		private EntitySet<NAVAppObjectMetadata> _NAV_App_Object_Metadata;
 		
-		private EntitySet<NAV_App_Object_Prerequisites> _NAV_App_Object_Prerequisites;
+		private EntitySet<NAVAppObjectPrerequisites> _NAV_App_Object_Prerequisites;
 		
-		private EntitySet<NAV_App_Resource> _NAV_App_Resource;
+		private EntitySet<NAVAppResource> _NAV_App_Resource;
 		
-		private EntitySet<NAV_App_Tenant_Add_In> _NAV_App_Tenant_Add_In;
+		private EntitySet<NAVAppTenantAddIn> _NAV_App_Tenant_Add_In;
 		
-		private EntitySet<NAV_App_Tenant_App> _NAV_App_Tenant_App;
+		private EntitySet<NAVAppTenantApp> _NAV_App_Tenant_App;
 		
     #region Definitionen der Erweiterungsmethoden
     partial void OnLoaded();
@@ -1044,36 +1044,36 @@ namespace Nav.API.SQL
     partial void OnCreated();
     partial void OntimestampChanging(System.Data.Linq.Binary value);
     partial void OntimestampChanged();
-    partial void OnPackage_IDChanging(System.Guid value);
-    partial void OnPackage_IDChanged();
+    partial void OnPackageIDChanging(System.Guid value);
+    partial void OnPackageIDChanged();
     partial void OnIDChanging(System.Guid value);
     partial void OnIDChanged();
     partial void OnNameChanging(string value);
     partial void OnNameChanged();
     partial void OnPublisherChanging(string value);
     partial void OnPublisherChanged();
-    partial void OnVersion_MajorChanging(int value);
-    partial void OnVersion_MajorChanged();
-    partial void OnVersion_MinorChanging(int value);
-    partial void OnVersion_MinorChanged();
-    partial void OnVersion_BuildChanging(int value);
-    partial void OnVersion_BuildChanged();
-    partial void OnVersion_RevisionChanging(int value);
-    partial void OnVersion_RevisionChanged();
-    partial void OnCompatibility_MajorChanging(int value);
-    partial void OnCompatibility_MajorChanged();
-    partial void OnCompatibility_MinorChanging(int value);
-    partial void OnCompatibility_MinorChanged();
-    partial void OnCompatibility_BuildChanging(int value);
-    partial void OnCompatibility_BuildChanged();
-    partial void OnCompatibility_RevisionChanging(int value);
-    partial void OnCompatibility_RevisionChanged();
+    partial void OnVersionMajorChanging(int value);
+    partial void OnVersionMajorChanged();
+    partial void OnVersionMinorChanging(int value);
+    partial void OnVersionMinorChanged();
+    partial void OnVersionBuildChanging(int value);
+    partial void OnVersionBuildChanged();
+    partial void OnVersionRevisionChanging(int value);
+    partial void OnVersionRevisionChanged();
+    partial void OnCompatibilityMajorChanging(int value);
+    partial void OnCompatibilityMajorChanged();
+    partial void OnCompatibilityMinorChanging(int value);
+    partial void OnCompatibilityMinorChanged();
+    partial void OnCompatibilityBuildChanging(int value);
+    partial void OnCompatibilityBuildChanged();
+    partial void OnCompatibilityRevisionChanging(int value);
+    partial void OnCompatibilityRevisionChanged();
     partial void OnBriefChanging(string value);
     partial void OnBriefChanged();
     partial void OnDescriptionChanging(System.Data.Linq.Binary value);
     partial void OnDescriptionChanged();
-    partial void OnPrivacy_StatementChanging(string value);
-    partial void OnPrivacy_StatementChanged();
+    partial void OnPrivacyStatementChanging(string value);
+    partial void OnPrivacyStatementChanged();
     partial void OnEULAChanging(string value);
     partial void OnEULAChanged();
     partial void OnUrlChanging(string value);
@@ -1086,28 +1086,28 @@ namespace Nav.API.SQL
     partial void OnScreenshotsChanged();
     partial void OnBlobChanging(System.Data.Linq.Binary value);
     partial void OnBlobChanged();
-    partial void OnPackage_TypeChanging(int value);
-    partial void OnPackage_TypeChanged();
+    partial void OnPackageTypeChanging(int value);
+    partial void OnPackageTypeChanged();
     partial void OnSymbolsChanging(System.Data.Linq.Binary value);
     partial void OnSymbolsChanged();
-    partial void OnContent_HashChanging(string value);
-    partial void OnContent_HashChanged();
-    partial void OnTenant_IDChanging(string value);
-    partial void OnTenant_IDChanged();
-    partial void OnShow_My_CodeChanging(byte value);
-    partial void OnShow_My_CodeChanged();
+    partial void OnContentHashChanging(string value);
+    partial void OnContentHashChanged();
+    partial void OnTenantIDChanging(string value);
+    partial void OnTenantIDChanged();
+    partial void OnShowMyCodeChanging(byte value);
+    partial void OnShowMyCodeChanged();
     #endregion
 		
-		public NAV_App()
+		public NAVApp()
 		{
-			this._NAV_App_Capabilities = new EntitySet<NAV_App_Capabilities>(new Action<NAV_App_Capabilities>(this.attach_NAV_App_Capabilities), new Action<NAV_App_Capabilities>(this.detach_NAV_App_Capabilities));
-			this._NAV_App_Data_Archive = new EntitySet<NAV_App_Data_Archive>(new Action<NAV_App_Data_Archive>(this.attach_NAV_App_Data_Archive), new Action<NAV_App_Data_Archive>(this.detach_NAV_App_Data_Archive));
-			this._NAV_App_Installed_App = new EntitySet<NAV_App_Installed_App>(new Action<NAV_App_Installed_App>(this.attach_NAV_App_Installed_App), new Action<NAV_App_Installed_App>(this.detach_NAV_App_Installed_App));
-			this._NAV_App_Object_Metadata = new EntitySet<NAV_App_Object_Metadata>(new Action<NAV_App_Object_Metadata>(this.attach_NAV_App_Object_Metadata), new Action<NAV_App_Object_Metadata>(this.detach_NAV_App_Object_Metadata));
-			this._NAV_App_Object_Prerequisites = new EntitySet<NAV_App_Object_Prerequisites>(new Action<NAV_App_Object_Prerequisites>(this.attach_NAV_App_Object_Prerequisites), new Action<NAV_App_Object_Prerequisites>(this.detach_NAV_App_Object_Prerequisites));
-			this._NAV_App_Resource = new EntitySet<NAV_App_Resource>(new Action<NAV_App_Resource>(this.attach_NAV_App_Resource), new Action<NAV_App_Resource>(this.detach_NAV_App_Resource));
-			this._NAV_App_Tenant_Add_In = new EntitySet<NAV_App_Tenant_Add_In>(new Action<NAV_App_Tenant_Add_In>(this.attach_NAV_App_Tenant_Add_In), new Action<NAV_App_Tenant_Add_In>(this.detach_NAV_App_Tenant_Add_In));
-			this._NAV_App_Tenant_App = new EntitySet<NAV_App_Tenant_App>(new Action<NAV_App_Tenant_App>(this.attach_NAV_App_Tenant_App), new Action<NAV_App_Tenant_App>(this.detach_NAV_App_Tenant_App));
+			this._NAV_App_Capabilities = new EntitySet<NAVAppCapabilities>(new Action<NAVAppCapabilities>(this.attach_NAV_App_Capabilities), new Action<NAVAppCapabilities>(this.detach_NAV_App_Capabilities));
+			this._NAV_App_Data_Archive = new EntitySet<NAVAppDataArchive>(new Action<NAVAppDataArchive>(this.attach_NAV_App_Data_Archive), new Action<NAVAppDataArchive>(this.detach_NAV_App_Data_Archive));
+			this._NAV_App_Installed_App = new EntitySet<NAVAppInstalledApp>(new Action<NAVAppInstalledApp>(this.attach_NAV_App_Installed_App), new Action<NAVAppInstalledApp>(this.detach_NAV_App_Installed_App));
+			this._NAV_App_Object_Metadata = new EntitySet<NAVAppObjectMetadata>(new Action<NAVAppObjectMetadata>(this.attach_NAV_App_Object_Metadata), new Action<NAVAppObjectMetadata>(this.detach_NAV_App_Object_Metadata));
+			this._NAV_App_Object_Prerequisites = new EntitySet<NAVAppObjectPrerequisites>(new Action<NAVAppObjectPrerequisites>(this.attach_NAV_App_Object_Prerequisites), new Action<NAVAppObjectPrerequisites>(this.detach_NAV_App_Object_Prerequisites));
+			this._NAV_App_Resource = new EntitySet<NAVAppResource>(new Action<NAVAppResource>(this.attach_NAV_App_Resource), new Action<NAVAppResource>(this.detach_NAV_App_Resource));
+			this._NAV_App_Tenant_Add_In = new EntitySet<NAVAppTenantAddIn>(new Action<NAVAppTenantAddIn>(this.attach_NAV_App_Tenant_Add_In), new Action<NAVAppTenantAddIn>(this.detach_NAV_App_Tenant_Add_In));
+			this._NAV_App_Tenant_App = new EntitySet<NAVAppTenantApp>(new Action<NAVAppTenantApp>(this.attach_NAV_App_Tenant_App), new Action<NAVAppTenantApp>(this.detach_NAV_App_Tenant_App));
 			OnCreated();
 		}
 		
@@ -1132,7 +1132,7 @@ namespace Nav.API.SQL
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Package ID]", Storage="_Package_ID", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true, UpdateCheck=UpdateCheck.Never)]
-		public System.Guid Package_ID
+		public System.Guid PackageID
 		{
 			get
 			{
@@ -1142,11 +1142,11 @@ namespace Nav.API.SQL
 			{
 				if ((this._Package_ID != value))
 				{
-					this.OnPackage_IDChanging(value);
+					this.OnPackageIDChanging(value);
 					this.SendPropertyChanging();
 					this._Package_ID = value;
-					this.SendPropertyChanged("Package_ID");
-					this.OnPackage_IDChanged();
+					this.SendPropertyChanged("PackageID");
+					this.OnPackageIDChanged();
 				}
 			}
 		}
@@ -1212,7 +1212,7 @@ namespace Nav.API.SQL
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Version Major]", Storage="_Version_Major", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Version_Major
+		public int VersionMajor
 		{
 			get
 			{
@@ -1222,17 +1222,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Version_Major != value))
 				{
-					this.OnVersion_MajorChanging(value);
+					this.OnVersionMajorChanging(value);
 					this.SendPropertyChanging();
 					this._Version_Major = value;
-					this.SendPropertyChanged("Version_Major");
-					this.OnVersion_MajorChanged();
+					this.SendPropertyChanged("VersionMajor");
+					this.OnVersionMajorChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Version Minor]", Storage="_Version_Minor", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Version_Minor
+		public int VersionMinor
 		{
 			get
 			{
@@ -1242,17 +1242,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Version_Minor != value))
 				{
-					this.OnVersion_MinorChanging(value);
+					this.OnVersionMinorChanging(value);
 					this.SendPropertyChanging();
 					this._Version_Minor = value;
-					this.SendPropertyChanged("Version_Minor");
-					this.OnVersion_MinorChanged();
+					this.SendPropertyChanged("VersionMinor");
+					this.OnVersionMinorChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Version Build]", Storage="_Version_Build", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Version_Build
+		public int VersionBuild
 		{
 			get
 			{
@@ -1262,17 +1262,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Version_Build != value))
 				{
-					this.OnVersion_BuildChanging(value);
+					this.OnVersionBuildChanging(value);
 					this.SendPropertyChanging();
 					this._Version_Build = value;
-					this.SendPropertyChanged("Version_Build");
-					this.OnVersion_BuildChanged();
+					this.SendPropertyChanged("VersionBuild");
+					this.OnVersionBuildChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Version Revision]", Storage="_Version_Revision", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Version_Revision
+		public int VersionRevision
 		{
 			get
 			{
@@ -1282,17 +1282,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Version_Revision != value))
 				{
-					this.OnVersion_RevisionChanging(value);
+					this.OnVersionRevisionChanging(value);
 					this.SendPropertyChanging();
 					this._Version_Revision = value;
-					this.SendPropertyChanged("Version_Revision");
-					this.OnVersion_RevisionChanged();
+					this.SendPropertyChanged("VersionRevision");
+					this.OnVersionRevisionChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Compatibility Major]", Storage="_Compatibility_Major", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Compatibility_Major
+		public int CompatibilityMajor
 		{
 			get
 			{
@@ -1302,17 +1302,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Compatibility_Major != value))
 				{
-					this.OnCompatibility_MajorChanging(value);
+					this.OnCompatibilityMajorChanging(value);
 					this.SendPropertyChanging();
 					this._Compatibility_Major = value;
-					this.SendPropertyChanged("Compatibility_Major");
-					this.OnCompatibility_MajorChanged();
+					this.SendPropertyChanged("CompatibilityMajor");
+					this.OnCompatibilityMajorChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Compatibility Minor]", Storage="_Compatibility_Minor", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Compatibility_Minor
+		public int CompatibilityMinor
 		{
 			get
 			{
@@ -1322,17 +1322,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Compatibility_Minor != value))
 				{
-					this.OnCompatibility_MinorChanging(value);
+					this.OnCompatibilityMinorChanging(value);
 					this.SendPropertyChanging();
 					this._Compatibility_Minor = value;
-					this.SendPropertyChanged("Compatibility_Minor");
-					this.OnCompatibility_MinorChanged();
+					this.SendPropertyChanged("CompatibilityMinor");
+					this.OnCompatibilityMinorChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Compatibility Build]", Storage="_Compatibility_Build", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Compatibility_Build
+		public int CompatibilityBuild
 		{
 			get
 			{
@@ -1342,17 +1342,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Compatibility_Build != value))
 				{
-					this.OnCompatibility_BuildChanging(value);
+					this.OnCompatibilityBuildChanging(value);
 					this.SendPropertyChanging();
 					this._Compatibility_Build = value;
-					this.SendPropertyChanged("Compatibility_Build");
-					this.OnCompatibility_BuildChanged();
+					this.SendPropertyChanged("CompatibilityBuild");
+					this.OnCompatibilityBuildChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Compatibility Revision]", Storage="_Compatibility_Revision", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Compatibility_Revision
+		public int CompatibilityRevision
 		{
 			get
 			{
@@ -1362,11 +1362,11 @@ namespace Nav.API.SQL
 			{
 				if ((this._Compatibility_Revision != value))
 				{
-					this.OnCompatibility_RevisionChanging(value);
+					this.OnCompatibilityRevisionChanging(value);
 					this.SendPropertyChanging();
 					this._Compatibility_Revision = value;
-					this.SendPropertyChanged("Compatibility_Revision");
-					this.OnCompatibility_RevisionChanged();
+					this.SendPropertyChanged("CompatibilityRevision");
+					this.OnCompatibilityRevisionChanged();
 				}
 			}
 		}
@@ -1412,7 +1412,7 @@ namespace Nav.API.SQL
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Privacy Statement]", Storage="_Privacy_Statement", DbType="NVarChar(250) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string Privacy_Statement
+		public string PrivacyStatement
 		{
 			get
 			{
@@ -1422,11 +1422,11 @@ namespace Nav.API.SQL
 			{
 				if ((this._Privacy_Statement != value))
 				{
-					this.OnPrivacy_StatementChanging(value);
+					this.OnPrivacyStatementChanging(value);
 					this.SendPropertyChanging();
 					this._Privacy_Statement = value;
-					this.SendPropertyChanged("Privacy_Statement");
-					this.OnPrivacy_StatementChanged();
+					this.SendPropertyChanged("PrivacyStatement");
+					this.OnPrivacyStatementChanged();
 				}
 			}
 		}
@@ -1552,7 +1552,7 @@ namespace Nav.API.SQL
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Package Type]", Storage="_Package_Type", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Package_Type
+		public int PackageType
 		{
 			get
 			{
@@ -1562,11 +1562,11 @@ namespace Nav.API.SQL
 			{
 				if ((this._Package_Type != value))
 				{
-					this.OnPackage_TypeChanging(value);
+					this.OnPackageTypeChanging(value);
 					this.SendPropertyChanging();
 					this._Package_Type = value;
-					this.SendPropertyChanged("Package_Type");
-					this.OnPackage_TypeChanged();
+					this.SendPropertyChanged("PackageType");
+					this.OnPackageTypeChanged();
 				}
 			}
 		}
@@ -1592,7 +1592,7 @@ namespace Nav.API.SQL
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Content Hash]", Storage="_Content_Hash", DbType="NVarChar(250) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string Content_Hash
+		public string ContentHash
 		{
 			get
 			{
@@ -1602,17 +1602,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Content_Hash != value))
 				{
-					this.OnContent_HashChanging(value);
+					this.OnContentHashChanging(value);
 					this.SendPropertyChanging();
 					this._Content_Hash = value;
-					this.SendPropertyChanged("Content_Hash");
-					this.OnContent_HashChanged();
+					this.SendPropertyChanged("ContentHash");
+					this.OnContentHashChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Tenant ID]", Storage="_Tenant_ID", DbType="NVarChar(128) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string Tenant_ID
+		public string TenantID
 		{
 			get
 			{
@@ -1622,17 +1622,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Tenant_ID != value))
 				{
-					this.OnTenant_IDChanging(value);
+					this.OnTenantIDChanging(value);
 					this.SendPropertyChanging();
 					this._Tenant_ID = value;
-					this.SendPropertyChanged("Tenant_ID");
-					this.OnTenant_IDChanged();
+					this.SendPropertyChanged("TenantID");
+					this.OnTenantIDChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Show My Code]", Storage="_Show_My_Code", DbType="TinyInt NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public byte Show_My_Code
+		public byte ShowMyCode
 		{
 			get
 			{
@@ -1642,17 +1642,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Show_My_Code != value))
 				{
-					this.OnShow_My_CodeChanging(value);
+					this.OnShowMyCodeChanging(value);
 					this.SendPropertyChanging();
 					this._Show_My_Code = value;
-					this.SendPropertyChanged("Show_My_Code");
-					this.OnShow_My_CodeChanged();
+					this.SendPropertyChanged("ShowMyCode");
+					this.OnShowMyCodeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAV_App_NAV_App_Capabilities", Storage="_NAV_App_Capabilities", ThisKey="Package_ID", OtherKey="Package_ID")]
-		public EntitySet<NAV_App_Capabilities> NAV_App_Capabilities
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAVApp_NAVAppCapabilities", Storage="_NAV_App_Capabilities", ThisKey="PackageID", OtherKey="PackageID")]
+		public EntitySet<NAVAppCapabilities> NAVAppCapabilities
 		{
 			get
 			{
@@ -1664,8 +1664,8 @@ namespace Nav.API.SQL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAV_App_NAV_App_Data_Archive", Storage="_NAV_App_Data_Archive", ThisKey="ID", OtherKey="App_ID")]
-		public EntitySet<NAV_App_Data_Archive> NAV_App_Data_Archive
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAVApp_NAVAppDataArchive", Storage="_NAV_App_Data_Archive", ThisKey="ID", OtherKey="AppID")]
+		public EntitySet<NAVAppDataArchive> NAVAppDataArchive
 		{
 			get
 			{
@@ -1677,8 +1677,8 @@ namespace Nav.API.SQL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAV_App_NAV_App_Installed_App", Storage="_NAV_App_Installed_App", ThisKey="ID,Package_ID", OtherKey="App_ID,Package_ID")]
-		public EntitySet<NAV_App_Installed_App> NAV_App_Installed_App
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAVApp_NAVAppInstalledApp", Storage="_NAV_App_Installed_App", ThisKey="ID,PackageID", OtherKey="AppID,PackageID")]
+		public EntitySet<NAVAppInstalledApp> NAVAppInstalledApp
 		{
 			get
 			{
@@ -1690,8 +1690,8 @@ namespace Nav.API.SQL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAV_App_NAV_App_Object_Metadata", Storage="_NAV_App_Object_Metadata", ThisKey="Package_ID", OtherKey="App_Package_ID")]
-		public EntitySet<NAV_App_Object_Metadata> NAV_App_Object_Metadata
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAVApp_NAVAppObjectMetadata", Storage="_NAV_App_Object_Metadata", ThisKey="PackageID", OtherKey="AppPackageID")]
+		public EntitySet<NAVAppObjectMetadata> NAVAppObjectMetadata
 		{
 			get
 			{
@@ -1703,8 +1703,8 @@ namespace Nav.API.SQL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAV_App_NAV_App_Object_Prerequisites", Storage="_NAV_App_Object_Prerequisites", ThisKey="Package_ID", OtherKey="Package_ID")]
-		public EntitySet<NAV_App_Object_Prerequisites> NAV_App_Object_Prerequisites
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAVApp_NAVAppObjectPrerequisites", Storage="_NAV_App_Object_Prerequisites", ThisKey="PackageID", OtherKey="PackageID")]
+		public EntitySet<NAVAppObjectPrerequisites> NAVAppObjectPrerequisites
 		{
 			get
 			{
@@ -1716,8 +1716,8 @@ namespace Nav.API.SQL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAV_App_NAV_App_Resource", Storage="_NAV_App_Resource", ThisKey="Package_ID", OtherKey="Package_ID")]
-		public EntitySet<NAV_App_Resource> NAV_App_Resource
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAVApp_NAVAppResource", Storage="_NAV_App_Resource", ThisKey="PackageID", OtherKey="PackageID")]
+		public EntitySet<NAVAppResource> NAVAppResource
 		{
 			get
 			{
@@ -1729,8 +1729,8 @@ namespace Nav.API.SQL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAV_App_NAV_App_Tenant_Add_In", Storage="_NAV_App_Tenant_Add_In", ThisKey="ID", OtherKey="App_ID")]
-		public EntitySet<NAV_App_Tenant_Add_In> NAV_App_Tenant_Add_In
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAVApp_NAVAppTenantAddIn", Storage="_NAV_App_Tenant_Add_In", ThisKey="ID", OtherKey="AppID")]
+		public EntitySet<NAVAppTenantAddIn> NAVAppTenantAddIn
 		{
 			get
 			{
@@ -1742,8 +1742,8 @@ namespace Nav.API.SQL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAV_App_NAV_App_Tenant_App", Storage="_NAV_App_Tenant_App", ThisKey="Package_ID,Tenant_ID", OtherKey="App_Package_ID,Tenant_ID")]
-		public EntitySet<NAV_App_Tenant_App> NAV_App_Tenant_App
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAVApp_NAVAppTenantApp", Storage="_NAV_App_Tenant_App", ThisKey="PackageID,TenantID", OtherKey="AppPackageID,TenantID")]
+		public EntitySet<NAVAppTenantApp> NAVAppTenantApp
 		{
 			get
 			{
@@ -1775,105 +1775,105 @@ namespace Nav.API.SQL
 			}
 		}
 		
-		private void attach_NAV_App_Capabilities(NAV_App_Capabilities entity)
+		private void attach_NAV_App_Capabilities(NAVAppCapabilities entity)
 		{
 			this.SendPropertyChanging();
-			entity.NAV_App = this;
+			entity.NAVApp = this;
 		}
 		
-		private void detach_NAV_App_Capabilities(NAV_App_Capabilities entity)
+		private void detach_NAV_App_Capabilities(NAVAppCapabilities entity)
 		{
 			this.SendPropertyChanging();
-			entity.NAV_App = null;
+			entity.NAVApp = null;
 		}
 		
-		private void attach_NAV_App_Data_Archive(NAV_App_Data_Archive entity)
+		private void attach_NAV_App_Data_Archive(NAVAppDataArchive entity)
 		{
 			this.SendPropertyChanging();
-			entity.NAV_App = this;
+			entity.NAVApp = this;
 		}
 		
-		private void detach_NAV_App_Data_Archive(NAV_App_Data_Archive entity)
+		private void detach_NAV_App_Data_Archive(NAVAppDataArchive entity)
 		{
 			this.SendPropertyChanging();
-			entity.NAV_App = null;
+			entity.NAVApp = null;
 		}
 		
-		private void attach_NAV_App_Installed_App(NAV_App_Installed_App entity)
+		private void attach_NAV_App_Installed_App(NAVAppInstalledApp entity)
 		{
 			this.SendPropertyChanging();
-			entity.NAV_App = this;
+			entity.NAVApp = this;
 		}
 		
-		private void detach_NAV_App_Installed_App(NAV_App_Installed_App entity)
+		private void detach_NAV_App_Installed_App(NAVAppInstalledApp entity)
 		{
 			this.SendPropertyChanging();
-			entity.NAV_App = null;
+			entity.NAVApp = null;
 		}
 		
-		private void attach_NAV_App_Object_Metadata(NAV_App_Object_Metadata entity)
+		private void attach_NAV_App_Object_Metadata(NAVAppObjectMetadata entity)
 		{
 			this.SendPropertyChanging();
-			entity.NAV_App = this;
+			entity.NAVApp = this;
 		}
 		
-		private void detach_NAV_App_Object_Metadata(NAV_App_Object_Metadata entity)
+		private void detach_NAV_App_Object_Metadata(NAVAppObjectMetadata entity)
 		{
 			this.SendPropertyChanging();
-			entity.NAV_App = null;
+			entity.NAVApp = null;
 		}
 		
-		private void attach_NAV_App_Object_Prerequisites(NAV_App_Object_Prerequisites entity)
+		private void attach_NAV_App_Object_Prerequisites(NAVAppObjectPrerequisites entity)
 		{
 			this.SendPropertyChanging();
-			entity.NAV_App = this;
+			entity.NAVApp = this;
 		}
 		
-		private void detach_NAV_App_Object_Prerequisites(NAV_App_Object_Prerequisites entity)
+		private void detach_NAV_App_Object_Prerequisites(NAVAppObjectPrerequisites entity)
 		{
 			this.SendPropertyChanging();
-			entity.NAV_App = null;
+			entity.NAVApp = null;
 		}
 		
-		private void attach_NAV_App_Resource(NAV_App_Resource entity)
+		private void attach_NAV_App_Resource(NAVAppResource entity)
 		{
 			this.SendPropertyChanging();
-			entity.NAV_App = this;
+			entity.NAVApp = this;
 		}
 		
-		private void detach_NAV_App_Resource(NAV_App_Resource entity)
+		private void detach_NAV_App_Resource(NAVAppResource entity)
 		{
 			this.SendPropertyChanging();
-			entity.NAV_App = null;
+			entity.NAVApp = null;
 		}
 		
-		private void attach_NAV_App_Tenant_Add_In(NAV_App_Tenant_Add_In entity)
+		private void attach_NAV_App_Tenant_Add_In(NAVAppTenantAddIn entity)
 		{
 			this.SendPropertyChanging();
-			entity.NAV_App = this;
+			entity.NAVApp = this;
 		}
 		
-		private void detach_NAV_App_Tenant_Add_In(NAV_App_Tenant_Add_In entity)
+		private void detach_NAV_App_Tenant_Add_In(NAVAppTenantAddIn entity)
 		{
 			this.SendPropertyChanging();
-			entity.NAV_App = null;
+			entity.NAVApp = null;
 		}
 		
-		private void attach_NAV_App_Tenant_App(NAV_App_Tenant_App entity)
+		private void attach_NAV_App_Tenant_App(NAVAppTenantApp entity)
 		{
 			this.SendPropertyChanging();
-			entity.NAV_App = this;
+			entity.NAVApp = this;
 		}
 		
-		private void detach_NAV_App_Tenant_App(NAV_App_Tenant_App entity)
+		private void detach_NAV_App_Tenant_App(NAVAppTenantApp entity)
 		{
 			this.SendPropertyChanging();
-			entity.NAV_App = null;
+			entity.NAVApp = null;
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[NAV App Capabilities]")]
-	public partial class NAV_App_Capabilities : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class NAVAppCapabilities : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -1884,7 +1884,7 @@ namespace Nav.API.SQL
 		
 		private int _Capability_ID;
 		
-		private EntityRef<NAV_App> _NAV_App;
+		private EntityRef<NAVApp> _NAV_App;
 		
     #region Definitionen der Erweiterungsmethoden
     partial void OnLoaded();
@@ -1892,15 +1892,15 @@ namespace Nav.API.SQL
     partial void OnCreated();
     partial void OntimestampChanging(System.Data.Linq.Binary value);
     partial void OntimestampChanged();
-    partial void OnPackage_IDChanging(System.Guid value);
-    partial void OnPackage_IDChanged();
-    partial void OnCapability_IDChanging(int value);
-    partial void OnCapability_IDChanged();
+    partial void OnPackageIDChanging(System.Guid value);
+    partial void OnPackageIDChanged();
+    partial void OnCapabilityIDChanging(int value);
+    partial void OnCapabilityIDChanged();
     #endregion
 		
-		public NAV_App_Capabilities()
+		public NAVAppCapabilities()
 		{
-			this._NAV_App = default(EntityRef<NAV_App>);
+			this._NAV_App = default(EntityRef<NAVApp>);
 			OnCreated();
 		}
 		
@@ -1925,7 +1925,7 @@ namespace Nav.API.SQL
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Package ID]", Storage="_Package_ID", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true, UpdateCheck=UpdateCheck.Never)]
-		public System.Guid Package_ID
+		public System.Guid PackageID
 		{
 			get
 			{
@@ -1935,17 +1935,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Package_ID != value))
 				{
-					this.OnPackage_IDChanging(value);
+					this.OnPackageIDChanging(value);
 					this.SendPropertyChanging();
 					this._Package_ID = value;
-					this.SendPropertyChanged("Package_ID");
-					this.OnPackage_IDChanged();
+					this.SendPropertyChanged("PackageID");
+					this.OnPackageIDChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Capability ID]", Storage="_Capability_ID", DbType="Int NOT NULL", IsPrimaryKey=true, UpdateCheck=UpdateCheck.Never)]
-		public int Capability_ID
+		public int CapabilityID
 		{
 			get
 			{
@@ -1955,17 +1955,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Capability_ID != value))
 				{
-					this.OnCapability_IDChanging(value);
+					this.OnCapabilityIDChanging(value);
 					this.SendPropertyChanging();
 					this._Capability_ID = value;
-					this.SendPropertyChanged("Capability_ID");
-					this.OnCapability_IDChanged();
+					this.SendPropertyChanged("CapabilityID");
+					this.OnCapabilityIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAV_App_NAV_App_Capabilities", Storage="_NAV_App", ThisKey="Package_ID", OtherKey="Package_ID", IsForeignKey=true)]
-		public NAV_App NAV_App
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAVApp_NAVAppCapabilities", Storage="_NAV_App", ThisKey="PackageID", OtherKey="PackageID", IsForeignKey=true)]
+		public NAVApp NAVApp
 		{
 			get
 			{
@@ -1973,7 +1973,7 @@ namespace Nav.API.SQL
 			}
 			set
 			{
-				NAV_App previousValue = this._NAV_App.Entity;
+				NAVApp previousValue = this._NAV_App.Entity;
 				if (((previousValue != value) 
 							|| (this._NAV_App.HasLoadedOrAssignedValue == false)))
 				{
@@ -1981,19 +1981,19 @@ namespace Nav.API.SQL
 					if ((previousValue != null))
 					{
 						this._NAV_App.Entity = null;
-						previousValue.NAV_App_Capabilities.Remove(this);
+						previousValue.NAVAppCapabilities.Remove(this);
 					}
 					this._NAV_App.Entity = value;
 					if ((value != null))
 					{
-						value.NAV_App_Capabilities.Add(this);
-						this._Package_ID = value.Package_ID;
+						value.NAVAppCapabilities.Add(this);
+						this._Package_ID = value.PackageID;
 					}
 					else
 					{
 						this._Package_ID = default(System.Guid);
 					}
-					this.SendPropertyChanged("NAV_App");
+					this.SendPropertyChanged("NAVApp");
 				}
 			}
 		}
@@ -2020,7 +2020,7 @@ namespace Nav.API.SQL
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[NAV App Dependencies]")]
-	public partial class NAV_App_Dependencies : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class NAVAppDependencies : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -2057,33 +2057,33 @@ namespace Nav.API.SQL
     partial void OnCreated();
     partial void OntimestampChanging(System.Data.Linq.Binary value);
     partial void OntimestampChanged();
-    partial void OnPackage_IDChanging(System.Guid value);
-    partial void OnPackage_IDChanged();
+    partial void OnPackageIDChanging(System.Guid value);
+    partial void OnPackageIDChanged();
     partial void OnIDChanging(System.Guid value);
     partial void OnIDChanged();
     partial void OnNameChanging(string value);
     partial void OnNameChanged();
     partial void OnPublisherChanging(string value);
     partial void OnPublisherChanged();
-    partial void OnVersion_MajorChanging(int value);
-    partial void OnVersion_MajorChanged();
-    partial void OnVersion_MinorChanging(int value);
-    partial void OnVersion_MinorChanged();
-    partial void OnVersion_BuildChanging(int value);
-    partial void OnVersion_BuildChanged();
-    partial void OnVersion_RevisionChanging(int value);
-    partial void OnVersion_RevisionChanged();
-    partial void OnCompatibility_MajorChanging(int value);
-    partial void OnCompatibility_MajorChanged();
-    partial void OnCompatibility_MinorChanging(int value);
-    partial void OnCompatibility_MinorChanged();
-    partial void OnCompatibility_BuildChanging(int value);
-    partial void OnCompatibility_BuildChanged();
-    partial void OnCompatibility_RevisionChanging(int value);
-    partial void OnCompatibility_RevisionChanged();
+    partial void OnVersionMajorChanging(int value);
+    partial void OnVersionMajorChanged();
+    partial void OnVersionMinorChanging(int value);
+    partial void OnVersionMinorChanged();
+    partial void OnVersionBuildChanging(int value);
+    partial void OnVersionBuildChanged();
+    partial void OnVersionRevisionChanging(int value);
+    partial void OnVersionRevisionChanged();
+    partial void OnCompatibilityMajorChanging(int value);
+    partial void OnCompatibilityMajorChanged();
+    partial void OnCompatibilityMinorChanging(int value);
+    partial void OnCompatibilityMinorChanged();
+    partial void OnCompatibilityBuildChanging(int value);
+    partial void OnCompatibilityBuildChanged();
+    partial void OnCompatibilityRevisionChanging(int value);
+    partial void OnCompatibilityRevisionChanged();
     #endregion
 		
-		public NAV_App_Dependencies()
+		public NAVAppDependencies()
 		{
 			OnCreated();
 		}
@@ -2109,7 +2109,7 @@ namespace Nav.API.SQL
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Package ID]", Storage="_Package_ID", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true, UpdateCheck=UpdateCheck.Never)]
-		public System.Guid Package_ID
+		public System.Guid PackageID
 		{
 			get
 			{
@@ -2119,11 +2119,11 @@ namespace Nav.API.SQL
 			{
 				if ((this._Package_ID != value))
 				{
-					this.OnPackage_IDChanging(value);
+					this.OnPackageIDChanging(value);
 					this.SendPropertyChanging();
 					this._Package_ID = value;
-					this.SendPropertyChanged("Package_ID");
-					this.OnPackage_IDChanged();
+					this.SendPropertyChanged("PackageID");
+					this.OnPackageIDChanged();
 				}
 			}
 		}
@@ -2189,7 +2189,7 @@ namespace Nav.API.SQL
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Version Major]", Storage="_Version_Major", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Version_Major
+		public int VersionMajor
 		{
 			get
 			{
@@ -2199,17 +2199,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Version_Major != value))
 				{
-					this.OnVersion_MajorChanging(value);
+					this.OnVersionMajorChanging(value);
 					this.SendPropertyChanging();
 					this._Version_Major = value;
-					this.SendPropertyChanged("Version_Major");
-					this.OnVersion_MajorChanged();
+					this.SendPropertyChanged("VersionMajor");
+					this.OnVersionMajorChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Version Minor]", Storage="_Version_Minor", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Version_Minor
+		public int VersionMinor
 		{
 			get
 			{
@@ -2219,17 +2219,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Version_Minor != value))
 				{
-					this.OnVersion_MinorChanging(value);
+					this.OnVersionMinorChanging(value);
 					this.SendPropertyChanging();
 					this._Version_Minor = value;
-					this.SendPropertyChanged("Version_Minor");
-					this.OnVersion_MinorChanged();
+					this.SendPropertyChanged("VersionMinor");
+					this.OnVersionMinorChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Version Build]", Storage="_Version_Build", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Version_Build
+		public int VersionBuild
 		{
 			get
 			{
@@ -2239,17 +2239,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Version_Build != value))
 				{
-					this.OnVersion_BuildChanging(value);
+					this.OnVersionBuildChanging(value);
 					this.SendPropertyChanging();
 					this._Version_Build = value;
-					this.SendPropertyChanged("Version_Build");
-					this.OnVersion_BuildChanged();
+					this.SendPropertyChanged("VersionBuild");
+					this.OnVersionBuildChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Version Revision]", Storage="_Version_Revision", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Version_Revision
+		public int VersionRevision
 		{
 			get
 			{
@@ -2259,17 +2259,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Version_Revision != value))
 				{
-					this.OnVersion_RevisionChanging(value);
+					this.OnVersionRevisionChanging(value);
 					this.SendPropertyChanging();
 					this._Version_Revision = value;
-					this.SendPropertyChanged("Version_Revision");
-					this.OnVersion_RevisionChanged();
+					this.SendPropertyChanged("VersionRevision");
+					this.OnVersionRevisionChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Compatibility Major]", Storage="_Compatibility_Major", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Compatibility_Major
+		public int CompatibilityMajor
 		{
 			get
 			{
@@ -2279,17 +2279,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Compatibility_Major != value))
 				{
-					this.OnCompatibility_MajorChanging(value);
+					this.OnCompatibilityMajorChanging(value);
 					this.SendPropertyChanging();
 					this._Compatibility_Major = value;
-					this.SendPropertyChanged("Compatibility_Major");
-					this.OnCompatibility_MajorChanged();
+					this.SendPropertyChanged("CompatibilityMajor");
+					this.OnCompatibilityMajorChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Compatibility Minor]", Storage="_Compatibility_Minor", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Compatibility_Minor
+		public int CompatibilityMinor
 		{
 			get
 			{
@@ -2299,17 +2299,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Compatibility_Minor != value))
 				{
-					this.OnCompatibility_MinorChanging(value);
+					this.OnCompatibilityMinorChanging(value);
 					this.SendPropertyChanging();
 					this._Compatibility_Minor = value;
-					this.SendPropertyChanged("Compatibility_Minor");
-					this.OnCompatibility_MinorChanged();
+					this.SendPropertyChanged("CompatibilityMinor");
+					this.OnCompatibilityMinorChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Compatibility Build]", Storage="_Compatibility_Build", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Compatibility_Build
+		public int CompatibilityBuild
 		{
 			get
 			{
@@ -2319,17 +2319,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Compatibility_Build != value))
 				{
-					this.OnCompatibility_BuildChanging(value);
+					this.OnCompatibilityBuildChanging(value);
 					this.SendPropertyChanging();
 					this._Compatibility_Build = value;
-					this.SendPropertyChanged("Compatibility_Build");
-					this.OnCompatibility_BuildChanged();
+					this.SendPropertyChanged("CompatibilityBuild");
+					this.OnCompatibilityBuildChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Compatibility Revision]", Storage="_Compatibility_Revision", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Compatibility_Revision
+		public int CompatibilityRevision
 		{
 			get
 			{
@@ -2339,11 +2339,11 @@ namespace Nav.API.SQL
 			{
 				if ((this._Compatibility_Revision != value))
 				{
-					this.OnCompatibility_RevisionChanging(value);
+					this.OnCompatibilityRevisionChanging(value);
 					this.SendPropertyChanging();
 					this._Compatibility_Revision = value;
-					this.SendPropertyChanged("Compatibility_Revision");
-					this.OnCompatibility_RevisionChanged();
+					this.SendPropertyChanged("CompatibilityRevision");
+					this.OnCompatibilityRevisionChanged();
 				}
 			}
 		}
@@ -2370,7 +2370,7 @@ namespace Nav.API.SQL
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[NAV App Data Archive]")]
-	public partial class NAV_App_Data_Archive : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class NAVAppDataArchive : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -2397,7 +2397,7 @@ namespace Nav.API.SQL
 		
 		private int _Table_Blob_Version;
 		
-		private EntityRef<NAV_App> _NAV_App;
+		private EntityRef<NAVApp> _NAV_App;
 		
     #region Definitionen der Erweiterungsmethoden
     partial void OnLoaded();
@@ -2405,31 +2405,31 @@ namespace Nav.API.SQL
     partial void OnCreated();
     partial void OntimestampChanging(System.Data.Linq.Binary value);
     partial void OntimestampChanged();
-    partial void OnApp_IDChanging(System.Guid value);
-    partial void OnApp_IDChanged();
-    partial void OnTable_IDChanging(int value);
-    partial void OnTable_IDChanged();
-    partial void OnCompany_NameChanging(string value);
-    partial void OnCompany_NameChanged();
-    partial void OnVersion_MajorChanging(int value);
-    partial void OnVersion_MajorChanged();
-    partial void OnVersion_MinorChanging(int value);
-    partial void OnVersion_MinorChanged();
-    partial void OnVersion_BuildChanging(int value);
-    partial void OnVersion_BuildChanged();
-    partial void OnVersion_RevisionChanging(int value);
-    partial void OnVersion_RevisionChanged();
-    partial void OnArchive_Table_NameChanging(string value);
-    partial void OnArchive_Table_NameChanged();
+    partial void OnAppIDChanging(System.Guid value);
+    partial void OnAppIDChanged();
+    partial void OnTableIDChanging(int value);
+    partial void OnTableIDChanged();
+    partial void OnCompanyNameChanging(string value);
+    partial void OnCompanyNameChanged();
+    partial void OnVersionMajorChanging(int value);
+    partial void OnVersionMajorChanged();
+    partial void OnVersionMinorChanging(int value);
+    partial void OnVersionMinorChanged();
+    partial void OnVersionBuildChanging(int value);
+    partial void OnVersionBuildChanged();
+    partial void OnVersionRevisionChanging(int value);
+    partial void OnVersionRevisionChanged();
+    partial void OnArchiveTableNameChanging(string value);
+    partial void OnArchiveTableNameChanged();
     partial void OnMetadataChanging(System.Data.Linq.Binary value);
     partial void OnMetadataChanged();
-    partial void OnTable_Blob_VersionChanging(int value);
-    partial void OnTable_Blob_VersionChanged();
+    partial void OnTableBlobVersionChanging(int value);
+    partial void OnTableBlobVersionChanged();
     #endregion
 		
-		public NAV_App_Data_Archive()
+		public NAVAppDataArchive()
 		{
-			this._NAV_App = default(EntityRef<NAV_App>);
+			this._NAV_App = default(EntityRef<NAVApp>);
 			OnCreated();
 		}
 		
@@ -2454,7 +2454,7 @@ namespace Nav.API.SQL
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[App ID]", Storage="_App_ID", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true, UpdateCheck=UpdateCheck.Never)]
-		public System.Guid App_ID
+		public System.Guid AppID
 		{
 			get
 			{
@@ -2464,17 +2464,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._App_ID != value))
 				{
-					this.OnApp_IDChanging(value);
+					this.OnAppIDChanging(value);
 					this.SendPropertyChanging();
 					this._App_ID = value;
-					this.SendPropertyChanged("App_ID");
-					this.OnApp_IDChanged();
+					this.SendPropertyChanged("AppID");
+					this.OnAppIDChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Table ID]", Storage="_Table_ID", DbType="Int NOT NULL", IsPrimaryKey=true, UpdateCheck=UpdateCheck.Never)]
-		public int Table_ID
+		public int TableID
 		{
 			get
 			{
@@ -2484,17 +2484,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Table_ID != value))
 				{
-					this.OnTable_IDChanging(value);
+					this.OnTableIDChanging(value);
 					this.SendPropertyChanging();
 					this._Table_ID = value;
-					this.SendPropertyChanged("Table_ID");
-					this.OnTable_IDChanged();
+					this.SendPropertyChanged("TableID");
+					this.OnTableIDChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Company Name]", Storage="_Company_Name", DbType="NVarChar(30) NOT NULL", CanBeNull=false, IsPrimaryKey=true, UpdateCheck=UpdateCheck.Never)]
-		public string Company_Name
+		public string CompanyName
 		{
 			get
 			{
@@ -2504,17 +2504,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Company_Name != value))
 				{
-					this.OnCompany_NameChanging(value);
+					this.OnCompanyNameChanging(value);
 					this.SendPropertyChanging();
 					this._Company_Name = value;
-					this.SendPropertyChanged("Company_Name");
-					this.OnCompany_NameChanged();
+					this.SendPropertyChanged("CompanyName");
+					this.OnCompanyNameChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Version Major]", Storage="_Version_Major", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Version_Major
+		public int VersionMajor
 		{
 			get
 			{
@@ -2524,17 +2524,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Version_Major != value))
 				{
-					this.OnVersion_MajorChanging(value);
+					this.OnVersionMajorChanging(value);
 					this.SendPropertyChanging();
 					this._Version_Major = value;
-					this.SendPropertyChanged("Version_Major");
-					this.OnVersion_MajorChanged();
+					this.SendPropertyChanged("VersionMajor");
+					this.OnVersionMajorChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Version Minor]", Storage="_Version_Minor", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Version_Minor
+		public int VersionMinor
 		{
 			get
 			{
@@ -2544,17 +2544,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Version_Minor != value))
 				{
-					this.OnVersion_MinorChanging(value);
+					this.OnVersionMinorChanging(value);
 					this.SendPropertyChanging();
 					this._Version_Minor = value;
-					this.SendPropertyChanged("Version_Minor");
-					this.OnVersion_MinorChanged();
+					this.SendPropertyChanged("VersionMinor");
+					this.OnVersionMinorChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Version Build]", Storage="_Version_Build", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Version_Build
+		public int VersionBuild
 		{
 			get
 			{
@@ -2564,17 +2564,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Version_Build != value))
 				{
-					this.OnVersion_BuildChanging(value);
+					this.OnVersionBuildChanging(value);
 					this.SendPropertyChanging();
 					this._Version_Build = value;
-					this.SendPropertyChanged("Version_Build");
-					this.OnVersion_BuildChanged();
+					this.SendPropertyChanged("VersionBuild");
+					this.OnVersionBuildChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Version Revision]", Storage="_Version_Revision", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Version_Revision
+		public int VersionRevision
 		{
 			get
 			{
@@ -2584,17 +2584,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Version_Revision != value))
 				{
-					this.OnVersion_RevisionChanging(value);
+					this.OnVersionRevisionChanging(value);
 					this.SendPropertyChanging();
 					this._Version_Revision = value;
-					this.SendPropertyChanged("Version_Revision");
-					this.OnVersion_RevisionChanged();
+					this.SendPropertyChanged("VersionRevision");
+					this.OnVersionRevisionChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Archive Table Name]", Storage="_Archive_Table_Name", DbType="NVarChar(128) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string Archive_Table_Name
+		public string ArchiveTableName
 		{
 			get
 			{
@@ -2604,11 +2604,11 @@ namespace Nav.API.SQL
 			{
 				if ((this._Archive_Table_Name != value))
 				{
-					this.OnArchive_Table_NameChanging(value);
+					this.OnArchiveTableNameChanging(value);
 					this.SendPropertyChanging();
 					this._Archive_Table_Name = value;
-					this.SendPropertyChanged("Archive_Table_Name");
-					this.OnArchive_Table_NameChanged();
+					this.SendPropertyChanged("ArchiveTableName");
+					this.OnArchiveTableNameChanged();
 				}
 			}
 		}
@@ -2634,7 +2634,7 @@ namespace Nav.API.SQL
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Table Blob Version]", Storage="_Table_Blob_Version", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Table_Blob_Version
+		public int TableBlobVersion
 		{
 			get
 			{
@@ -2644,17 +2644,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Table_Blob_Version != value))
 				{
-					this.OnTable_Blob_VersionChanging(value);
+					this.OnTableBlobVersionChanging(value);
 					this.SendPropertyChanging();
 					this._Table_Blob_Version = value;
-					this.SendPropertyChanged("Table_Blob_Version");
-					this.OnTable_Blob_VersionChanged();
+					this.SendPropertyChanged("TableBlobVersion");
+					this.OnTableBlobVersionChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAV_App_NAV_App_Data_Archive", Storage="_NAV_App", ThisKey="App_ID", OtherKey="ID", IsForeignKey=true)]
-		public NAV_App NAV_App
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAVApp_NAVAppDataArchive", Storage="_NAV_App", ThisKey="AppID", OtherKey="ID", IsForeignKey=true)]
+		public NAVApp NAVApp
 		{
 			get
 			{
@@ -2662,7 +2662,7 @@ namespace Nav.API.SQL
 			}
 			set
 			{
-				NAV_App previousValue = this._NAV_App.Entity;
+				NAVApp previousValue = this._NAV_App.Entity;
 				if (((previousValue != value) 
 							|| (this._NAV_App.HasLoadedOrAssignedValue == false)))
 				{
@@ -2670,19 +2670,19 @@ namespace Nav.API.SQL
 					if ((previousValue != null))
 					{
 						this._NAV_App.Entity = null;
-						previousValue.NAV_App_Data_Archive.Remove(this);
+						previousValue.NAVAppDataArchive.Remove(this);
 					}
 					this._NAV_App.Entity = value;
 					if ((value != null))
 					{
-						value.NAV_App_Data_Archive.Add(this);
+						value.NAVAppDataArchive.Add(this);
 						this._App_ID = value.ID;
 					}
 					else
 					{
 						this._App_ID = default(System.Guid);
 					}
-					this.SendPropertyChanged("NAV_App");
+					this.SendPropertyChanged("NAVApp");
 				}
 			}
 		}
@@ -2709,7 +2709,7 @@ namespace Nav.API.SQL
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[NAV App Installed App]")]
-	public partial class NAV_App_Installed_App : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class NAVAppInstalledApp : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -2746,7 +2746,7 @@ namespace Nav.API.SQL
 		
 		private int _Extension_Type;
 		
-		private EntityRef<NAV_App> _NAV_App;
+		private EntityRef<NAVApp> _NAV_App;
 		
     #region Definitionen der Erweiterungsmethoden
     partial void OnLoaded();
@@ -2754,41 +2754,41 @@ namespace Nav.API.SQL
     partial void OnCreated();
     partial void OntimestampChanging(System.Data.Linq.Binary value);
     partial void OntimestampChanged();
-    partial void OnApp_IDChanging(System.Guid value);
-    partial void OnApp_IDChanged();
-    partial void OnPackage_IDChanging(System.Guid value);
-    partial void OnPackage_IDChanged();
+    partial void OnAppIDChanging(System.Guid value);
+    partial void OnAppIDChanged();
+    partial void OnPackageIDChanging(System.Guid value);
+    partial void OnPackageIDChanged();
     partial void OnNameChanging(string value);
     partial void OnNameChanged();
     partial void OnPublisherChanging(string value);
     partial void OnPublisherChanged();
-    partial void OnVersion_MajorChanging(int value);
-    partial void OnVersion_MajorChanged();
-    partial void OnVersion_MinorChanging(int value);
-    partial void OnVersion_MinorChanged();
-    partial void OnVersion_BuildChanging(int value);
-    partial void OnVersion_BuildChanged();
-    partial void OnVersion_RevisionChanging(int value);
-    partial void OnVersion_RevisionChanged();
-    partial void OnCompatibility_MajorChanging(int value);
-    partial void OnCompatibility_MajorChanged();
-    partial void OnCompatibility_MinorChanging(int value);
-    partial void OnCompatibility_MinorChanged();
-    partial void OnCompatibility_BuildChanging(int value);
-    partial void OnCompatibility_BuildChanged();
-    partial void OnCompatibility_RevisionChanging(int value);
-    partial void OnCompatibility_RevisionChanged();
-    partial void OnContent_HashChanging(string value);
-    partial void OnContent_HashChanged();
-    partial void OnHash_AlgorithmChanging(int value);
-    partial void OnHash_AlgorithmChanged();
-    partial void OnExtension_TypeChanging(int value);
-    partial void OnExtension_TypeChanged();
+    partial void OnVersionMajorChanging(int value);
+    partial void OnVersionMajorChanged();
+    partial void OnVersionMinorChanging(int value);
+    partial void OnVersionMinorChanged();
+    partial void OnVersionBuildChanging(int value);
+    partial void OnVersionBuildChanged();
+    partial void OnVersionRevisionChanging(int value);
+    partial void OnVersionRevisionChanged();
+    partial void OnCompatibilityMajorChanging(int value);
+    partial void OnCompatibilityMajorChanged();
+    partial void OnCompatibilityMinorChanging(int value);
+    partial void OnCompatibilityMinorChanged();
+    partial void OnCompatibilityBuildChanging(int value);
+    partial void OnCompatibilityBuildChanged();
+    partial void OnCompatibilityRevisionChanging(int value);
+    partial void OnCompatibilityRevisionChanged();
+    partial void OnContentHashChanging(string value);
+    partial void OnContentHashChanged();
+    partial void OnHashAlgorithmChanging(int value);
+    partial void OnHashAlgorithmChanged();
+    partial void OnExtensionTypeChanging(int value);
+    partial void OnExtensionTypeChanged();
     #endregion
 		
-		public NAV_App_Installed_App()
+		public NAVAppInstalledApp()
 		{
-			this._NAV_App = default(EntityRef<NAV_App>);
+			this._NAV_App = default(EntityRef<NAVApp>);
 			OnCreated();
 		}
 		
@@ -2813,7 +2813,7 @@ namespace Nav.API.SQL
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[App ID]", Storage="_App_ID", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true, UpdateCheck=UpdateCheck.Never)]
-		public System.Guid App_ID
+		public System.Guid AppID
 		{
 			get
 			{
@@ -2823,17 +2823,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._App_ID != value))
 				{
-					this.OnApp_IDChanging(value);
+					this.OnAppIDChanging(value);
 					this.SendPropertyChanging();
 					this._App_ID = value;
-					this.SendPropertyChanged("App_ID");
-					this.OnApp_IDChanged();
+					this.SendPropertyChanged("AppID");
+					this.OnAppIDChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Package ID]", Storage="_Package_ID", DbType="UniqueIdentifier NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public System.Guid Package_ID
+		public System.Guid PackageID
 		{
 			get
 			{
@@ -2843,11 +2843,11 @@ namespace Nav.API.SQL
 			{
 				if ((this._Package_ID != value))
 				{
-					this.OnPackage_IDChanging(value);
+					this.OnPackageIDChanging(value);
 					this.SendPropertyChanging();
 					this._Package_ID = value;
-					this.SendPropertyChanged("Package_ID");
-					this.OnPackage_IDChanged();
+					this.SendPropertyChanged("PackageID");
+					this.OnPackageIDChanged();
 				}
 			}
 		}
@@ -2893,7 +2893,7 @@ namespace Nav.API.SQL
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Version Major]", Storage="_Version_Major", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Version_Major
+		public int VersionMajor
 		{
 			get
 			{
@@ -2903,17 +2903,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Version_Major != value))
 				{
-					this.OnVersion_MajorChanging(value);
+					this.OnVersionMajorChanging(value);
 					this.SendPropertyChanging();
 					this._Version_Major = value;
-					this.SendPropertyChanged("Version_Major");
-					this.OnVersion_MajorChanged();
+					this.SendPropertyChanged("VersionMajor");
+					this.OnVersionMajorChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Version Minor]", Storage="_Version_Minor", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Version_Minor
+		public int VersionMinor
 		{
 			get
 			{
@@ -2923,17 +2923,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Version_Minor != value))
 				{
-					this.OnVersion_MinorChanging(value);
+					this.OnVersionMinorChanging(value);
 					this.SendPropertyChanging();
 					this._Version_Minor = value;
-					this.SendPropertyChanged("Version_Minor");
-					this.OnVersion_MinorChanged();
+					this.SendPropertyChanged("VersionMinor");
+					this.OnVersionMinorChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Version Build]", Storage="_Version_Build", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Version_Build
+		public int VersionBuild
 		{
 			get
 			{
@@ -2943,17 +2943,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Version_Build != value))
 				{
-					this.OnVersion_BuildChanging(value);
+					this.OnVersionBuildChanging(value);
 					this.SendPropertyChanging();
 					this._Version_Build = value;
-					this.SendPropertyChanged("Version_Build");
-					this.OnVersion_BuildChanged();
+					this.SendPropertyChanged("VersionBuild");
+					this.OnVersionBuildChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Version Revision]", Storage="_Version_Revision", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Version_Revision
+		public int VersionRevision
 		{
 			get
 			{
@@ -2963,17 +2963,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Version_Revision != value))
 				{
-					this.OnVersion_RevisionChanging(value);
+					this.OnVersionRevisionChanging(value);
 					this.SendPropertyChanging();
 					this._Version_Revision = value;
-					this.SendPropertyChanged("Version_Revision");
-					this.OnVersion_RevisionChanged();
+					this.SendPropertyChanged("VersionRevision");
+					this.OnVersionRevisionChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Compatibility Major]", Storage="_Compatibility_Major", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Compatibility_Major
+		public int CompatibilityMajor
 		{
 			get
 			{
@@ -2983,17 +2983,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Compatibility_Major != value))
 				{
-					this.OnCompatibility_MajorChanging(value);
+					this.OnCompatibilityMajorChanging(value);
 					this.SendPropertyChanging();
 					this._Compatibility_Major = value;
-					this.SendPropertyChanged("Compatibility_Major");
-					this.OnCompatibility_MajorChanged();
+					this.SendPropertyChanged("CompatibilityMajor");
+					this.OnCompatibilityMajorChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Compatibility Minor]", Storage="_Compatibility_Minor", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Compatibility_Minor
+		public int CompatibilityMinor
 		{
 			get
 			{
@@ -3003,17 +3003,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Compatibility_Minor != value))
 				{
-					this.OnCompatibility_MinorChanging(value);
+					this.OnCompatibilityMinorChanging(value);
 					this.SendPropertyChanging();
 					this._Compatibility_Minor = value;
-					this.SendPropertyChanged("Compatibility_Minor");
-					this.OnCompatibility_MinorChanged();
+					this.SendPropertyChanged("CompatibilityMinor");
+					this.OnCompatibilityMinorChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Compatibility Build]", Storage="_Compatibility_Build", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Compatibility_Build
+		public int CompatibilityBuild
 		{
 			get
 			{
@@ -3023,17 +3023,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Compatibility_Build != value))
 				{
-					this.OnCompatibility_BuildChanging(value);
+					this.OnCompatibilityBuildChanging(value);
 					this.SendPropertyChanging();
 					this._Compatibility_Build = value;
-					this.SendPropertyChanged("Compatibility_Build");
-					this.OnCompatibility_BuildChanged();
+					this.SendPropertyChanged("CompatibilityBuild");
+					this.OnCompatibilityBuildChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Compatibility Revision]", Storage="_Compatibility_Revision", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Compatibility_Revision
+		public int CompatibilityRevision
 		{
 			get
 			{
@@ -3043,17 +3043,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Compatibility_Revision != value))
 				{
-					this.OnCompatibility_RevisionChanging(value);
+					this.OnCompatibilityRevisionChanging(value);
 					this.SendPropertyChanging();
 					this._Compatibility_Revision = value;
-					this.SendPropertyChanged("Compatibility_Revision");
-					this.OnCompatibility_RevisionChanged();
+					this.SendPropertyChanged("CompatibilityRevision");
+					this.OnCompatibilityRevisionChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Content Hash]", Storage="_Content_Hash", DbType="NVarChar(250) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string Content_Hash
+		public string ContentHash
 		{
 			get
 			{
@@ -3063,17 +3063,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Content_Hash != value))
 				{
-					this.OnContent_HashChanging(value);
+					this.OnContentHashChanging(value);
 					this.SendPropertyChanging();
 					this._Content_Hash = value;
-					this.SendPropertyChanged("Content_Hash");
-					this.OnContent_HashChanged();
+					this.SendPropertyChanged("ContentHash");
+					this.OnContentHashChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Hash Algorithm]", Storage="_Hash_Algorithm", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Hash_Algorithm
+		public int HashAlgorithm
 		{
 			get
 			{
@@ -3083,17 +3083,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Hash_Algorithm != value))
 				{
-					this.OnHash_AlgorithmChanging(value);
+					this.OnHashAlgorithmChanging(value);
 					this.SendPropertyChanging();
 					this._Hash_Algorithm = value;
-					this.SendPropertyChanged("Hash_Algorithm");
-					this.OnHash_AlgorithmChanged();
+					this.SendPropertyChanged("HashAlgorithm");
+					this.OnHashAlgorithmChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Extension Type]", Storage="_Extension_Type", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Extension_Type
+		public int ExtensionType
 		{
 			get
 			{
@@ -3103,17 +3103,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Extension_Type != value))
 				{
-					this.OnExtension_TypeChanging(value);
+					this.OnExtensionTypeChanging(value);
 					this.SendPropertyChanging();
 					this._Extension_Type = value;
-					this.SendPropertyChanged("Extension_Type");
-					this.OnExtension_TypeChanged();
+					this.SendPropertyChanged("ExtensionType");
+					this.OnExtensionTypeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAV_App_NAV_App_Installed_App", Storage="_NAV_App", ThisKey="App_ID,Package_ID", OtherKey="ID,Package_ID", IsForeignKey=true)]
-		public NAV_App NAV_App
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAVApp_NAVAppInstalledApp", Storage="_NAV_App", ThisKey="AppID,PackageID", OtherKey="ID,PackageID", IsForeignKey=true)]
+		public NAVApp NAVApp
 		{
 			get
 			{
@@ -3121,7 +3121,7 @@ namespace Nav.API.SQL
 			}
 			set
 			{
-				NAV_App previousValue = this._NAV_App.Entity;
+				NAVApp previousValue = this._NAV_App.Entity;
 				if (((previousValue != value) 
 							|| (this._NAV_App.HasLoadedOrAssignedValue == false)))
 				{
@@ -3129,21 +3129,21 @@ namespace Nav.API.SQL
 					if ((previousValue != null))
 					{
 						this._NAV_App.Entity = null;
-						previousValue.NAV_App_Installed_App.Remove(this);
+						previousValue.NAVAppInstalledApp.Remove(this);
 					}
 					this._NAV_App.Entity = value;
 					if ((value != null))
 					{
-						value.NAV_App_Installed_App.Add(this);
+						value.NAVAppInstalledApp.Add(this);
 						this._App_ID = value.ID;
-						this._Package_ID = value.Package_ID;
+						this._Package_ID = value.PackageID;
 					}
 					else
 					{
 						this._App_ID = default(System.Guid);
 						this._Package_ID = default(System.Guid);
 					}
-					this.SendPropertyChanged("NAV_App");
+					this.SendPropertyChanged("NAVApp");
 				}
 			}
 		}
@@ -3170,7 +3170,7 @@ namespace Nav.API.SQL
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[NAV App Object Metadata]")]
-	public partial class NAV_App_Object_Metadata : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class NAVAppObjectMetadata : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -3199,7 +3199,7 @@ namespace Nav.API.SQL
 		
 		private string _Metadata_Hash;
 		
-		private EntityRef<NAV_App> _NAV_App;
+		private EntityRef<NAVApp> _NAV_App;
 		
     #region Definitionen der Erweiterungsmethoden
     partial void OnLoaded();
@@ -3207,33 +3207,33 @@ namespace Nav.API.SQL
     partial void OnCreated();
     partial void OntimestampChanging(System.Data.Linq.Binary value);
     partial void OntimestampChanged();
-    partial void OnApp_Package_IDChanging(System.Guid value);
-    partial void OnApp_Package_IDChanged();
-    partial void OnObject_TypeChanging(int value);
-    partial void OnObject_TypeChanged();
-    partial void OnObject_IDChanging(int value);
-    partial void OnObject_IDChanged();
+    partial void OnAppPackageIDChanging(System.Guid value);
+    partial void OnAppPackageIDChanged();
+    partial void OnObjectTypeChanging(int value);
+    partial void OnObjectTypeChanged();
+    partial void OnObjectIDChanging(int value);
+    partial void OnObjectIDChanged();
     partial void OnMetadata_FormatChanging(int value);
     partial void OnMetadata_FormatChanged();
     partial void OnMetadataChanging(System.Data.Linq.Binary value);
     partial void OnMetadataChanged();
-    partial void OnUser_CodeChanging(System.Data.Linq.Binary value);
-    partial void OnUser_CodeChanged();
-    partial void OnUser_AL_CodeChanging(System.Data.Linq.Binary value);
-    partial void OnUser_AL_CodeChanged();
-    partial void OnMetadata_VersionChanging(int value);
-    partial void OnMetadata_VersionChanged();
-    partial void OnObject_SubtypeChanging(string value);
-    partial void OnObject_SubtypeChanged();
-    partial void OnObject_NameChanging(string value);
-    partial void OnObject_NameChanged();
-    partial void OnMetadata_HashChanging(string value);
-    partial void OnMetadata_HashChanged();
+    partial void OnUserCodeChanging(System.Data.Linq.Binary value);
+    partial void OnUserCodeChanged();
+    partial void OnUserALCodeChanging(System.Data.Linq.Binary value);
+    partial void OnUserALCodeChanged();
+    partial void OnMetadataVersionChanging(int value);
+    partial void OnMetadataVersionChanged();
+    partial void OnObjectSubtypeChanging(string value);
+    partial void OnObjectSubtypeChanged();
+    partial void OnObjectNameChanging(string value);
+    partial void OnObjectNameChanged();
+    partial void OnMetadataHashChanging(string value);
+    partial void OnMetadataHashChanged();
     #endregion
 		
-		public NAV_App_Object_Metadata()
+		public NAVAppObjectMetadata()
 		{
-			this._NAV_App = default(EntityRef<NAV_App>);
+			this._NAV_App = default(EntityRef<NAVApp>);
 			OnCreated();
 		}
 		
@@ -3258,7 +3258,7 @@ namespace Nav.API.SQL
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[App Package ID]", Storage="_App_Package_ID", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true, UpdateCheck=UpdateCheck.Never)]
-		public System.Guid App_Package_ID
+		public System.Guid AppPackageID
 		{
 			get
 			{
@@ -3268,17 +3268,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._App_Package_ID != value))
 				{
-					this.OnApp_Package_IDChanging(value);
+					this.OnAppPackageIDChanging(value);
 					this.SendPropertyChanging();
 					this._App_Package_ID = value;
-					this.SendPropertyChanged("App_Package_ID");
-					this.OnApp_Package_IDChanged();
+					this.SendPropertyChanged("AppPackageID");
+					this.OnAppPackageIDChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Object Type]", Storage="_Object_Type", DbType="Int NOT NULL", IsPrimaryKey=true, UpdateCheck=UpdateCheck.Never)]
-		public int Object_Type
+		public int ObjectType
 		{
 			get
 			{
@@ -3288,17 +3288,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Object_Type != value))
 				{
-					this.OnObject_TypeChanging(value);
+					this.OnObjectTypeChanging(value);
 					this.SendPropertyChanging();
 					this._Object_Type = value;
-					this.SendPropertyChanged("Object_Type");
-					this.OnObject_TypeChanged();
+					this.SendPropertyChanged("ObjectType");
+					this.OnObjectTypeChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Object ID]", Storage="_Object_ID", DbType="Int NOT NULL", IsPrimaryKey=true, UpdateCheck=UpdateCheck.Never)]
-		public int Object_ID
+		public int ObjectID
 		{
 			get
 			{
@@ -3308,11 +3308,11 @@ namespace Nav.API.SQL
 			{
 				if ((this._Object_ID != value))
 				{
-					this.OnObject_IDChanging(value);
+					this.OnObjectIDChanging(value);
 					this.SendPropertyChanging();
 					this._Object_ID = value;
-					this.SendPropertyChanged("Object_ID");
-					this.OnObject_IDChanged();
+					this.SendPropertyChanged("ObjectID");
+					this.OnObjectIDChanged();
 				}
 			}
 		}
@@ -3358,7 +3358,7 @@ namespace Nav.API.SQL
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[User Code]", Storage="_User_Code", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary User_Code
+		public System.Data.Linq.Binary UserCode
 		{
 			get
 			{
@@ -3368,17 +3368,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._User_Code != value))
 				{
-					this.OnUser_CodeChanging(value);
+					this.OnUserCodeChanging(value);
 					this.SendPropertyChanging();
 					this._User_Code = value;
-					this.SendPropertyChanged("User_Code");
-					this.OnUser_CodeChanged();
+					this.SendPropertyChanged("UserCode");
+					this.OnUserCodeChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[User AL Code]", Storage="_User_AL_Code", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary User_AL_Code
+		public System.Data.Linq.Binary UserALCode
 		{
 			get
 			{
@@ -3388,17 +3388,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._User_AL_Code != value))
 				{
-					this.OnUser_AL_CodeChanging(value);
+					this.OnUserALCodeChanging(value);
 					this.SendPropertyChanging();
 					this._User_AL_Code = value;
-					this.SendPropertyChanged("User_AL_Code");
-					this.OnUser_AL_CodeChanged();
+					this.SendPropertyChanged("UserALCode");
+					this.OnUserALCodeChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Metadata Version]", Storage="_Metadata_Version", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public int Metadata_Version
+		public int MetadataVersion
 		{
 			get
 			{
@@ -3408,17 +3408,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Metadata_Version != value))
 				{
-					this.OnMetadata_VersionChanging(value);
+					this.OnMetadataVersionChanging(value);
 					this.SendPropertyChanging();
 					this._Metadata_Version = value;
-					this.SendPropertyChanged("Metadata_Version");
-					this.OnMetadata_VersionChanged();
+					this.SendPropertyChanged("MetadataVersion");
+					this.OnMetadataVersionChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Object Subtype]", Storage="_Object_Subtype", DbType="NVarChar(30) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string Object_Subtype
+		public string ObjectSubtype
 		{
 			get
 			{
@@ -3428,17 +3428,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Object_Subtype != value))
 				{
-					this.OnObject_SubtypeChanging(value);
+					this.OnObjectSubtypeChanging(value);
 					this.SendPropertyChanging();
 					this._Object_Subtype = value;
-					this.SendPropertyChanged("Object_Subtype");
-					this.OnObject_SubtypeChanged();
+					this.SendPropertyChanged("ObjectSubtype");
+					this.OnObjectSubtypeChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Object Name]", Storage="_Object_Name", DbType="NVarChar(30) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string Object_Name
+		public string ObjectName
 		{
 			get
 			{
@@ -3448,17 +3448,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Object_Name != value))
 				{
-					this.OnObject_NameChanging(value);
+					this.OnObjectNameChanging(value);
 					this.SendPropertyChanging();
 					this._Object_Name = value;
-					this.SendPropertyChanged("Object_Name");
-					this.OnObject_NameChanged();
+					this.SendPropertyChanged("ObjectName");
+					this.OnObjectNameChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Metadata Hash]", Storage="_Metadata_Hash", DbType="NVarChar(50) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string Metadata_Hash
+		public string MetadataHash
 		{
 			get
 			{
@@ -3468,17 +3468,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Metadata_Hash != value))
 				{
-					this.OnMetadata_HashChanging(value);
+					this.OnMetadataHashChanging(value);
 					this.SendPropertyChanging();
 					this._Metadata_Hash = value;
-					this.SendPropertyChanged("Metadata_Hash");
-					this.OnMetadata_HashChanged();
+					this.SendPropertyChanged("MetadataHash");
+					this.OnMetadataHashChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAV_App_NAV_App_Object_Metadata", Storage="_NAV_App", ThisKey="App_Package_ID", OtherKey="Package_ID", IsForeignKey=true)]
-		public NAV_App NAV_App
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAVApp_NAVAppObjectMetadata", Storage="_NAV_App", ThisKey="AppPackageID", OtherKey="PackageID", IsForeignKey=true)]
+		public NAVApp NAVApp
 		{
 			get
 			{
@@ -3486,7 +3486,7 @@ namespace Nav.API.SQL
 			}
 			set
 			{
-				NAV_App previousValue = this._NAV_App.Entity;
+				NAVApp previousValue = this._NAV_App.Entity;
 				if (((previousValue != value) 
 							|| (this._NAV_App.HasLoadedOrAssignedValue == false)))
 				{
@@ -3494,19 +3494,19 @@ namespace Nav.API.SQL
 					if ((previousValue != null))
 					{
 						this._NAV_App.Entity = null;
-						previousValue.NAV_App_Object_Metadata.Remove(this);
+						previousValue.NAVAppObjectMetadata.Remove(this);
 					}
 					this._NAV_App.Entity = value;
 					if ((value != null))
 					{
-						value.NAV_App_Object_Metadata.Add(this);
-						this._App_Package_ID = value.Package_ID;
+						value.NAVAppObjectMetadata.Add(this);
+						this._App_Package_ID = value.PackageID;
 					}
 					else
 					{
 						this._App_Package_ID = default(System.Guid);
 					}
-					this.SendPropertyChanged("NAV_App");
+					this.SendPropertyChanged("NAVApp");
 				}
 			}
 		}
@@ -3533,7 +3533,7 @@ namespace Nav.API.SQL
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[NAV App Object Prerequisites]")]
-	public partial class NAV_App_Object_Prerequisites : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class NAVAppObjectPrerequisites : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -3546,7 +3546,7 @@ namespace Nav.API.SQL
 		
 		private int _ID;
 		
-		private EntityRef<NAV_App> _NAV_App;
+		private EntityRef<NAVApp> _NAV_App;
 		
     #region Definitionen der Erweiterungsmethoden
     partial void OnLoaded();
@@ -3554,17 +3554,17 @@ namespace Nav.API.SQL
     partial void OnCreated();
     partial void OntimestampChanging(System.Data.Linq.Binary value);
     partial void OntimestampChanged();
-    partial void OnPackage_IDChanging(System.Guid value);
-    partial void OnPackage_IDChanged();
+    partial void OnPackageIDChanging(System.Guid value);
+    partial void OnPackageIDChanged();
     partial void OnTypeChanging(int value);
     partial void OnTypeChanged();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
     #endregion
 		
-		public NAV_App_Object_Prerequisites()
+		public NAVAppObjectPrerequisites()
 		{
-			this._NAV_App = default(EntityRef<NAV_App>);
+			this._NAV_App = default(EntityRef<NAVApp>);
 			OnCreated();
 		}
 		
@@ -3589,7 +3589,7 @@ namespace Nav.API.SQL
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Package ID]", Storage="_Package_ID", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true, UpdateCheck=UpdateCheck.Never)]
-		public System.Guid Package_ID
+		public System.Guid PackageID
 		{
 			get
 			{
@@ -3599,11 +3599,11 @@ namespace Nav.API.SQL
 			{
 				if ((this._Package_ID != value))
 				{
-					this.OnPackage_IDChanging(value);
+					this.OnPackageIDChanging(value);
 					this.SendPropertyChanging();
 					this._Package_ID = value;
-					this.SendPropertyChanged("Package_ID");
-					this.OnPackage_IDChanged();
+					this.SendPropertyChanged("PackageID");
+					this.OnPackageIDChanged();
 				}
 			}
 		}
@@ -3648,8 +3648,8 @@ namespace Nav.API.SQL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAV_App_NAV_App_Object_Prerequisites", Storage="_NAV_App", ThisKey="Package_ID", OtherKey="Package_ID", IsForeignKey=true)]
-		public NAV_App NAV_App
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAVApp_NAVAppObjectPrerequisites", Storage="_NAV_App", ThisKey="PackageID", OtherKey="PackageID", IsForeignKey=true)]
+		public NAVApp NAVApp
 		{
 			get
 			{
@@ -3657,7 +3657,7 @@ namespace Nav.API.SQL
 			}
 			set
 			{
-				NAV_App previousValue = this._NAV_App.Entity;
+				NAVApp previousValue = this._NAV_App.Entity;
 				if (((previousValue != value) 
 							|| (this._NAV_App.HasLoadedOrAssignedValue == false)))
 				{
@@ -3665,19 +3665,19 @@ namespace Nav.API.SQL
 					if ((previousValue != null))
 					{
 						this._NAV_App.Entity = null;
-						previousValue.NAV_App_Object_Prerequisites.Remove(this);
+						previousValue.NAVAppObjectPrerequisites.Remove(this);
 					}
 					this._NAV_App.Entity = value;
 					if ((value != null))
 					{
-						value.NAV_App_Object_Prerequisites.Add(this);
-						this._Package_ID = value.Package_ID;
+						value.NAVAppObjectPrerequisites.Add(this);
+						this._Package_ID = value.PackageID;
 					}
 					else
 					{
 						this._Package_ID = default(System.Guid);
 					}
-					this.SendPropertyChanged("NAV_App");
+					this.SendPropertyChanged("NAVApp");
 				}
 			}
 		}
@@ -3704,7 +3704,7 @@ namespace Nav.API.SQL
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[NAV App Resource]")]
-	public partial class NAV_App_Resource : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class NAVAppResource : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -3719,7 +3719,7 @@ namespace Nav.API.SQL
 		
 		private System.Data.Linq.Binary _Content;
 		
-		private EntityRef<NAV_App> _NAV_App;
+		private EntityRef<NAVApp> _NAV_App;
 		
     #region Definitionen der Erweiterungsmethoden
     partial void OnLoaded();
@@ -3727,8 +3727,8 @@ namespace Nav.API.SQL
     partial void OnCreated();
     partial void OntimestampChanging(System.Data.Linq.Binary value);
     partial void OntimestampChanged();
-    partial void OnPackage_IDChanging(System.Guid value);
-    partial void OnPackage_IDChanged();
+    partial void OnPackageIDChanging(System.Guid value);
+    partial void OnPackageIDChanged();
     partial void OnTypeChanging(int value);
     partial void OnTypeChanged();
     partial void OnNameChanging(string value);
@@ -3737,9 +3737,9 @@ namespace Nav.API.SQL
     partial void OnContentChanged();
     #endregion
 		
-		public NAV_App_Resource()
+		public NAVAppResource()
 		{
-			this._NAV_App = default(EntityRef<NAV_App>);
+			this._NAV_App = default(EntityRef<NAVApp>);
 			OnCreated();
 		}
 		
@@ -3764,7 +3764,7 @@ namespace Nav.API.SQL
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Package ID]", Storage="_Package_ID", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true, UpdateCheck=UpdateCheck.Never)]
-		public System.Guid Package_ID
+		public System.Guid PackageID
 		{
 			get
 			{
@@ -3774,11 +3774,11 @@ namespace Nav.API.SQL
 			{
 				if ((this._Package_ID != value))
 				{
-					this.OnPackage_IDChanging(value);
+					this.OnPackageIDChanging(value);
 					this.SendPropertyChanging();
 					this._Package_ID = value;
-					this.SendPropertyChanged("Package_ID");
-					this.OnPackage_IDChanged();
+					this.SendPropertyChanged("PackageID");
+					this.OnPackageIDChanged();
 				}
 			}
 		}
@@ -3843,8 +3843,8 @@ namespace Nav.API.SQL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAV_App_NAV_App_Resource", Storage="_NAV_App", ThisKey="Package_ID", OtherKey="Package_ID", IsForeignKey=true)]
-		public NAV_App NAV_App
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAVApp_NAVAppResource", Storage="_NAV_App", ThisKey="PackageID", OtherKey="PackageID", IsForeignKey=true)]
+		public NAVApp NAVApp
 		{
 			get
 			{
@@ -3852,7 +3852,7 @@ namespace Nav.API.SQL
 			}
 			set
 			{
-				NAV_App previousValue = this._NAV_App.Entity;
+				NAVApp previousValue = this._NAV_App.Entity;
 				if (((previousValue != value) 
 							|| (this._NAV_App.HasLoadedOrAssignedValue == false)))
 				{
@@ -3860,19 +3860,19 @@ namespace Nav.API.SQL
 					if ((previousValue != null))
 					{
 						this._NAV_App.Entity = null;
-						previousValue.NAV_App_Resource.Remove(this);
+						previousValue.NAVAppResource.Remove(this);
 					}
 					this._NAV_App.Entity = value;
 					if ((value != null))
 					{
-						value.NAV_App_Resource.Add(this);
-						this._Package_ID = value.Package_ID;
+						value.NAVAppResource.Add(this);
+						this._Package_ID = value.PackageID;
 					}
 					else
 					{
 						this._Package_ID = default(System.Guid);
 					}
-					this.SendPropertyChanged("NAV_App");
+					this.SendPropertyChanged("NAVApp");
 				}
 			}
 		}
@@ -3899,7 +3899,7 @@ namespace Nav.API.SQL
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[NAV App Tenant Add-In]")]
-	public partial class NAV_App_Tenant_Add_In : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class NAVAppTenantAddIn : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -3920,7 +3920,7 @@ namespace Nav.API.SQL
 		
 		private System.Data.Linq.Binary _Resource;
 		
-		private EntityRef<NAV_App> _NAV_App;
+		private EntityRef<NAVApp> _NAV_App;
 		
     #region Definitionen der Erweiterungsmethoden
     partial void OnLoaded();
@@ -3928,12 +3928,12 @@ namespace Nav.API.SQL
     partial void OnCreated();
     partial void OntimestampChanging(System.Data.Linq.Binary value);
     partial void OntimestampChanged();
-    partial void OnApp_IDChanging(System.Guid value);
-    partial void OnApp_IDChanged();
-    partial void OnAdd_In_NameChanging(string value);
-    partial void OnAdd_In_NameChanged();
-    partial void OnPublic_Key_TokenChanging(string value);
-    partial void OnPublic_Key_TokenChanged();
+    partial void OnAppIDChanging(System.Guid value);
+    partial void OnAppIDChanged();
+    partial void OnAddInNameChanging(string value);
+    partial void OnAddInNameChanged();
+    partial void OnPublicKeyTokenChanging(string value);
+    partial void OnPublicKeyTokenChanged();
     partial void OnVersionChanging(string value);
     partial void OnVersionChanged();
     partial void OnCategoryChanging(int value);
@@ -3944,9 +3944,9 @@ namespace Nav.API.SQL
     partial void OnResourceChanged();
     #endregion
 		
-		public NAV_App_Tenant_Add_In()
+		public NAVAppTenantAddIn()
 		{
-			this._NAV_App = default(EntityRef<NAV_App>);
+			this._NAV_App = default(EntityRef<NAVApp>);
 			OnCreated();
 		}
 		
@@ -3971,7 +3971,7 @@ namespace Nav.API.SQL
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[App ID]", Storage="_App_ID", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true, UpdateCheck=UpdateCheck.Never)]
-		public System.Guid App_ID
+		public System.Guid AppID
 		{
 			get
 			{
@@ -3981,17 +3981,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._App_ID != value))
 				{
-					this.OnApp_IDChanging(value);
+					this.OnAppIDChanging(value);
 					this.SendPropertyChanging();
 					this._App_ID = value;
-					this.SendPropertyChanged("App_ID");
-					this.OnApp_IDChanged();
+					this.SendPropertyChanged("AppID");
+					this.OnAppIDChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Add-In Name]", Storage="_Add_In_Name", DbType="NVarChar(220) NOT NULL", CanBeNull=false, IsPrimaryKey=true, UpdateCheck=UpdateCheck.Never)]
-		public string Add_In_Name
+		public string AddInName
 		{
 			get
 			{
@@ -4001,17 +4001,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Add_In_Name != value))
 				{
-					this.OnAdd_In_NameChanging(value);
+					this.OnAddInNameChanging(value);
 					this.SendPropertyChanging();
 					this._Add_In_Name = value;
-					this.SendPropertyChanged("Add_In_Name");
-					this.OnAdd_In_NameChanged();
+					this.SendPropertyChanged("AddInName");
+					this.OnAddInNameChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Public Key Token]", Storage="_Public_Key_Token", DbType="NVarChar(20) NOT NULL", CanBeNull=false, IsPrimaryKey=true, UpdateCheck=UpdateCheck.Never)]
-		public string Public_Key_Token
+		public string PublicKeyToken
 		{
 			get
 			{
@@ -4021,11 +4021,11 @@ namespace Nav.API.SQL
 			{
 				if ((this._Public_Key_Token != value))
 				{
-					this.OnPublic_Key_TokenChanging(value);
+					this.OnPublicKeyTokenChanging(value);
 					this.SendPropertyChanging();
 					this._Public_Key_Token = value;
-					this.SendPropertyChanged("Public_Key_Token");
-					this.OnPublic_Key_TokenChanged();
+					this.SendPropertyChanged("PublicKeyToken");
+					this.OnPublicKeyTokenChanged();
 				}
 			}
 		}
@@ -4110,8 +4110,8 @@ namespace Nav.API.SQL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAV_App_NAV_App_Tenant_Add_In", Storage="_NAV_App", ThisKey="App_ID", OtherKey="ID", IsForeignKey=true)]
-		public NAV_App NAV_App
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAVApp_NAVAppTenantAddIn", Storage="_NAV_App", ThisKey="AppID", OtherKey="ID", IsForeignKey=true)]
+		public NAVApp NAVApp
 		{
 			get
 			{
@@ -4119,7 +4119,7 @@ namespace Nav.API.SQL
 			}
 			set
 			{
-				NAV_App previousValue = this._NAV_App.Entity;
+				NAVApp previousValue = this._NAV_App.Entity;
 				if (((previousValue != value) 
 							|| (this._NAV_App.HasLoadedOrAssignedValue == false)))
 				{
@@ -4127,19 +4127,19 @@ namespace Nav.API.SQL
 					if ((previousValue != null))
 					{
 						this._NAV_App.Entity = null;
-						previousValue.NAV_App_Tenant_Add_In.Remove(this);
+						previousValue.NAVAppTenantAddIn.Remove(this);
 					}
 					this._NAV_App.Entity = value;
 					if ((value != null))
 					{
-						value.NAV_App_Tenant_Add_In.Add(this);
+						value.NAVAppTenantAddIn.Add(this);
 						this._App_ID = value.ID;
 					}
 					else
 					{
 						this._App_ID = default(System.Guid);
 					}
-					this.SendPropertyChanged("NAV_App");
+					this.SendPropertyChanged("NAVApp");
 				}
 			}
 		}
@@ -4166,7 +4166,7 @@ namespace Nav.API.SQL
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[NAV App Tenant App]")]
-	public partial class NAV_App_Tenant_App : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class NAVAppTenantApp : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -4177,7 +4177,7 @@ namespace Nav.API.SQL
 		
 		private System.Guid _App_Package_ID;
 		
-		private EntityRef<NAV_App> _NAV_App;
+		private EntityRef<NAVApp> _NAV_App;
 		
     #region Definitionen der Erweiterungsmethoden
     partial void OnLoaded();
@@ -4185,15 +4185,15 @@ namespace Nav.API.SQL
     partial void OnCreated();
     partial void OntimestampChanging(System.Data.Linq.Binary value);
     partial void OntimestampChanged();
-    partial void OnTenant_IDChanging(string value);
-    partial void OnTenant_IDChanged();
-    partial void OnApp_Package_IDChanging(System.Guid value);
-    partial void OnApp_Package_IDChanged();
+    partial void OnTenantIDChanging(string value);
+    partial void OnTenantIDChanged();
+    partial void OnAppPackageIDChanging(System.Guid value);
+    partial void OnAppPackageIDChanged();
     #endregion
 		
-		public NAV_App_Tenant_App()
+		public NAVAppTenantApp()
 		{
-			this._NAV_App = default(EntityRef<NAV_App>);
+			this._NAV_App = default(EntityRef<NAVApp>);
 			OnCreated();
 		}
 		
@@ -4218,7 +4218,7 @@ namespace Nav.API.SQL
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Tenant ID]", Storage="_Tenant_ID", DbType="NVarChar(128) NOT NULL", CanBeNull=false, IsPrimaryKey=true, UpdateCheck=UpdateCheck.Never)]
-		public string Tenant_ID
+		public string TenantID
 		{
 			get
 			{
@@ -4228,17 +4228,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._Tenant_ID != value))
 				{
-					this.OnTenant_IDChanging(value);
+					this.OnTenantIDChanging(value);
 					this.SendPropertyChanging();
 					this._Tenant_ID = value;
-					this.SendPropertyChanged("Tenant_ID");
-					this.OnTenant_IDChanged();
+					this.SendPropertyChanged("TenantID");
+					this.OnTenantIDChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[App Package ID]", Storage="_App_Package_ID", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true, UpdateCheck=UpdateCheck.Never)]
-		public System.Guid App_Package_ID
+		public System.Guid AppPackageID
 		{
 			get
 			{
@@ -4248,17 +4248,17 @@ namespace Nav.API.SQL
 			{
 				if ((this._App_Package_ID != value))
 				{
-					this.OnApp_Package_IDChanging(value);
+					this.OnAppPackageIDChanging(value);
 					this.SendPropertyChanging();
 					this._App_Package_ID = value;
-					this.SendPropertyChanged("App_Package_ID");
-					this.OnApp_Package_IDChanged();
+					this.SendPropertyChanged("AppPackageID");
+					this.OnAppPackageIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAV_App_NAV_App_Tenant_App", Storage="_NAV_App", ThisKey="App_Package_ID,Tenant_ID", OtherKey="Package_ID,Tenant_ID", IsForeignKey=true)]
-		public NAV_App NAV_App
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NAVApp_NAVAppTenantApp", Storage="_NAV_App", ThisKey="AppPackageID,TenantID", OtherKey="PackageID,TenantID", IsForeignKey=true)]
+		public NAVApp NAVApp
 		{
 			get
 			{
@@ -4266,7 +4266,7 @@ namespace Nav.API.SQL
 			}
 			set
 			{
-				NAV_App previousValue = this._NAV_App.Entity;
+				NAVApp previousValue = this._NAV_App.Entity;
 				if (((previousValue != value) 
 							|| (this._NAV_App.HasLoadedOrAssignedValue == false)))
 				{
@@ -4274,21 +4274,21 @@ namespace Nav.API.SQL
 					if ((previousValue != null))
 					{
 						this._NAV_App.Entity = null;
-						previousValue.NAV_App_Tenant_App.Remove(this);
+						previousValue.NAVAppTenantApp.Remove(this);
 					}
 					this._NAV_App.Entity = value;
 					if ((value != null))
 					{
-						value.NAV_App_Tenant_App.Add(this);
-						this._App_Package_ID = value.Package_ID;
-						this._Tenant_ID = value.Tenant_ID;
+						value.NAVAppTenantApp.Add(this);
+						this._App_Package_ID = value.PackageID;
+						this._Tenant_ID = value.TenantID;
 					}
 					else
 					{
 						this._App_Package_ID = default(System.Guid);
 						this._Tenant_ID = default(string);
 					}
-					this.SendPropertyChanged("NAV_App");
+					this.SendPropertyChanged("NAVApp");
 				}
 			}
 		}

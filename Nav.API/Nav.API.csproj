@@ -44,19 +44,16 @@
   <ItemGroup>
     <Compile Include="Manager.cs" />
     <Compile Include="NavObjectHandler.cs" />
-    <Compile Include="Database\Database.cs" />
     <Compile Include="Interfaces\IObjectRecord.cs" />
     <Compile Include="Interfaces\IObjectMetadata.cs" />
     <Compile Include="Interfaces\IDatabaseContext.cs" />
-    <Compile Include="Database\Metadata.cs" />
-    <Compile Include="Database\Object.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="SQL\Database.designer.cs">
+    <Compile Include="Database.designer.cs">
       <DependentUpon>Database.dbml</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -64,12 +61,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="SQL\Database.dbml">
+    <None Include="Database.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>Database.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="SQL\Database.dbml.layout">
+    <None Include="Database.dbml.layout">
       <DependentUpon>Database.dbml</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
