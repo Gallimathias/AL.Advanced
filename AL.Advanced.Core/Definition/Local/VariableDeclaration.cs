@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AL.Advanced.Core.Definition.Local
 {
-    internal class VariableDeclaration : Statement
+    internal abstract class VariableDeclaration : Statement
     {
     }
 }

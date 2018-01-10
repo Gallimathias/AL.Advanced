@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AL.Advanced.Core.Definition.Global
 {
-    internal class Method : Member
+    internal abstract class Method : Member
     {
     }
 }
