@@ -162,7 +162,7 @@
       <Project>{4aed056c-91d2-4f8c-a59b-897ed207d330}</Project>
       <Name>Compiler.API</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nav_API\Nav.API.csproj">
+    <ProjectReference Include="..\Nav.API\Nav.API.csproj">
       <Project>{A013CD46-A43F-4963-9992-65961C8FDCF1}</Project>
       <Name>Nav.API</Name>
     </ProjectReference>
