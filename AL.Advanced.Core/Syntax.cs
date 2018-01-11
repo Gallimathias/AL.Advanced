@@ -4,13 +4,13 @@ using System.Text;
 
 namespace AL.Advanced.Core
 {
-    public abstract class Syntax
+    public abstract class Syntax<TNode>
     {
-        public abstract void Parse();
-        public abstract void TryParse();
+        public abstract void Parse(TNode root);
+        public abstract void TryParse(TNode root);
 
-        public abstract bool Check();
+        public abstract bool Check(TNode root);
 
-        public abstract string AsString();
+        public abstract string ToText();
     }
 }

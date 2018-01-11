@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AL.Advanced.Core.Definition
 {
-    public abstract class Member : Syntax
+    public abstract class Member<TNode> : Syntax<TNode>
     {
     }
 }
