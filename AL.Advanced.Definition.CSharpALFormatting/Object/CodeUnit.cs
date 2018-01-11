@@ -11,5 +11,25 @@ namespace AL.Advanced.Definition.CSharpALFormatting.Object
         {
             ObjectType = ObjectType.CodeUnit;
         }
+
+        public override string AsString()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool Check()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Parse()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void TryParse()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
