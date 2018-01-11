@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AL.Advanced.Core
 {
-    internal abstract class Syntax
+    public abstract class Syntax
     {
     }
 }

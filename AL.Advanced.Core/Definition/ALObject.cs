@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AL.Advanced.Core.Definition
 {
-    internal abstract class ALObject : Syntax
+    public abstract class ALObject : Syntax
     {
         public int ID { get; set; }
         public string Name { get; set; }
