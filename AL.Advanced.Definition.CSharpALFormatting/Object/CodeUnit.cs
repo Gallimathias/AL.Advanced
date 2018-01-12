@@ -6,9 +6,9 @@ using System.Text;
 
 namespace AL.Advanced.Definition.CSharpALFormatting.Object
 {
-    internal class CodeUnit : ALObject<MemberDeclarationSyntax>
+    internal class Codeunit : ALObject<MemberDeclarationSyntax>
     {
-        public CodeUnit() : base()
+        public Codeunit() : base()
         {
             ObjectType = ObjectType.CodeUnit;
         }
@@ -28,7 +28,7 @@ namespace AL.Advanced.Definition.CSharpALFormatting.Object
             throw new NotImplementedException();
         }
 
-        public override void TryParse(MemberDeclarationSyntax root)
+        public override bool TryParse(MemberDeclarationSyntax root)
         {
             throw new NotImplementedException();
         }
