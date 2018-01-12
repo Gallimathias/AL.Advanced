@@ -6,8 +6,10 @@ using System.Text;
 
 namespace AL.Advanced.Core
 {
-    public abstract class Scanner<TNode>
+    public abstract class Scanner
     {
+        protected Type nodeType;
+
         public Scanner()
         {
             Initialize();
@@ -17,6 +19,22 @@ namespace AL.Advanced.Core
         {
         }
 
+        public abstract bool TryScan(object member, out Member root);
+    }
+    public abstract class Scanner<TNode> : Scanner
+    {
+        public Scanner()
+        {
+            nodeType = typeof(TNode);
+        }
+
         public abstract bool TryScan(TNode member, out Member<TNode> root);
+
+        public override bool TryScan(object member, out Member root)
+        {
+            var value = TryScan((TNode)member, out Member<TNode> result);
+            root = result;
+            return value;
+        }
     }
 }
