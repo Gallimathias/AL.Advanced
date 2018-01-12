@@ -1,0 +1,50 @@
+﻿using AL.Advanced.Core;
+using AL.Advanced.Core.Definition;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Al.Advanced.Definition.CSharp
+{
+    public class CSharpTree : Tree<CSharpTree>
+    {
+        protected CSharpTree(UnitRoot unitRoot) : base(unitRoot)
+        {
+        }
+
+        public static CSharpTree Parse(string text)
+        {
+            if (TryParse(text, out CSharpTree tree))
+                return tree;
+
+            throw new Exception("Could not parse text");
+        }
+        public static bool TryParse(string text, out CSharpTree tree)
+        {
+            var list = CSharpSyntaxTree.ParseText(text).GetCompilationUnitRoot().Members;
+            var scanner = new CSharpScanner();
+            var tmpList = new List<Member>();
+
+            foreach (NamespaceDeclarationSyntax namespaceDeclarationSyntax in list)
+            {
+                foreach (ClassDeclarationSyntax classDeclaration in namespaceDeclarationSyntax.Members)
+                {
+                    if (scanner.TryScan(classDeclaration, out Member obj))
+                    {
+                        tmpList.Add(obj);
+                    }
+                    else
+                    {
+                        tree = null;
+                        return false;
+                    }
+                }
+            }
+
+            tree = new CSharpTree(new UnitRoot(tmpList));
+            return true;
+        }
+    }
+}

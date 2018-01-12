@@ -8,4 +8,8 @@
     <PackageReference Include="Microsoft.CodeAnalysis" Version="2.6.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AL.Advanced.Core\AL.Advanced.Core.csproj" />
+  </ItemGroup>
+
 </Project>
