@@ -36,9 +36,8 @@ namespace AL.Advanced.Definition.CSharpALFormatting
                 if (typeName.ToLower().StartsWith("nav"))
                     typeName = typeName.Substring(3);
 
-                var obj = (ALObject<MemberDeclarationSyntax>)Activator.CreateInstance(objects[typeName]);
-                root = obj;
-                return obj.TryParse(classDeclaration);
+                root = (ALObject<MemberDeclarationSyntax>)Activator.CreateInstance(objects[typeName]);
+                return root.TryParse(classDeclaration);
             }
 
             return false;
