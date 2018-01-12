@@ -10,15 +10,10 @@ namespace AL.Advanced.Definition.CSharpALFormatting
 {
     public class CSharpALTree : Tree<CSharpALTree>
     {
-        public UnitRoot UnitRoot { get; private set; }
-
-        internal CSharpALTree(UnitRoot unitRoot)
+        protected CSharpALTree(UnitRoot unitRoot) : base(unitRoot)
         {
-            UnitRoot = unitRoot;
         }
-
-        public string ToText() => UnitRoot.ToText().Trim();
-
+        
         public static CSharpALTree Parse(string text)
         {
             if (TryParse(text, out CSharpALTree tree))
