@@ -17,7 +17,7 @@ namespace AL.Advanced.Definition.CSharpALFormatting
             UnitRoot = unitRoot;
         }
 
-        public string ToText() => UnitRoot.ToText();
+        public string ToText() => UnitRoot.ToText().Trim();
 
         public static CSharpALTree Parse(string text)
         {

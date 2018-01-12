@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AL.Advanced.Definition.CSha
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{86196041-FBB2-4C8D-B723-A7A93A6AC422}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompilingTests", "CompilingTests\CompilingTests.csproj", "{A2F1E967-0EF8-44F6-9095-1CFE709383D2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ALFormattingTests", "ALFormattingTests\ALFormattingTests.csproj", "{A2F1E967-0EF8-44F6-9095-1CFE709383D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
