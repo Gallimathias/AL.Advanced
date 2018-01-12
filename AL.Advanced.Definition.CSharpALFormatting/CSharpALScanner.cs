@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace AL.Advanced.Definition.CSharpALFormatting
 {
-    class CSharpALScanner : Scanner<MemberDeclarationSyntax>
+    class CSharpALScanner : Scanner
     {
         private Dictionary<string, Type> objects;
 
@@ -22,7 +22,7 @@ namespace AL.Advanced.Definition.CSharpALFormatting
                 objects.Add(type.Name, type);
         }
 
-        public override bool TryScan(MemberDeclarationSyntax member, out Member<MemberDeclarationSyntax> root)
+        public override bool TryScan(object member, out Member root)
         {
             root = null;
 
@@ -37,8 +37,8 @@ namespace AL.Advanced.Definition.CSharpALFormatting
                     typeName = typeName.Substring(3);
 
                 var obj = (ALObject<MemberDeclarationSyntax>)Activator.CreateInstance(objects[typeName]);
-
-                obj.TryParse(classDeclaration);
+                root = obj;
+                return obj.TryParse(classDeclaration);
             }
 
             return false;
