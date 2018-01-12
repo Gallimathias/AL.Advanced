@@ -6,10 +6,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CompilingTests
 {
     [TestClass]
-    public class CodeUnit_CodeUnit_Empty
+    public class CodeUnit_CodeUnit
     {
         [TestMethod]
-        public void CompileExample()
+        public void Empty()
         {
             var text = File.ReadAllText(@"..\..\..\examples\CSharp-ALFormatting\CodeUnit.cs");
 

@@ -193,7 +193,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CodeUnit_CodeUnit_Empty.cs" />
+    <Compile Include="CodeUnit_CodeUnit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
