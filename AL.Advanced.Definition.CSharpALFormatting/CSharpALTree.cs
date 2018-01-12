@@ -10,6 +10,15 @@ namespace AL.Advanced.Definition.CSharpALFormatting
 {
     public class CSharpALTree : Tree<CSharpALTree>
     {
+        public UnitRoot UnitRoot { get; private set; }
+
+        internal CSharpALTree(UnitRoot unitRoot)
+        {
+            UnitRoot = unitRoot;
+        }
+
+        public string ToText() => UnitRoot.ToText();
+
         public static CSharpALTree Parse(string text)
         {
             if (TryParse(text, out CSharpALTree tree))
@@ -21,16 +30,26 @@ namespace AL.Advanced.Definition.CSharpALFormatting
         {
             var list = CSharpSyntaxTree.ParseText(text).GetCompilationUnitRoot().Members;
             var scanner = new CSharpALScanner();
+            var tmpList = new List<Member>();
 
             foreach (NamespaceDeclarationSyntax namespaceDeclarationSyntax in list)
             {
                 foreach (ClassDeclarationSyntax classDeclaration in namespaceDeclarationSyntax.Members)
                 {
-                    scanner.TryScan(classDeclaration, out Member<MemberDeclarationSyntax>  obj);
+                    if (scanner.TryScan(classDeclaration, out Member obj))
+                    {
+                        tmpList.Add(obj);
+                    }
+                    else
+                    {
+                        tree = null;
+                        return false;
+                    }
                 }
             }
 
-            throw new NotImplementedException();
+            tree = new CSharpALTree(new UnitRoot(tmpList));
+            return true;
         }
     }
 }
