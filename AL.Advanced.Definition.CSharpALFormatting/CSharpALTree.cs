@@ -8,9 +8,9 @@ using System.Text;
 
 namespace AL.Advanced.Definition.CSharpALFormatting
 {
-    public class CSharpALTree : Tree<CSharpALTree>
+    public class CSharpALTree : Tree
     {
-        protected CSharpALTree(UnitRoot unitRoot) : base(unitRoot)
+        public CSharpALTree(UnitRoot unitRoot) : base(unitRoot)
         {
         }
         
@@ -45,6 +45,19 @@ namespace AL.Advanced.Definition.CSharpALFormatting
 
             tree = new CSharpALTree(new UnitRoot(tmpList));
             return true;
+        }
+
+        public override void CopyRoot(UnitRoot unitRoot)
+        {
+            var scanner = new CSharpALScanner();
+
+            foreach (var member in unitRoot.Members)
+            {
+                if (scanner.TryGetCopy(member, out Member newMember))
+                    UnitRoot.Members.Add(newMember);
+                else
+                    throw new Exception("Can not copy Member");
+            }
         }
     }
 }

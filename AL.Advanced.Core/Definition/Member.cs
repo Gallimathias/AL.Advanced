@@ -23,5 +23,6 @@ namespace AL.Advanced.Core.Definition
 
         public abstract bool Check(TNode root);
         public override bool Check(object root) => Check((TNode)root);
+        
     }
 }
