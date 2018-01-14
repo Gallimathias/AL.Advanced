@@ -13,6 +13,23 @@ namespace AL.Advanced.Core
 
         public abstract bool Check(object root);
 
+        public virtual T GetCopyAs<T>() where T : Syntax
+        {
+            var props = typeof(T).GetProperties();
+
+            var newObject = Activator.CreateInstance<T>();
+
+            foreach (var prop in props)
+            {
+                if (!prop.CanRead || !prop.CanWrite)
+                    continue;
+
+                prop.SetValue(newObject, prop.GetValue(this));
+            }
+
+            return newObject;
+        }
+
         public abstract string ToText();
     }
     public abstract class Syntax<TNode> : Syntax

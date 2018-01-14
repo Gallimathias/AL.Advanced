@@ -20,6 +20,8 @@ namespace AL.Advanced.Core
         }
 
         public abstract bool TryScan(object member, out Member root);
+
+        public abstract bool TryGetCopy(object member, out Member copie);
     }
     public abstract class Scanner<TNode> : Scanner
     {
@@ -34,6 +36,15 @@ namespace AL.Advanced.Core
         {
             var value = TryScan((TNode)member, out Member<TNode> result);
             root = result;
+            return value;
+        }
+
+        public abstract bool TryGetCopy(TNode member, out Member<TNode> copie);
+
+        public override bool TryGetCopy(object member, out Member copie)
+        {
+            var value = TryGetCopy((TNode)member, out Member<TNode> result);
+            copie = result;
             return value;
         }
     }

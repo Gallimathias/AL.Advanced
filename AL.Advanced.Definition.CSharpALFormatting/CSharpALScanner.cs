@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
 using System.Linq;
+using AL.Advanced.Definition.CSharpALFormatting.Object;
 
 namespace AL.Advanced.Definition.CSharpALFormatting
 {
@@ -22,6 +23,19 @@ namespace AL.Advanced.Definition.CSharpALFormatting
                 objects.Add(type.Name, type);
         }
 
+        public override bool TryGetCopy(object member, out Member copie)
+        {
+            copie = null;
+
+            if (member is ALObject originObject)
+            {
+                copie = originObject.GetCopyAs<ObjectDeclaration>();
+                return true;
+            }
+
+            return false;
+        }
+
         public override bool TryScan(object member, out Member root)
         {
             root = null;
@@ -36,7 +50,8 @@ namespace AL.Advanced.Definition.CSharpALFormatting
                 if (typeName.ToLower().StartsWith("nav"))
                     typeName = typeName.Substring(3);
 
-                root = (ALObject<MemberDeclarationSyntax>)Activator.CreateInstance(objects[typeName]);
+                root = new ObjectDeclaration((ObjectType)Enum.Parse(typeof(ObjectType), typeName, true));
+
                 return root.TryParse(classDeclaration);
             }
 

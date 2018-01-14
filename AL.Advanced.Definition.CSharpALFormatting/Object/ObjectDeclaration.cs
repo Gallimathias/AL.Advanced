@@ -10,11 +10,14 @@ using Microsoft.CodeAnalysis.CSharp.Formatting;
 
 namespace AL.Advanced.Definition.CSharpALFormatting.Object
 {
-    internal class Codeunit : ALObject<MemberDeclarationSyntax>
+    internal class ObjectDeclaration : ALObject<MemberDeclarationSyntax>
     {
-        public Codeunit() : base()
+        public ObjectDeclaration()
         {
-            ObjectType = ObjectType.CodeUnit;
+        }
+        public ObjectDeclaration(ObjectType type)
+        {
+            ObjectType = type;
         }
 
         public override string ToText()

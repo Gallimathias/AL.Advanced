@@ -11,6 +11,10 @@ namespace Al.Advanced.Definition.CSharp
 {
     internal class ObjectDeclaration : ALObject<MemberDeclarationSyntax>
     {
+        public ObjectDeclaration()
+        {
+
+        }
         public ObjectDeclaration(ObjectType type)
         {
             ObjectType = type;
@@ -30,7 +34,7 @@ namespace Al.Advanced.Definition.CSharp
 
             return false;
         }
-
+        
         public override void Parse(MemberDeclarationSyntax root)
         {
             if (!TryParse(root))

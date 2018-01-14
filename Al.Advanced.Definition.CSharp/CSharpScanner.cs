@@ -9,6 +9,19 @@ namespace Al.Advanced.Definition.CSharp
 {
     class CSharpScanner : Scanner
     {
+        public override bool TryGetCopy(object member, out Member copie)
+        {
+            copie = null;
+
+            if (member is ALObject originObject)
+            {
+                copie = originObject.GetCopyAs<ObjectDeclaration>();
+                return true;
+            }
+
+            return false;
+        }
+
         public override bool TryScan(object member, out Member root)
         {
             root = null;
@@ -19,12 +32,13 @@ namespace Al.Advanced.Definition.CSharp
 
                 if (string.IsNullOrWhiteSpace(typeName))
                     return false;
-                
+
                 root = new ObjectDeclaration((ObjectType)Enum.Parse(typeof(ObjectType), typeName, true));
                 return root.TryParse(classDeclaration);
             }
 
             return false;
         }
+
     }
 }
