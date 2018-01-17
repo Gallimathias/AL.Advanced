@@ -54,6 +54,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Linq">
       <HintPath>..\packages\System.Linq.4.3.0\lib\net463\System.Linq.dll</HintPath>
       <Private>True</Private>
@@ -90,6 +91,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Nav.API\Nav.API.csproj">
+      <Project>{a013cd46-a43f-4963-9992-65961c8fdcf1}</Project>
+      <Name>Nav.API</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Nav.Object.Explorer.Core\Nav.Object.Explorer.Core.csproj">
       <Project>{77e1331a-3054-4883-9bbb-26f5e61ac7d6}</Project>
       <Name>Nav.Object.Explorer.Core</Name>
