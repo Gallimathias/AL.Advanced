@@ -1,4 +1,4 @@
-﻿<Page x:Class="Nav.Object.Explorer.Views.CodeUnit"
+﻿<Page x:Class="Nav.Object.Explorer.Views.CodeUnits"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -11,7 +11,7 @@
       Title="{Binding Title}">
 
     <Grid>
-        <Label Content="Hallo Welt" HorizontalAlignment="Left" Margin="100.915,61.098,0,0" VerticalAlignment="Top"/>
-
+        <DataGrid ItemsSource="{Binding Items}" Margin="10">
+        </DataGrid>
     </Grid>
 </Page>

@@ -18,9 +18,9 @@ namespace Nav.Object.Explorer.Views
     /// <summary>
     /// Interaktionslogik für CodeUnit.xaml
     /// </summary>
-    public partial class CodeUnit : Page
+    public partial class CodeUnits : Page
     {
-        public CodeUnit()
+        public CodeUnits()
         {
             InitializeComponent();
         }
