@@ -1,5 +1,7 @@
-﻿using System.Windows;
+﻿using System.Reflection;
+using System.Windows;
 using Microsoft.Practices.ServiceLocation;
+using Nav.Object.Explorer.Core;
 using Nav.Object.Explorer.Model;
 using Prism.DryIoc;
 
@@ -16,7 +18,10 @@ namespace Nav.Object.Explorer
 
         protected override void InitializeShell()
         {
+            PageContainer.RegisterAssembly(Assembly.GetExecutingAssembly());
+
             ShellBase.CollectPages();
+            
             CurrentApplication.MainWindow = (MainWindow)Shell;           
             CurrentApplication.MainWindow.Show();
         }

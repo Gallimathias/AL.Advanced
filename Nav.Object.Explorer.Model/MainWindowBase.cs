@@ -14,16 +14,17 @@ namespace Nav.Object.Explorer.Model
 {
     public class MainWindowBase : BindableBase
     {
-        public BindableBase CurrentPage { get => currentPage; set => SetProperty(ref currentPage, value); }
+        public object CurrentPage { get => currentPage; set => SetProperty(ref currentPage, value); }
         public ObservableCollection<MenuItemContext> NavigationList { get => navigationList; private set => SetProperty(ref navigationList, value); }
 
 
-        private BindableBase currentPage;
+        private object currentPage;
         private ObservableCollection<MenuItemContext> navigationList;
 
         public MainWindowBase()
         {
             NavigationList = new ObservableCollection<MenuItemContext>();
+            PageContainer.RegisterAssembly(Assembly.GetExecutingAssembly());
         }
 
         public void CollectPages()
@@ -45,12 +46,7 @@ namespace Nav.Object.Explorer.Model
             if (string.IsNullOrWhiteSpace(pageName))
                 return;
 
-            var type = Type.GetType($"Nav.Object.Explorer.Views.{pageName}", false);
-
-            if (type == null)
-                return;
-
-            CurrentPage = (BindableBase)ServiceLocator.Current.GetInstance(type);
+            CurrentPage = ServiceLocator.Current.TryResolve(PageContainer.GetPageViewType(pageName));
         }
 
         public class MenuItemContext
