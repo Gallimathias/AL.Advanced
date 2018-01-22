@@ -1,5 +1,7 @@
 ﻿//using Compiler.Core;
+using Nav.API;
 using System;
+using System.Collections.Generic;
 using System.Data.Linq;
 using System.IO;
 using System.IO.Compression;
@@ -15,8 +17,25 @@ namespace Test
     {
         static void Main(string[] args)
         {
+            var con = new NavDatabaseContext();
+            var obj = con.GetTable<NavObject>().FirstOrDefault(o => o.Type == (int)ObjectType.CodeUnit && o.ID == 90000);
+            var compressd = GetBlob(obj.BLOBReference);
+            
 
+            using (var writer = new BinaryWriter(File.Create(@"C:\temp\reference")))
+            {
+                //var result = reader.ReadBytes((int)reader.BaseStream.Length);
+                //var com = (char)result[0];
+                //var cha = Encoding.Default.GetString(result);
+                //str = reader.ReadToEnd();
 
+                writer.Write(compressd);
+            }
+            
+            //using (var binaryWriter = new BinaryWriter(File.Create(@"C:\temp\compressed")))
+            //{
+            //    binaryWriter.Write(compressd);
+            //}
 
             //var stream = new FileStream(@"C:\Temp\NAV\C_Functions.fob", FileMode.Open,FileAccess.Read);
             //var encoded = NeaStreamReader.IsSupported(stream);
@@ -26,15 +45,15 @@ namespace Test
             //var import = new TxtImporter(TxtFileModelInfo.Instance);
             //var res = import.ImportFromStream(stream);
 
-            //    var con = new DatabaseOne();
-            //    var id = 96001;
-            //    ObjectType type = ObjectType.CodeUnit;
-            //    var folder = "examples";
-            //    //var t = new string[6];
-            //    //var obj = con.GetTable<NAV_App_Object_Metadata>().FirstOrDefault(o => o.Object_ID == id && o.Object_Type == (int)type);
-            //    //var pck = con.GetTable<NAV_App>().FirstOrDefault();
-            //    //var str = GetStringFromBLOB(obj.User_AL_Code);
-            //    //var code = GetStringFromBLOB(obj.User_Code);
+            //var con = new DatabaseOne();
+            //var id = 96001;
+            //ObjectType type = ObjectType.CodeUnit;
+            //var folder = "examples";
+            //var t = new string[6];
+            //var obj = con.GetTable<NAV_App_Object_Metadata>().FirstOrDefault(o => o.Object_ID == id && o.Object_Type == (int)type);
+            //var pck = con.GetTable<NAV_App>().FirstOrDefault();
+            //var str = GetStringFromBLOB(obj.User_AL_Code);
+            //var code = GetStringFromBLOB(obj.User_Code);
 
             //    //var pack = GetStringFromBLOB(pck.Blob);
             //    //var a = 12;
@@ -76,33 +95,33 @@ namespace Test
             //    //Console.ReadKey();
             //}
         }
-        private static void NavApps()
-        {
-            var con = new DatabaseOne();
-            var folder = "nav_app";
+        //private static void NavApps()
+        //{
+        //    var con = new DatabaseOne();
+        //    var folder = "nav_app";
 
-            //var meta = con.GetTab,le<Object_Metadata>().FirstOrDefault(m => m.Object_ID == id && m.Object_Type == (int)type);
-            //var obj = con.GetTable<Object>().FirstOrDefault(m => m.ID == id && m.Type == (int)type);
+        //    //var meta = con.GetTab,le<Object_Metadata>().FirstOrDefault(m => m.Object_ID == id && m.Object_Type == (int)type);
+        //    //var obj = con.GetTable<Object>().FirstOrDefault(m => m.ID == id && m.Type == (int)type);
 
-            var app = con.GetTable<NAV_App>().FirstOrDefault(n => n.ID == new Guid("186E76FE-79D3-4AEB-A7AC-078B66FC258D"));
+        //    var app = con.GetTable<NAV_App>().FirstOrDefault(n => n.ID == new Guid("186E76FE-79D3-4AEB-A7AC-078B66FC258D"));
 
-            //var str = GetStringFromBLOB(meta.User_Code);
-            //File.Delete($@"C:\Temp\{folder}\{app.Name}.app");
-            //using (var writer = new BinaryWriter(File.OpenWrite($@"C:\Temp\{folder}\{app.Name}.app")))
-            //{
-            //    writer.Write(GetBlob(app.Blob));
-            //}
+        //    //var str = GetStringFromBLOB(meta.User_Code);
+        //    //File.Delete($@"C:\Temp\{folder}\{app.Name}.app");
+        //    //using (var writer = new BinaryWriter(File.OpenWrite($@"C:\Temp\{folder}\{app.Name}.app")))
+        //    //{
+        //    //    writer.Write(GetBlob(app.Blob));
+        //    //}
 
-            byte[] data;
+        //    byte[] data;
 
-            using (var reader = new BinaryReader(File.OpenRead($@"C:\Temp\{folder}\{app.Name}.app")))
-            {
-                data = reader.ReadBytes((int)reader.BaseStream.Length);
-            }
+        //    using (var reader = new BinaryReader(File.OpenRead($@"C:\Temp\{folder}\{app.Name}.app")))
+        //    {
+        //        data = reader.ReadBytes((int)reader.BaseStream.Length);
+        //    }
 
-            app.Blob = ToBLOB(data);
-            con.SubmitChanges();
-        }
+        //    app.Blob = ToBLOB(data);
+        //    con.SubmitChanges();
+        //}
 
         private static string GetFromBLOB(Binary bLOB_Reference)
         {
