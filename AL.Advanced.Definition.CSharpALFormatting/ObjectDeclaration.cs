@@ -8,7 +8,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Formatting;
 
-namespace AL.Advanced.Definition.CSharpALFormatting.Object
+namespace AL.Advanced.Definition.CSharpALFormatting
 {
     internal class ObjectDeclaration : ALObject<MemberDeclarationSyntax>
     {
