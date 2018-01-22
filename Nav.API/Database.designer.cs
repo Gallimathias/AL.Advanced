@@ -30,9 +30,9 @@ namespace Nav.API
 		
     #region Definitionen der Erweiterungsmethoden
     partial void OnCreated();
-    partial void InsertObject(Object instance);
-    partial void UpdateObject(Object instance);
-    partial void DeleteObject(Object instance);
+    partial void InsertNavObject(NavObject instance);
+    partial void UpdateNavObject(NavObject instance);
+    partial void DeleteNavObject(NavObject instance);
     partial void InsertObjectMetadata(ObjectMetadata instance);
     partial void UpdateObjectMetadata(ObjectMetadata instance);
     partial void DeleteObjectMetadata(ObjectMetadata instance);
@@ -69,7 +69,7 @@ namespace Nav.API
     #endregion
 		
 		public NavDatabaseContext() : 
-				base(global::Nav.API.Properties.Settings.Default.Demo_Database_NAV__11_0_ConnectionString, mappingSource)
+				base(global::Nav.API.Properties.Settings.Default.Demo_Database_NAV__11_0_ConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -98,11 +98,11 @@ namespace Nav.API
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Object> Object
+		public System.Data.Linq.Table<NavObject> NavObject
 		{
 			get
 			{
-				return this.GetTable<Object>();
+				return this.GetTable<NavObject>();
 			}
 		}
 		
@@ -196,7 +196,7 @@ namespace Nav.API
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Object")]
-	public partial class Object : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class NavObject : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -261,15 +261,15 @@ namespace Nav.API
     partial void OnDateChanged();
     partial void OnTimeChanging(System.DateTime value);
     partial void OnTimeChanged();
-    partial void OnVersion_ListChanging(string value);
-    partial void OnVersion_ListChanged();
+    partial void OnVersionListChanging(string value);
+    partial void OnVersionListChanged();
     partial void OnLockedChanging(byte value);
     partial void OnLockedChanged();
     partial void OnLockedByChanging(string value);
     partial void OnLockedByChanged();
     #endregion
 		
-		public Object()
+		public NavObject()
 		{
 			this._Object_Metadata = new EntitySet<ObjectMetadata>(new Action<ObjectMetadata>(this.attach_Object_Metadata), new Action<ObjectMetadata>(this.detach_Object_Metadata));
 			OnCreated();
@@ -516,7 +516,7 @@ namespace Nav.API
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Version List]", Storage="_Version_List", DbType="VarChar(248) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string Version_List
+		public string VersionList
 		{
 			get
 			{
@@ -526,11 +526,11 @@ namespace Nav.API
 			{
 				if ((this._Version_List != value))
 				{
-					this.OnVersion_ListChanging(value);
+					this.OnVersionListChanging(value);
 					this.SendPropertyChanging();
 					this._Version_List = value;
-					this.SendPropertyChanged("Version_List");
-					this.OnVersion_ListChanged();
+					this.SendPropertyChanged("VersionList");
+					this.OnVersionListChanged();
 				}
 			}
 		}
@@ -611,13 +611,13 @@ namespace Nav.API
 		private void attach_Object_Metadata(ObjectMetadata entity)
 		{
 			this.SendPropertyChanging();
-			entity.Object = this;
+			entity.NavObject = this;
 		}
 		
 		private void detach_Object_Metadata(ObjectMetadata entity)
 		{
 			this.SendPropertyChanging();
-			entity.Object = null;
+			entity.NavObject = null;
 		}
 	}
 	
@@ -649,7 +649,7 @@ namespace Nav.API
 		
 		private System.Data.Linq.Binary _Symbol_Reference;
 		
-		private EntityRef<Object> _Object;
+		private EntityRef<NavObject> _Object;
 		
     #region Definitionen der Erweiterungsmethoden
     partial void OnLoaded();
@@ -681,7 +681,7 @@ namespace Nav.API
 		
 		public ObjectMetadata()
 		{
-			this._Object = default(EntityRef<Object>);
+			this._Object = default(EntityRef<NavObject>);
 			OnCreated();
 		}
 		
@@ -906,7 +906,7 @@ namespace Nav.API
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Object_ObjectMetadata", Storage="_Object", ThisKey="ObjectType,ObjectID", OtherKey="Type,ID", IsForeignKey=true)]
-		public Object Object
+		public NavObject NavObject
 		{
 			get
 			{
@@ -914,7 +914,7 @@ namespace Nav.API
 			}
 			set
 			{
-				Object previousValue = this._Object.Entity;
+				NavObject previousValue = this._Object.Entity;
 				if (((previousValue != value) 
 							|| (this._Object.HasLoadedOrAssignedValue == false)))
 				{
@@ -936,7 +936,7 @@ namespace Nav.API
 						this._Object_Type = default(int);
 						this._Object_ID = default(int);
 					}
-					this.SendPropertyChanged("Object");
+					this.SendPropertyChanged("NavObject");
 				}
 			}
 		}

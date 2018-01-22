@@ -3,7 +3,7 @@
   <DataContextMoniker Name="/NavDatabaseContext" />
   <nestedChildShapes>
     <classShape Id="fed0ad3f-7acf-4d19-a683-f7422f9b95b0" absoluteBounds="1.25, 0.5, 2, 3.6939111328124996">
-      <DataClassMoniker Name="/NavDatabaseContext/Object" />
+      <DataClassMoniker Name="/NavDatabaseContext/NavObject" />
       <nestedChildShapes>
         <elementListCompartment Id="1a7cf6fe-898d-4f5c-adcf-47004e6f7000" absoluteBounds="1.2650000000000001, 0.96, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
@@ -75,66 +75,66 @@
       </nestedChildShapes>
     </classShape>
     <associationConnector edgePoints="[(3.25 : 1.96235270182292); (4.25 : 1.96235270182292)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/NavDatabaseContext/Object/Object_Object_Metadata" />
+      <AssociationMoniker Name="/NavDatabaseContext/NavObject/Object_ObjectMetadata" />
       <nodes>
         <classShapeMoniker Id="fed0ad3f-7acf-4d19-a683-f7422f9b95b0" />
         <classShapeMoniker Id="326c13ad-260a-499f-b97f-e010f3cec304" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4 : 7.90465413411458); (9.16666666666667 : 7.90465413411458 : JumpStart); (9.33333333333333 : 7.90465413411458 : JumpEnd); (9.75 : 7.90465413411458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/NavDatabaseContext/NAVApp/NAV_App_NAV_App_Object_Metadata" />
+    <associationConnector edgePoints="[(4 : 7.87576416015625); (6.5 : 7.87576416015625); (6.5 : 2.5112939453125); (7.75 : 2.5112939453125); (7.75 : 2.1362939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NavDatabaseContext/NAVApp/NAVApp_NAVAppCapabilities" />
       <nodes>
         <classShapeMoniker Id="3d235f17-dbd5-4506-8ae2-31246d427111" />
-        <classShapeMoniker Id="6cc60657-6dc4-480e-abda-da4cae2a736e" />
+        <classShapeMoniker Id="bfedd545-4c29-4bed-9cde-2da66101c9ed" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(4 : 9.81326416015625); (6.75 : 9.81326416015625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/NavDatabaseContext/NAVApp/NAV_App_NAV_App_Data_Archive" />
+      <AssociationMoniker Name="/NavDatabaseContext/NAVApp/NAVApp_NAVAppDataArchive" />
       <nodes>
         <classShapeMoniker Id="3d235f17-dbd5-4506-8ae2-31246d427111" />
         <classShapeMoniker Id="09707836-bd80-4211-bb34-a8cc5cf6d8e9" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.375 : 10.8765283203125); (2.375 : 11.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/NavDatabaseContext/NAVApp/NAV_App_NAV_App_Resource" />
-      <nodes>
-        <classShapeMoniker Id="3d235f17-dbd5-4506-8ae2-31246d427111" />
-        <classShapeMoniker Id="4f662634-e364-467f-ba54-a3a486b7bb0c" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(3.2812495 : 10.8765283203125); (3.2812495 : 13.8598453776042); (3.75 : 13.8598453776042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/NavDatabaseContext/NAVApp/NAV_App_NAV_App_Tenant_App" />
-      <nodes>
-        <classShapeMoniker Id="3d235f17-dbd5-4506-8ae2-31246d427111" />
-        <classShapeMoniker Id="699ccd7b-3fab-4cf5-bc7f-6a5f44b279e3" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(4 : 8.32732956705729); (9.16666666666667 : 8.32732956705729 : JumpStart); (9.33333333333333 : 8.32732956705729 : JumpEnd); (9.5 : 8.32732956705729); (9.5 : 9.1170068359375); (10.75 : 9.1170068359375); (10.75 : 9.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/NavDatabaseContext/NAVApp/NAV_App_NAV_App_Object_Prerequisites" />
-      <nodes>
-        <classShapeMoniker Id="3d235f17-dbd5-4506-8ae2-31246d427111" />
-        <classShapeMoniker Id="ccd56463-e776-4a83-9229-d538683a8a91" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(4 : 7.48197870117188); (9.25 : 7.48197870117188); (9.25 : 9.2420068359375); (13.625 : 9.2420068359375); (13.625 : 8.51121256510417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/NavDatabaseContext/NAVApp/NAV_App_NAV_App_Installed_App" />
+    <associationConnector edgePoints="[(4 : 8.31288458007812); (9.5 : 8.31288458007812); (9.5 : 9.1170068359375); (13.625 : 9.1170068359375); (13.625 : 8.51121256510417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NavDatabaseContext/NAVApp/NAVApp_NAVAppInstalledApp" />
       <nodes>
         <classShapeMoniker Id="3d235f17-dbd5-4506-8ae2-31246d427111" />
         <classShapeMoniker Id="5dc5d8e7-5447-4a2a-9962-5cf4fb77972b" />
       </nodes>
     </associationConnector>
+    <associationConnector edgePoints="[(4 : 7.43628621419271); (9.75 : 7.43628621419271)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NavDatabaseContext/NAVApp/NAVApp_NAVAppObjectMetadata" />
+      <nodes>
+        <classShapeMoniker Id="3d235f17-dbd5-4506-8ae2-31246d427111" />
+        <classShapeMoniker Id="6cc60657-6dc4-480e-abda-da4cae2a736e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4 : 7.65602518717448); (6.41666666666667 : 7.65602518717448 : JumpStart); (6.58333333333333 : 7.65602518717448 : JumpEnd); (9.25 : 7.65602518717448); (9.25 : 9.3670068359375); (10.75 : 9.3670068359375); (10.75 : 9.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NavDatabaseContext/NAVApp/NAVApp_NAVAppObjectPrerequisites" />
+      <nodes>
+        <classShapeMoniker Id="3d235f17-dbd5-4506-8ae2-31246d427111" />
+        <classShapeMoniker Id="ccd56463-e776-4a83-9229-d538683a8a91" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.375 : 10.8765283203125); (2.375 : 11.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NavDatabaseContext/NAVApp/NAVApp_NAVAppResource" />
+      <nodes>
+        <classShapeMoniker Id="3d235f17-dbd5-4506-8ae2-31246d427111" />
+        <classShapeMoniker Id="4f662634-e364-467f-ba54-a3a486b7bb0c" />
+      </nodes>
+    </associationConnector>
     <associationConnector edgePoints="[(4 : 10.8765283203125); (4.375 : 11.2515283203125); (4.375 : 12.2228011067708); (12.625 : 12.2228011067708); (13 : 11.8478011067708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/NavDatabaseContext/NAVApp/NAV_App_NAV_App_Tenant_Add_In" />
+      <AssociationMoniker Name="/NavDatabaseContext/NAVApp/NAVApp_NAVAppTenantAddIn" />
       <nodes>
         <classShapeMoniker Id="3d235f17-dbd5-4506-8ae2-31246d427111" />
         <classShapeMoniker Id="0ca05fb1-1e90-4015-9a43-bace269f26dd" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4 : 6.14723735058594); (6.5 : 6.14723735058594); (6.5 : 2.5112939453125); (7.75 : 2.5112939453125); (7.75 : 2.1362939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/NavDatabaseContext/NAVApp/NAV_App_NAV_App_Capabilities" />
+    <associationConnector edgePoints="[(3.2812495 : 10.8765283203125); (3.2812495 : 13.8598453776042); (3.75 : 13.8598453776042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NavDatabaseContext/NAVApp/NAVApp_NAVAppTenantApp" />
       <nodes>
         <classShapeMoniker Id="3d235f17-dbd5-4506-8ae2-31246d427111" />
-        <classShapeMoniker Id="bfedd545-4c29-4bed-9cde-2da66101c9ed" />
+        <classShapeMoniker Id="699ccd7b-3fab-4cf5-bc7f-6a5f44b279e3" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>
