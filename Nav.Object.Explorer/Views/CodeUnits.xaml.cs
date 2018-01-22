@@ -23,6 +23,6 @@ namespace Nav.Object.Explorer.Views
         public CodeUnits()
         {
             InitializeComponent();
-        }
+        }       
     }
 }

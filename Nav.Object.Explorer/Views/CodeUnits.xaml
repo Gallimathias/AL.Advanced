@@ -11,7 +11,12 @@
       Title="{Binding Title}">
 
     <Grid>
-        <DataGrid ItemsSource="{Binding Items}" Margin="10">
+        <DataGrid ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" Margin="10">
+            <DataGrid.InputBindings>
+                <MouseBinding MouseAction="LeftDoubleClick"
+                              Command="{Binding LeftDoubleClickCommand}"
+                              CommandParameter="{Binding SelectedItem}"/>
+            </DataGrid.InputBindings>
         </DataGrid>
     </Grid>
 </Page>
