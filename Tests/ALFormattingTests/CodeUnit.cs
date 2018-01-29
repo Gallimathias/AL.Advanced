@@ -3,15 +3,15 @@ using System.IO;
 using AL.Advanced.Definition.CSharpALFormatting;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CompilingTests
+namespace ALFormattingTests
 {
     [TestClass]
-    public class CodeUnit_CodeUnit
+    public class CodeUnit
     {
         [TestMethod]
-        public void Empty()
+        public void EmptyCodeunitALFormatting()
         {
-            var text = File.ReadAllText(@"..\..\..\examples\CSharp-ALFormatting\CodeUnit.cs");
+            var text = File.ReadAllText(@"..\..\..\..\examples\CSharp-ALFormatting\CodeUnit.cs");
 
             var tree = CSharpALTree.Parse(text);
             var txt = tree.ToText();
