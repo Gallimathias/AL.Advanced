@@ -1,0 +1,79 @@
+﻿[
+  {
+    "Name": "Space",
+    "Expressions": [
+      {
+        "Pattern": "\\s+",
+        "Options": 0
+      }
+    ],
+    "Skip": true,
+    "Group": -1,
+    "ChildrenGroup": -1
+  },
+  {
+    "Name": "ClassType",
+    "Expressions": [
+      {
+        "Pattern": "\\b(codeunit)\\b",
+        "Options": 0
+      }
+    ],
+    "Skip": false,
+    "Group": 0,
+    "ChildrenGroup": -1
+  },
+  {
+    "Name": "Id",
+    "Expressions": [
+      {
+        "Pattern": "\\b[0-9]+\\b",
+        "Options": 0
+      }
+    ],
+    "Skip": false,
+    "Group": 0,
+    "ChildrenGroup": -1
+  },
+  {
+    "Name": "Identifier",
+    "Expressions": [
+      {
+        "Pattern": "\\b([a-zA-Z][a-zA-Z0-9]*)\\b",
+        "Options": 0
+      }
+    ],
+    "Skip": false,
+    "Group": -1,
+    "ChildrenGroup": -1
+  },
+  {
+    "Name": "Bracket",
+    "Expressions": [
+      {
+        "Pattern": "{",
+        "Options": 0
+      },
+      {
+        "Pattern": "}",
+        "Options": 0
+      }
+    ],
+    "Skip": false,
+    "Group": -1,
+    "ChildrenGroup": -1
+  },
+  {
+    "Name": "Comment",
+    "Expressions": [
+      {
+        "Pattern": "([\\/]{2,}([A-Za-z]+|\\s*)*)\\z",
+        "Options": 0
+      }
+    ],
+    "Skip": false,
+    "Group": -1,
+    "ChildrenGroup": -1
+  }
+
+]

@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 15.25, 14.375" name="Database">
+  <DataContextMoniker Name="/NavDatabaseContext" />
+  <nestedChildShapes>
+    <classShape Id="fed0ad3f-7acf-4d19-a683-f7422f9b95b0" absoluteBounds="1.25, 0.5, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/NavDatabaseContext/NavObject" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1a7cf6fe-898d-4f5c-adcf-47004e6f7000" absoluteBounds="1.2650000000000001, 0.96, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="326c13ad-260a-499f-b97f-e010f3cec304" absoluteBounds="4.25, 0.5, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/NavDatabaseContext/ObjectMetadata" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9f797c2d-a262-4cb9-bf23-f96491c2b672" absoluteBounds="4.2650000000000006, 0.96, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3d235f17-dbd5-4506-8ae2-31246d427111" absoluteBounds="2, 4.875, 2, 6.0015283203124987">
+      <DataClassMoniker Name="/NavDatabaseContext/NAVApp" />
+      <nestedChildShapes>
+        <elementListCompartment Id="719e081d-b65a-44bb-ba4a-cf27d51dc0a8" absoluteBounds="2.015, 5.335, 1.9700000000000002, 5.4415283203125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bfedd545-4c29-4bed-9cde-2da66101c9ed" absoluteBounds="6.75, 0.75, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/NavDatabaseContext/NAVAppCapabilities" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5d0290f8-3325-41ec-9498-4f11d6427a38" absoluteBounds="6.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7580a3b9-fc81-4bb6-bd2c-af7089a1b92a" absoluteBounds="6.75, 3.75, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/NavDatabaseContext/NAVAppDependencies" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3bbad4ed-c0c9-4a22-a750-b249fe778df6" absoluteBounds="6.765, 4.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="09707836-bd80-4211-bb34-a8cc5cf6d8e9" absoluteBounds="6.75, 8.75, 2, 2.9247054036458309">
+      <DataClassMoniker Name="/NavDatabaseContext/NAVAppDataArchive" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a3ac7277-02f7-4b60-ba20-5ceeef381a45" absoluteBounds="6.765, 9.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5dc5d8e7-5447-4a2a-9962-5cf4fb77972b" absoluteBounds="12.625, 4.625, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/NavDatabaseContext/NAVAppInstalledApp" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c4934c65-4227-4576-a870-cfaaa66f6d06" absoluteBounds="12.64, 5.085, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6cc60657-6dc4-480e-abda-da4cae2a736e" absoluteBounds="9.75, 5.75, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/NavDatabaseContext/NAVAppObjectMetadata" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f8fb943f-aef4-48e6-b009-7e98206b7552" absoluteBounds="9.765, 6.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ccd56463-e776-4a83-9229-d538683a8a91" absoluteBounds="9.75, 9.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/NavDatabaseContext/NAVAppObjectPrerequisites" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c5acba64-46be-4c61-9a83-c67b581be10b" absoluteBounds="9.765, 10.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4f662634-e364-467f-ba54-a3a486b7bb0c" absoluteBounds="0.75, 11.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/NavDatabaseContext/NAVAppResource" />
+      <nestedChildShapes>
+        <elementListCompartment Id="913d0122-7877-4bd1-ad12-0dd73c54036e" absoluteBounds="0.765, 12.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0ca05fb1-1e90-4015-9a43-bace269f26dd" absoluteBounds="13, 9.5, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/NavDatabaseContext/NAVAppTenantAddIn" />
+      <nestedChildShapes>
+        <elementListCompartment Id="76c0145d-b36a-4ee6-8aef-e20c08a0d223" absoluteBounds="13.015, 9.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="699ccd7b-3fab-4cf5-bc7f-6a5f44b279e3" absoluteBounds="3.75, 12.75, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/NavDatabaseContext/NAVAppTenantApp" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8aea5dbe-e9fb-4b79-bb81-6a4e9ca58d8c" absoluteBounds="3.765, 13.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.25 : 1.96235270182292); (4.25 : 1.96235270182292)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NavDatabaseContext/NavObject/Object_ObjectMetadata" />
+      <nodes>
+        <classShapeMoniker Id="fed0ad3f-7acf-4d19-a683-f7422f9b95b0" />
+        <classShapeMoniker Id="326c13ad-260a-499f-b97f-e010f3cec304" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4 : 7.87576416015625); (6.5 : 7.87576416015625); (6.5 : 2.5112939453125); (7.75 : 2.5112939453125); (7.75 : 2.1362939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NavDatabaseContext/NAVApp/NAVApp_NAVAppCapabilities" />
+      <nodes>
+        <classShapeMoniker Id="3d235f17-dbd5-4506-8ae2-31246d427111" />
+        <classShapeMoniker Id="bfedd545-4c29-4bed-9cde-2da66101c9ed" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4 : 9.81326416015625); (6.75 : 9.81326416015625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NavDatabaseContext/NAVApp/NAVApp_NAVAppDataArchive" />
+      <nodes>
+        <classShapeMoniker Id="3d235f17-dbd5-4506-8ae2-31246d427111" />
+        <classShapeMoniker Id="09707836-bd80-4211-bb34-a8cc5cf6d8e9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4 : 8.31288458007812); (9.5 : 8.31288458007812); (9.5 : 9.1170068359375); (13.625 : 9.1170068359375); (13.625 : 8.51121256510417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NavDatabaseContext/NAVApp/NAVApp_NAVAppInstalledApp" />
+      <nodes>
+        <classShapeMoniker Id="3d235f17-dbd5-4506-8ae2-31246d427111" />
+        <classShapeMoniker Id="5dc5d8e7-5447-4a2a-9962-5cf4fb77972b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4 : 7.43628621419271); (9.75 : 7.43628621419271)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NavDatabaseContext/NAVApp/NAVApp_NAVAppObjectMetadata" />
+      <nodes>
+        <classShapeMoniker Id="3d235f17-dbd5-4506-8ae2-31246d427111" />
+        <classShapeMoniker Id="6cc60657-6dc4-480e-abda-da4cae2a736e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4 : 7.65602518717448); (6.41666666666667 : 7.65602518717448 : JumpStart); (6.58333333333333 : 7.65602518717448 : JumpEnd); (9.25 : 7.65602518717448); (9.25 : 9.3670068359375); (10.75 : 9.3670068359375); (10.75 : 9.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NavDatabaseContext/NAVApp/NAVApp_NAVAppObjectPrerequisites" />
+      <nodes>
+        <classShapeMoniker Id="3d235f17-dbd5-4506-8ae2-31246d427111" />
+        <classShapeMoniker Id="ccd56463-e776-4a83-9229-d538683a8a91" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.375 : 10.8765283203125); (2.375 : 11.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NavDatabaseContext/NAVApp/NAVApp_NAVAppResource" />
+      <nodes>
+        <classShapeMoniker Id="3d235f17-dbd5-4506-8ae2-31246d427111" />
+        <classShapeMoniker Id="4f662634-e364-467f-ba54-a3a486b7bb0c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4 : 10.8765283203125); (4.375 : 11.2515283203125); (4.375 : 12.2228011067708); (12.625 : 12.2228011067708); (13 : 11.8478011067708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NavDatabaseContext/NAVApp/NAVApp_NAVAppTenantAddIn" />
+      <nodes>
+        <classShapeMoniker Id="3d235f17-dbd5-4506-8ae2-31246d427111" />
+        <classShapeMoniker Id="0ca05fb1-1e90-4015-9a43-bace269f26dd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.2812495 : 10.8765283203125); (3.2812495 : 13.8598453776042); (3.75 : 13.8598453776042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NavDatabaseContext/NAVApp/NAVApp_NAVAppTenantApp" />
+      <nodes>
+        <classShapeMoniker Id="3d235f17-dbd5-4506-8ae2-31246d427111" />
+        <classShapeMoniker Id="699ccd7b-3fab-4cf5-bc7f-6a5f44b279e3" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
