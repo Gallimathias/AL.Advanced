@@ -8,12 +8,10 @@ using System.Windows;
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die einer Assembly zugeordnet sind.
 [assembly: AssemblyTitle("Nav.Object.Explorer")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Konica Minolta IT Solutions GmbH")]
-[assembly: AssemblyProduct("Nav.Object.Explorer")]
-[assembly: AssemblyCopyright("Copyright © Konica Minolta IT Solutions GmbH 2017")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyDescription("Explorer through the NAV database and file export")]
+[assembly: AssemblyConfiguration("Alpha")]
+[assembly: AssemblyProduct("AL.Advanced")]
+[assembly: AssemblyCopyright("Copyright © Galliamthias 2018")]
 [assembly: AssemblyCulture("")]
 
 // Durch Festlegen von ComVisible auf FALSE werden die Typen in dieser Assembly
@@ -51,5 +49,6 @@ using System.Windows;
 // Sie können alle Werte angeben oder Standardwerte für die Build- und Revisionsnummern verwenden,
 // übernehmen, indem Sie "*" eingeben:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("4.0.1.1")]
+[assembly: AssemblyFileVersion("4.0.1.1")]
+[assembly: AssemblyInformationalVersion("4.0.1.1-alpha")]

@@ -1,6 +1,6 @@
 # AL.Advanced
 
-[![master 0.0.0.2](https://img.shields.io/badge/master-0.0.0.2-green.svg?style=flat-square)]()
+[![master 4.0.1.1](https://img.shields.io/badge/master-4.0.1.1-green.svg?style=flat-square)](https://github.com/Gallimathias/AL.Advanced)
 
 AL.Advanced is the attempt to offer an alternative compiler to Microsoft.
 
@@ -54,3 +54,15 @@ Currently I am developing the 4th generation of my compiler based on. NET core o
 * Administrative Tool
 * NAV mod
 * Own object base
+
+---
+
+## License
+
+[![license Apache License Version 2.0](https://img.shields.io/badge/license-Apache_License_Version_2.0-lightgrey.svg?style=flat-square)](http://www.apache.org/licenses/)
+
+__DE__: [AL.Advanced](https://github.com/Gallimathias/AL.Advanced) von [gallimathias](www.gallimathias.de) ist lizenziert unter einer [Apache License Version 2.0](http://www.apache.org/licenses/).
+Über diese Lizenz hinausgehende Erlaubnisse können Sie unter [info@gallimathias.de](mailto:info@gallimathias.de) erhalten.
+
+__EN__: [AL.Advanced](https://github.com/Gallimathias/AL.Advanced) by [gallimathias](www.gallimathias.de) is licensed under a [Apache License Version 2.0](http://www.apache.org/licenses/).
+Permissions beyond the scope of this license may be available at [info@gallimathias.de](mailto:info@gallimathias.de).
