@@ -2,6 +2,21 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Version>4.0.1.1-alpha</Version>
+    <Authors>Gallimathias</Authors>
+    <Company />
+    <Product>AL.Advanced</Product>
+    <Description>Core functionality for definitions and compilers</Description>
+    <Copyright>2018 Gallimathias</Copyright>
+    <PackageReleaseNotes>This is an alpha version that has been released for test purposes and is not intended for productive use.
+
+</PackageReleaseNotes>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageLicenseUrl>https://github.com/Gallimathias/AL.Advanced/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Gallimathias/AL.Advanced</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Gallimathias/AL.Advanced.git</RepositoryUrl>
+    <PackageId>AL.Advanced.Core</PackageId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

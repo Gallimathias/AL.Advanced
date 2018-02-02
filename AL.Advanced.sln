@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nav.Object.Explorer", "Nav.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nav.Object.Explorer.Model", "Nav.Object.Explorer.Model\Nav.Object.Explorer.Model.csproj", "{76719CF3-3395-4FBF-8BE8-6744FF6471DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nav.Object.Explorer.Core", "Nav.Object.Explorer.Core\Nav.Object.Explorer.Core.csproj", "{77E1331A-3054-4883-9BBB-26F5E61AC7D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{76719CF3-3395-4FBF-8BE8-6744FF6471DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76719CF3-3395-4FBF-8BE8-6744FF6471DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76719CF3-3395-4FBF-8BE8-6744FF6471DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77E1331A-3054-4883-9BBB-26F5E61AC7D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77E1331A-3054-4883-9BBB-26F5E61AC7D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77E1331A-3054-4883-9BBB-26F5E61AC7D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77E1331A-3054-4883-9BBB-26F5E61AC7D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
