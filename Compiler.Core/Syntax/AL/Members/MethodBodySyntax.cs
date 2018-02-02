@@ -71,7 +71,7 @@ namespace Compiler.Core.Syntax.AL.Members
                 bodySyntax.Statements = tmpList;
 
                 memberSyntax = bodySyntax;
-               
+                members.Clear();
                 return true;
             }
 

@@ -1,0 +1,22 @@
+﻿<Page x:Class="Nav.Object.Explorer.Views.CodeUnits"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Nav.Object.Explorer.Views"
+      xmlns:prism="http://prismlibrary.com/"
+      prism:ViewModelLocator.AutoWireViewModel="True"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="{Binding Title}">
+
+    <Grid>
+        <DataGrid ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" Margin="10">
+            <DataGrid.InputBindings>
+                <MouseBinding MouseAction="LeftDoubleClick"
+                              Command="{Binding LeftDoubleClickCommand}"
+                              CommandParameter="{Binding SelectedItem}"/>
+            </DataGrid.InputBindings>
+        </DataGrid>
+    </Grid>
+</Page>
